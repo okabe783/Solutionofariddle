@@ -14,11 +14,11 @@ public class CardBase : ScriptableObject
     [SerializeField] string description;
     
 
-    public string CardName { get => cardName;}
-    public CardType CardType { get => cardType;}
-    public int CardNumber { get => cardNumber;}
-    public Sprite Icon1 { get => Icon;}
-    public string Description { get => description;}
+    public string CardName { get => cardName; }
+    public CardType CardType { get => cardType; }
+    public int CardNumber { get => cardNumber; }
+    public Sprite Icon1 { get => Icon; }
+    public string Description { get => description; }
 }
 
 public enum CardType
