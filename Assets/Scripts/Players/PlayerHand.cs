@@ -1,4 +1,3 @@
-using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
@@ -10,7 +9,7 @@ public class PlayerHand : MonoBehaviour
     public void Add(Card card)
     {
         list.Add(card);
-        card.transform.SetParent(this.transform); //親として自分自信を子要素にする
+        card.transform.SetParent(this.transform); //親として自分自身を子要素にする
     }
     public void Remove(Card card)
     {

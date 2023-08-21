@@ -1,5 +1,3 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
 [CreateAssetMenu]
@@ -21,7 +19,7 @@ public class CardBase : ScriptableObject
     public string Description { get => description; }
 }
 
-public enum CardType
+public  enum CardType
 {
     Sword,
     Shield,
@@ -31,4 +29,5 @@ public enum CardType
     Gun,
     Fist,
     Heal,
+    Red,
 }
