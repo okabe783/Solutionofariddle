@@ -6,7 +6,11 @@ public class CardGenerator : MonoBehaviour
 
     private void Start()
     {
-        Spawn();
+        //カードを3枚配る
+        for (int i = 1; i <= 3; i++)
+        {
+            Spawn();
+        }
     }
     //Cardの生成
     public void Spawn()
