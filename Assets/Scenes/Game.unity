@@ -236,6 +236,15 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 590ae8128fd5bbe49ac295edf7f36b79, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  cardBases:
+  - {fileID: 11400000, guid: eccb0e48298fc374a943175c2a954bd3, type: 2}
+  - {fileID: 11400000, guid: 01f8512181f424449877fca2b52d8d08, type: 2}
+  - {fileID: 11400000, guid: 467b77b74ac9b7b48b0fde9380137cac, type: 2}
+  - {fileID: 11400000, guid: ba6a8bb5c09743d4ab9132818c98bad7, type: 2}
+  - {fileID: 11400000, guid: 103e806a07465bc40b0e8c3d5b250195, type: 2}
+  - {fileID: 11400000, guid: 8c7b0e0948a9deb428895a4616ad667f, type: 2}
+  - {fileID: 11400000, guid: dbe24cd6c9c2d794c938cb8003257111, type: 2}
+  - {fileID: 11400000, guid: e2fac7a48ccd555449318433dcd9abd6, type: 2}
   cardprefab: {fileID: 8998810292363682441, guid: 278a4ae0a1e95c54db69f38dcdc68d83, type: 3}
 --- !u!4 &698281325
 Transform:
