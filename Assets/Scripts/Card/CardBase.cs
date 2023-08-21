@@ -30,4 +30,7 @@ public  enum CardType
     Fist,
     Heal,
     Red,
+    Blue,
+    Green,
+    Yellow,
 }
