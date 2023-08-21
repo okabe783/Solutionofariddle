@@ -12,8 +12,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b593cfda8b5ca224a9feaf8d331e4cc8, type: 3}
   m_Name: 10
   m_EditorClassIdentifier: 
-  cardName: Red
-  cardType: 8
-  cardNumber: 9
+  cardName: Blue
+  cardType: 9
+  cardNumber: 10
   Icon: {fileID: 0}
   description: 

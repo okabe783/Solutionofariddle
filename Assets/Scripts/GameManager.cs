@@ -19,5 +19,13 @@ public class GameManager : MonoBehaviour
             _player.Hand.Add(card);  //ƒvƒŒƒCƒ„[‚ÌèD‚É’Ç‰Á
         }
         _player.Hand.ResetPosition();
+
+        //“G‚É–‚Î‚ğˆê‚Â“n‚·
+        for (int i = 0; i < 1; i++)
+        {
+            Card card = _generator.Spawn(i);  
+            _enemy.Hand.Add(card);  
+        }
+        _enemy.Hand.ResetPosition();
     }
 }
