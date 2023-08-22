@@ -10,8 +10,6 @@ public class CardBase : ScriptableObject
     [SerializeField] Sprite Icon;
     [TextArea]
     [SerializeField] string description;
-    
-
     public string CardName { get => cardName; }
     public CardType CardType { get => cardType; }
     public int CardNumber { get => cardNumber; }

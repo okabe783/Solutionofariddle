@@ -16,15 +16,15 @@ public class GameManager : MonoBehaviour
         for (int i = 0; i < 3; i++)
         {
             Card card = _generator.Spawn(i);  //ƒJ[ƒh‚ð¶¬‚µ‚Ä“n‚³‚ê‚é
-            _player.Hand.Add(card);  //ƒvƒŒƒCƒ„[‚ÌŽèŽD‚É’Ç‰Á
+            _player.SetCardToHand(card);  //ƒvƒŒƒCƒ„[‚ÌŽèŽD‚É’Ç‰Á
         }
         _player.Hand.ResetPosition();
 
         //“G‚É–‚Î‚ðˆê‚Â“n‚·
         for (int i = 0; i < 1; i++)
         {
-            Card card = _generator.Spawn(i);  
-            _enemy.Hand.Add(card);  
+            Card card = _generator.Spawn(i);
+            _enemy.SetCardToHand(card);  //ƒvƒŒƒCƒ„[‚ÌŽèŽD‚É’Ç‰Á
         }
         _enemy.Hand.ResetPosition();
     }
