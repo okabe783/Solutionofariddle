@@ -5,6 +5,7 @@ using UnityEngine;
 public class Player : MonoBehaviour
 {
     [SerializeField] PlayerHand _hand;
+    [SerializeField] SubmitPosition _submitposition;
 
     public PlayerHand Hand { get => _hand; }
 
@@ -16,6 +17,7 @@ public class Player : MonoBehaviour
     }
     void SelectedCard(Card card)
     {
-        Debug.Log(card.Base.CardNumber);
+        _submitposition.Set(card);
+        //Debug.Log(card.Base.CardNumber);
     }
 }
