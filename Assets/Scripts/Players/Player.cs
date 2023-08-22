@@ -17,7 +17,13 @@ public class Player : MonoBehaviour
     }
     void SelectedCard(Card card)
     {
+        //すでにセットしていれば、手札に戻す
+        if (_submitposition.SubmitCard)
+        {
+            _hand.Add(_submitposition.SubmitCard);
+        }
+        _hand.Remove(card);
         _submitposition.Set(card);
-        //Debug.Log(card.Base.CardNumber);
+        _hand.ResetPosition();
     }
 }

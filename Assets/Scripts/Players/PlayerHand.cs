@@ -16,8 +16,12 @@ public class PlayerHand : MonoBehaviour
         list.Remove(card);
     }
 
+    //èD‚ğ®—‚·‚é
     public void ResetPosition() //èD‚ÌƒJ[ƒh‚ğ®—ñ‚³‚¹‚é
     {
+        //¬‚³‚¢‡‚É•À‚×‚é
+        list.Sort((card0, card1) => card0.Base.CardNumber - card1.Base.CardNumber);
+
         for (int i = 0; i < list.Count; i++)
         {
             float posX = i * 2f; //ãY—í‚É®—ñ‚³‚¹‚é
