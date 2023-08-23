@@ -13,6 +13,7 @@ public class GameManager : MonoBehaviour
     //カードを生成して配る
     void SetUp()
     {
+        _player.OnSubmitAction = SubmittedAction;
         for (int i = 0; i < 3; i++)
         {
             Card card = _generator.Spawn(i);  //カードを生成して渡される
@@ -27,5 +28,9 @@ public class GameManager : MonoBehaviour
             _enemy.SetCardToHand(card);  //プレイヤーの手札に追加
         }
         _enemy.Hand.ResetPosition();
+    }
+    void SubmittedAction()
+    {
+        Debug.Log("SubmitAction");
     }
 }
