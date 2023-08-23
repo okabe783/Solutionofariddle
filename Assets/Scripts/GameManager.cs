@@ -5,6 +5,7 @@ public class GameManager : MonoBehaviour
     [SerializeField] Player _player;
     [SerializeField] Player _enemy;
     [SerializeField] CardGenerator _generator;
+    [SerializeField] GameObject _submitButton;
     private void Start()
     {
         SetUp();
@@ -32,5 +33,6 @@ public class GameManager : MonoBehaviour
     void SubmittedAction()
     {
         Debug.Log("SubmitAction");
+        _submitButton.SetActive(false); //player‚ªŒˆ’è‚ð‰Ÿ‚µ‚½‚ç
     }
 }
