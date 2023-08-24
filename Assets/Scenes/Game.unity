@@ -284,7 +284,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!114 &461686207
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -554,6 +554,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1435432202}
   - component: {fileID: 1435432203}
+  - component: {fileID: 1435432204}
   m_Layer: 0
   m_Name: GameManager
   m_TagString: Untagged
@@ -591,6 +592,19 @@ MonoBehaviour:
   _player: {fileID: 1395356546}
   _enemy: {fileID: 734763871}
   _generator: {fileID: 698281324}
+  _submitButton: {fileID: 1937404375}
+--- !u!114 &1435432204
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1435432201}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4c6da1379b45a0d4b854f578584c8b9b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1721294949
 GameObject:
   m_ObjectHideFlags: 0

@@ -14,6 +14,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   cardName: Spear
   cardType: 2
-  cardNumber: 0
+  cardNumber: 3
   Icon: {fileID: 0}
   description: 

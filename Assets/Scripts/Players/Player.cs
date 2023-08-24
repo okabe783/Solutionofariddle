@@ -5,10 +5,10 @@ public class Player : MonoBehaviour
 {
     [SerializeField] PlayerHand _hand;
     [SerializeField] SubmitPosition _submitposition;
-    bool _isSubmitted;
+    public bool IsSubmitted { get; private set; }
     public UnityAction OnSubmitAction;
     public PlayerHand Hand { get => _hand; }
-
+    public Card SubmitCard { get => _submitposition.SubmitCard; }
     public void SetCardToHand(Card card) //カードをこのタイミングで認識する
     {
         
@@ -18,7 +18,7 @@ public class Player : MonoBehaviour
     }
     void SelectedCard(Card card)
     {
-        if (_isSubmitted == true)
+        if (IsSubmitted == true)
         {
             return;
         }
@@ -34,8 +34,13 @@ public class Player : MonoBehaviour
     public void OnSubmitButton()
     {
         //カードの決定、変更不可
-        _isSubmitted = true;
+        IsSubmitted = true;
         //Managerに通知
         OnSubmitAction?.Invoke();
+    }
+    public void SetUpNextTurn()
+    {
+        IsSubmitted = false;
+        _submitposition.DestroyCard();
     }
 }

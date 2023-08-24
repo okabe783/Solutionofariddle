@@ -6,6 +6,12 @@ public class GameManager : MonoBehaviour
     [SerializeField] Player _enemy;
     [SerializeField] CardGenerator _generator;
     [SerializeField] GameObject _submitButton;
+    RuleBook _ruleBook;
+
+    private void Awake()
+    {
+        _ruleBook = GetComponent<RuleBook>();
+    }
     private void Start()
     {
         SetUp();
@@ -33,6 +39,24 @@ public class GameManager : MonoBehaviour
     void SubmittedAction()
     {
         Debug.Log("SubmitAction");
-        _submitButton.SetActive(false); //playerが決定を押したら
+        if (_player.IsSubmitted)
+        {
+            _submitButton.SetActive(false); //Playerが決定をおしたら
+        }
+    }
+
+    //Cardのダメージ判定
+    void CardBattle()
+    {
+        //ダメージを与える←まだ
+        SetUpNextTurn();
+    }
+
+    //ターンが終わったらカードを消す
+    void SetUpNextTurn()
+    {
+        _player.SetUpNextTurn();
+        _submitButton.SetActive(true); 
+
     }
 }
