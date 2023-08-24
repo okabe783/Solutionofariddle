@@ -7,6 +7,7 @@ public class GameManager : MonoBehaviour
     [SerializeField] CardGenerator _generator;
     [SerializeField] GameObject _submitButton;
     RuleBook _ruleBook;
+    GameUI _gameUI;
 
     private void Awake()
     {
@@ -20,6 +21,11 @@ public class GameManager : MonoBehaviour
     //カードを生成して配る
     void SetUp()
     {
+        //ライフ管理
+        _player.Life = 10;
+        _enemy.Life = 10;
+        _gameUI.ShowLife(_player.Life,_enemy.Life);
+
         _player.OnSubmitAction = SubmittedAction;
         for (int i = 0; i < 3; i++)
         {

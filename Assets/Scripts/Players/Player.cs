@@ -9,6 +9,7 @@ public class Player : MonoBehaviour
     public UnityAction OnSubmitAction;
     public PlayerHand Hand { get => _hand; }
     public Card SubmitCard { get => _submitposition.SubmitCard; }
+    public int Life { get; set; } 
     public void SetCardToHand(Card card) //カードをこのタイミングで認識する
     {
         
