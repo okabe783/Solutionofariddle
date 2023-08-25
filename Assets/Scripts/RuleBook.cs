@@ -31,7 +31,7 @@ public class RuleBook : MonoBehaviour
         {
             _player.Life -= 1;
         }
-        //プレイヤーのカードが槍で敵の魔石が赤緑黄色の時
+        //プレイヤーのカードが槍で敵の魔石が赤、緑、黄色の時
         if (myCard.HasFlag(CardType.Spear) && (enemyType.HasFlag(EnemyType.Red) || (enemyType.HasFlag(EnemyType.Green))
             || (enemyType.HasFlag(EnemyType.Yellow))))
         {
@@ -42,7 +42,7 @@ public class RuleBook : MonoBehaviour
         {
             _player.Life -= 1;
         }
-        //プレイヤーのカードが弓で敵の魔石が青緑黄色の時
+        //プレイヤーのカードが弓で敵の魔石が青、緑、黄色の時
         if (myCard.HasFlag(CardType.Bow) && (enemyType.HasFlag(EnemyType.Blue) || (enemyType.HasFlag(EnemyType.Green))
             || (enemyType.HasFlag(EnemyType.Yellow))))
         {
@@ -50,6 +50,26 @@ public class RuleBook : MonoBehaviour
         }
         //プレイヤーのカードが弓で敵の魔石が赤の時
         if (myCard.HasFlag(CardType.Bow) && (enemyType.HasFlag(EnemyType.Red)))
+        {
+            _player.Life -= 1;
+        }
+        //プレイヤーのカードが銃で敵の魔石が赤、青の時
+        if (myCard.HasFlag(CardType.Gun) && (enemyType.HasFlag(EnemyType.Red) || (enemyType.HasFlag(EnemyType.Blue))))
+        {
+            _enemy.Life -= 1;
+        }
+        //プレイヤーのカードが銃で敵の魔石が緑、黄色の時
+        if (myCard.HasFlag(CardType.Gun) && (enemyType.HasFlag(EnemyType.Green) || (enemyType.HasFlag(EnemyType.Yellow))))
+        {
+            _player.Life -= 1;
+        }
+        //プレイヤーのカードが拳で敵の魔石が赤、緑の時
+        if (myCard.HasFlag(CardType.Fist) && (enemyType.HasFlag(EnemyType.Red) || (enemyType.HasFlag(EnemyType.Green))))
+        {
+            _enemy.Life -= 1;
+        }
+        //プレイヤーのカードが拳で敵の魔石が青、黄色の時
+        if (myCard.HasFlag(CardType.Fist) && (enemyType.HasFlag(EnemyType.Blue) || (enemyType.HasFlag(EnemyType.Yellow))))
         {
             _player.Life -= 1;
         }
