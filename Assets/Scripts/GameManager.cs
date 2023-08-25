@@ -51,14 +51,15 @@ public class GameManager : MonoBehaviour
     //Cardのダメージ判定
     public void CardBattle()
     {
-        _ruleBook.Result(_player, _enemy);
         SetUpNextTurn();
+        //勝利判定
+        //プレイヤーのスコアが0なら
     }
 
     //ターンが終わったらカードを消す
     void SetUpNextTurn()
     {
         _player.SetUpNextTurn();
-        _submitButton.SetActive(true); 
+        _submitButton.SetActive(true);
     }
 }

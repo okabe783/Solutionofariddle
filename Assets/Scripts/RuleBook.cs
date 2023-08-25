@@ -3,7 +3,7 @@ using UnityEngine;
 public class RuleBook : MonoBehaviour
 {
     //Œ‹‰Ê‚Ì•\Ž¦
-    public void Result(Player _player, Player _enemy)
+    public void Result(Player _player, Enemy _enemy)
     {
         CardType myCard = CardType.None;
         EnemyType enemyType = EnemyType.None;
