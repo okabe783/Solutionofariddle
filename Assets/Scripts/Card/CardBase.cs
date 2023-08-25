@@ -1,3 +1,4 @@
+using System;
 using UnityEngine;
 
 [CreateAssetMenu]
@@ -17,18 +18,29 @@ public class CardBase : ScriptableObject
     public string Description { get => description; }
 }
 
-public  enum CardType
+//ビッチフラグで相性を管理する
+
+[Flags]
+public enum CardType
 {
-    Sword,
-    Shield,
-    Spear,
-    Bow,
-    Special,
-    Gun,
-    Fist,
-    Heal,
-    Red,
-    Blue,
-    Green,
-    Yellow,
+    None = 0,
+    Sword = 1 << 0,   // 1
+    Shield = 1 << 1,  // 2
+    Spear = 1 << 2,   // 4
+    Bow = 1 << 3,     // 8
+    Special = 1 << 4, // 16
+    Gun = 1 << 5,     // 32
+    Fist = 1 << 6,    // 64
+    Heal = 1 << 7     // 128
 }
+
+[Flags]
+public enum EnemyType
+{
+    None = 0,
+    Red = 1 << 0,    // 1
+    Blue = 1 << 1,   // 2
+    Green = 1 << 2,  // 4
+    Yellow = 1 << 3  // 8
+}
+

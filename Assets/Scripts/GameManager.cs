@@ -8,7 +8,6 @@ public class GameManager : MonoBehaviour
     [SerializeField] GameObject _submitButton;
     RuleBook _ruleBook;
     GameUI _gameUI;
-
     private void Awake()
     {
         _ruleBook = GetComponent<RuleBook>();
@@ -24,8 +23,6 @@ public class GameManager : MonoBehaviour
         //ライフ管理
         _player.Life = 10;
         _enemy.Life = 10;
-        _gameUI.ShowLife(_player.Life,_enemy.Life);
-
         _player.OnSubmitAction = SubmittedAction;
         for (int i = 0; i < 3; i++)
         {
@@ -52,9 +49,9 @@ public class GameManager : MonoBehaviour
     }
 
     //Cardのダメージ判定
-    void CardBattle()
+    public void CardBattle()
     {
-        //ダメージを与える←まだ
+        _ruleBook.Result(_player, _enemy);
         SetUpNextTurn();
     }
 
@@ -63,6 +60,5 @@ public class GameManager : MonoBehaviour
     {
         _player.SetUpNextTurn();
         _submitButton.SetActive(true); 
-
     }
 }
