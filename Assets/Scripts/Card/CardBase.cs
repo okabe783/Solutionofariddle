@@ -18,7 +18,7 @@ public class CardBase : ScriptableObject
     public string Description { get => description; }
 }
 
-//ビッチフラグで相性を管理する
+//ビットフラグで相性を管理する
 
 [Flags]
 public enum CardType
@@ -31,7 +31,9 @@ public enum CardType
     Special = 1 << 4, // 16
     Gun = 1 << 5,     // 32
     Fist = 1 << 6,    // 64
-    Heal = 1 << 7     // 128
+    Heal = 1 << 7,     // 128
+    Shuriken = 1 << 8,   //256
+    Axe = 1 << 9 //512
 }
 
 [Flags]
@@ -43,4 +45,3 @@ public enum EnemyType
     Green = 1 << 2,  // 4
     Yellow = 1 << 3  // 8
 }
-

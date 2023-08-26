@@ -73,5 +73,45 @@ public class RuleBook : MonoBehaviour
         {
             _player.Life -= 1;
         }
+        //プレイヤーのカードが回復で敵の魔石が赤、黄色の時
+        if (myCard.HasFlag(CardType.Heal) && (enemyType.HasFlag(EnemyType.Red) || (enemyType.HasFlag(EnemyType.Yellow))))
+        {
+            _enemy.Life -= 1;
+        }
+        //プレイヤーのカードが回復で敵の魔石が青、緑の時
+        if (myCard.HasFlag(CardType.Heal) && (enemyType.HasFlag(EnemyType.Blue) || (enemyType.HasFlag(EnemyType.Green))))
+        {
+            _player.Life -= 1;
+        }
+        //プレイヤーのカードが必殺技で敵の魔石が青、緑の時
+        if (myCard.HasFlag(CardType.Special) && (enemyType.HasFlag(EnemyType.Blue) || (enemyType.HasFlag(EnemyType.Green))))
+        {
+            _enemy.Life -= 1;
+        }
+        //  プレイヤーのカードが必殺技で敵の魔石が赤、黄色の時
+        if (myCard.HasFlag(CardType.Special) && (enemyType.HasFlag(EnemyType.Red) || (enemyType.HasFlag(EnemyType.Yellow))))
+        {
+            _player.Life -= 1;
+        }
+        //プレイヤーのカードが手裏剣で敵の魔石が青、黄色の時
+        if (myCard.HasFlag(CardType.Shuriken) && (enemyType.HasFlag(EnemyType.Blue) || (enemyType.HasFlag(EnemyType.Yellow))))
+        {
+            _enemy.Life -= 1;
+        }
+        //プレイヤーのカードが手裏剣で敵の魔石が赤、黄色の時
+        if (myCard.HasFlag(CardType.Shuriken) && (enemyType.HasFlag(EnemyType.Red) || (enemyType.HasFlag(EnemyType.Yellow))))
+        {
+            _player.Life -= 1;
+        }
+        //プレイヤーのカードが斧で敵の魔石が緑、黄色の時
+        if (myCard.HasFlag(CardType.Axe) && (enemyType.HasFlag(EnemyType.Green) || (enemyType.HasFlag(EnemyType.Yellow))))
+        {
+            _enemy.Life -= 1;
+        }
+        //プレイヤーのカードが斧で敵の魔石が赤、青の時
+        if (myCard.HasFlag(CardType.Shuriken) && (enemyType.HasFlag(EnemyType.Red) || (enemyType.HasFlag(EnemyType.Blue))))
+        {
+            _player.Life -= 1;
+        }
     }
 }
