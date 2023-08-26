@@ -36,6 +36,8 @@ public enum CardType
     Axe = 1 << 9, //512
     Staff = 1 << 10, //1024
     Machinegun = 1 << 11, //2048
+    Bomb = 1 << 12, //4096
+    Scythe = 1 << 13, //8192
 }
 
 [Flags]

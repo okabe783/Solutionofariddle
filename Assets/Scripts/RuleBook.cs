@@ -122,7 +122,7 @@ public class RuleBook : MonoBehaviour
         if (myCard.HasFlag(CardType.Staff) && (enemyType.HasFlag(EnemyType.Blue) || (enemyType.HasFlag(EnemyType.Green))
             || (enemyType.HasFlag(EnemyType.Yellow))))
         {
-            _player.Life -= 1;
+            _player.Life -= 3;
         }
         //プレイヤーのカードがマシンガンで敵の魔石が青の時
         if (myCard.HasFlag(CardType.Machinegun) && (enemyType.HasFlag(EnemyType.Blue)))
@@ -133,7 +133,29 @@ public class RuleBook : MonoBehaviour
         if (myCard.HasFlag(CardType.Staff) && (enemyType.HasFlag(EnemyType.Red) || (enemyType.HasFlag(EnemyType.Green))
             || (enemyType.HasFlag(EnemyType.Yellow))))
         {
-            _player.Life -= 1;
+            _player.Life -= 3;
+        }
+        //プレイヤーのカードが爆弾で敵の魔石が緑の時
+        if (myCard.HasFlag(CardType.Bomb) && (enemyType.HasFlag(EnemyType.Green)))
+        {
+            _enemy.Life -= 3;
+        }
+        //プレイヤーのカードがマシンガンで敵の魔石が赤、黄色、青の時 
+        if (myCard.HasFlag(CardType.Bomb) && (enemyType.HasFlag(EnemyType.Red) || (enemyType.HasFlag(EnemyType.Blue))
+            || (enemyType.HasFlag(EnemyType.Yellow))))
+        {
+            _player.Life -= 3;
+        }
+        //プレイヤーのカードが大鎌で敵の魔石が黄色の時
+        if (myCard.HasFlag(CardType.Scythe) && (enemyType.HasFlag(EnemyType.Yellow)))
+        {
+            _enemy.Life -= 3;
+        }
+        //プレイヤーのカードがマシンガンで敵の魔石が赤、緑、青の時 
+        if (myCard.HasFlag(CardType.Bomb) && (enemyType.HasFlag(EnemyType.Red) || (enemyType.HasFlag(EnemyType.Blue))
+            || (enemyType.HasFlag(EnemyType.Green))))
+        {
+            _player.Life -= 3;
         }
     }
 }
