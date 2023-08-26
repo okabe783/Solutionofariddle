@@ -56,60 +56,82 @@ public class RuleBook : MonoBehaviour
         //プレイヤーのカードが銃で敵の魔石が赤、青の時
         if (myCard.HasFlag(CardType.Gun) && (enemyType.HasFlag(EnemyType.Red) || (enemyType.HasFlag(EnemyType.Blue))))
         {
-            _enemy.Life -= 1;
+            _enemy.Life -= 2;
         }
         //プレイヤーのカードが銃で敵の魔石が緑、黄色の時
         if (myCard.HasFlag(CardType.Gun) && (enemyType.HasFlag(EnemyType.Green) || (enemyType.HasFlag(EnemyType.Yellow))))
         {
-            _player.Life -= 1;
+            _player.Life -= 2;
         }
         //プレイヤーのカードが拳で敵の魔石が赤、緑の時
         if (myCard.HasFlag(CardType.Fist) && (enemyType.HasFlag(EnemyType.Red) || (enemyType.HasFlag(EnemyType.Green))))
         {
-            _enemy.Life -= 1;
+            _enemy.Life -= 2;
         }
         //プレイヤーのカードが拳で敵の魔石が青、黄色の時
         if (myCard.HasFlag(CardType.Fist) && (enemyType.HasFlag(EnemyType.Blue) || (enemyType.HasFlag(EnemyType.Yellow))))
         {
-            _player.Life -= 1;
+            _player.Life -= 2;
         }
         //プレイヤーのカードが回復で敵の魔石が赤、黄色の時
         if (myCard.HasFlag(CardType.Heal) && (enemyType.HasFlag(EnemyType.Red) || (enemyType.HasFlag(EnemyType.Yellow))))
         {
-            _enemy.Life -= 1;
+            _enemy.Life -= 2;
         }
         //プレイヤーのカードが回復で敵の魔石が青、緑の時
         if (myCard.HasFlag(CardType.Heal) && (enemyType.HasFlag(EnemyType.Blue) || (enemyType.HasFlag(EnemyType.Green))))
         {
-            _player.Life -= 1;
+            _player.Life -= 2;
         }
         //プレイヤーのカードが必殺技で敵の魔石が青、緑の時
         if (myCard.HasFlag(CardType.Special) && (enemyType.HasFlag(EnemyType.Blue) || (enemyType.HasFlag(EnemyType.Green))))
         {
-            _enemy.Life -= 1;
+            _enemy.Life -= 2;
         }
         //  プレイヤーのカードが必殺技で敵の魔石が赤、黄色の時
         if (myCard.HasFlag(CardType.Special) && (enemyType.HasFlag(EnemyType.Red) || (enemyType.HasFlag(EnemyType.Yellow))))
         {
-            _player.Life -= 1;
+            _player.Life -= 2;
         }
         //プレイヤーのカードが手裏剣で敵の魔石が青、黄色の時
         if (myCard.HasFlag(CardType.Shuriken) && (enemyType.HasFlag(EnemyType.Blue) || (enemyType.HasFlag(EnemyType.Yellow))))
         {
-            _enemy.Life -= 1;
+            _enemy.Life -= 2;
         }
         //プレイヤーのカードが手裏剣で敵の魔石が赤、黄色の時
         if (myCard.HasFlag(CardType.Shuriken) && (enemyType.HasFlag(EnemyType.Red) || (enemyType.HasFlag(EnemyType.Yellow))))
         {
-            _player.Life -= 1;
+            _player.Life -= 2;
         }
         //プレイヤーのカードが斧で敵の魔石が緑、黄色の時
         if (myCard.HasFlag(CardType.Axe) && (enemyType.HasFlag(EnemyType.Green) || (enemyType.HasFlag(EnemyType.Yellow))))
         {
-            _enemy.Life -= 1;
+            _enemy.Life -= 2;
         }
         //プレイヤーのカードが斧で敵の魔石が赤、青の時
         if (myCard.HasFlag(CardType.Shuriken) && (enemyType.HasFlag(EnemyType.Red) || (enemyType.HasFlag(EnemyType.Blue))))
+        {
+            _player.Life -= 2;
+        }
+        //プレイヤーのカードが杖で敵の魔石が赤の時
+        if (myCard.HasFlag(CardType.Staff) && (enemyType.HasFlag(EnemyType.Red)))
+        {
+            _enemy.Life -= 3;
+        }
+        //プレイヤーのカードが杖で敵の魔石が青、黄色、緑の時 
+        if (myCard.HasFlag(CardType.Staff) && (enemyType.HasFlag(EnemyType.Blue) || (enemyType.HasFlag(EnemyType.Green))
+            || (enemyType.HasFlag(EnemyType.Yellow))))
+        {
+            _player.Life -= 1;
+        }
+        //プレイヤーのカードがマシンガンで敵の魔石が青の時
+        if (myCard.HasFlag(CardType.Machinegun) && (enemyType.HasFlag(EnemyType.Blue)))
+        {
+            _enemy.Life -= 3;
+        }
+        //プレイヤーのカードがマシンガンで敵の魔石が赤、黄色、緑の時 
+        if (myCard.HasFlag(CardType.Staff) && (enemyType.HasFlag(EnemyType.Red) || (enemyType.HasFlag(EnemyType.Green))
+            || (enemyType.HasFlag(EnemyType.Yellow))))
         {
             _player.Life -= 1;
         }

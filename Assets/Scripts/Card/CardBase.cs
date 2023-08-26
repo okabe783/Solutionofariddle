@@ -33,7 +33,9 @@ public enum CardType
     Fist = 1 << 6,    // 64
     Heal = 1 << 7,     // 128
     Shuriken = 1 << 8,   //256
-    Axe = 1 << 9 //512
+    Axe = 1 << 9, //512
+    Staff = 1 << 10, //1024
+    Machinegun = 1 << 11, //2048
 }
 
 [Flags]
