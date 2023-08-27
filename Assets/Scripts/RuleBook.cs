@@ -158,4 +158,11 @@ public class RuleBook : MonoBehaviour
             _player.Life -= 3;
         }
     }
+    public enum TurnResult
+    {
+        Success,
+        Failure,
+        Win,
+        Lose,
+    }
 }

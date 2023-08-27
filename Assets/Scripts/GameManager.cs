@@ -62,4 +62,8 @@ public class GameManager : MonoBehaviour
         _player.SetUpNextTurn();
         _submitButton.SetActive(true);
     }
+    public void ShowResult()
+    {
+        //Ÿ”sƒpƒlƒ‹‚ğ•\¦
+    }
 }
