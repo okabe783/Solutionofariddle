@@ -1,10 +1,11 @@
+using System.Collections;
 using UnityEngine;
 using static RuleBook;
 
 public class GameManager : MonoBehaviour
 {
     [SerializeField] Player _player;
-    [SerializeField] Player _enemy;
+    [SerializeField] Enemy _enemy;
     [SerializeField] CardGenerator _generator;
     [SerializeField] GameObject _submitButton;
     RuleBook _ruleBook;
@@ -52,9 +53,18 @@ public class GameManager : MonoBehaviour
     //Cardのダメージ判定
     public void CardBattle()
     {
-        SetUpNextTurn();
+        TurnResult result =_ruleBook.Result(_player, _enemy);
         //勝利判定
-        //プレイヤーのスコアが0なら
+        //ライフがなくなった時の処理
+        _gameUI.ShowLife(_player.Life, _enemy.Life);
+        if ((result == TurnResult.Win) || (result == TurnResult.Lose) || (_player.Life <= 0 || _enemy.Life <= 0)) //ライフが0ならゲームオーバー
+        {
+            ShowResult(result);
+        }
+        else
+        {
+            SetUpNextTurn();  
+        }
     }
 
     //ターンが終わったらカードを消す
