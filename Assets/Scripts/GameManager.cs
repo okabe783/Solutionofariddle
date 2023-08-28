@@ -66,6 +66,13 @@ public class GameManager : MonoBehaviour
     public void ShowResult(TurnResult result)
     {
         //Ÿ”sƒpƒlƒ‹‚ğ•\¦
-        
+        if(result == TurnResult.Success)
+        {
+            _gameUI.SetPanel("Success");
+        }
+        else if(result == TurnResult.Failure)
+        {
+            _gameUI.SetPanel("Failure");
+        }
     }
 }

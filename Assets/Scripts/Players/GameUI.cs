@@ -17,8 +17,9 @@ public class GameUI : MonoBehaviour
         _platerLifeText.text = $"x{_playerLife}";
         _enemyLifeText.text = $"x{_enemyLife}";
     }
-    public void SetPanel()
+    public void SetPanel(string result)
     {
-
+        _resultPanel.gameObject.SetActive(true);
+        _resultText.text = result;
     }
 }
