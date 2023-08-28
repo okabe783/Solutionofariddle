@@ -1,4 +1,5 @@
 using UnityEngine;
+using static RuleBook;
 
 public class GameManager : MonoBehaviour
 {
@@ -62,8 +63,9 @@ public class GameManager : MonoBehaviour
         _player.SetUpNextTurn();
         _submitButton.SetActive(true);
     }
-    public void ShowResult()
+    public void ShowResult(TurnResult result)
     {
         //Ÿ”sƒpƒlƒ‹‚ğ•\¦
+        
     }
 }
