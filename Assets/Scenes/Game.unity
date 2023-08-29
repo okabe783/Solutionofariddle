@@ -538,10 +538,10 @@ MonoBehaviour:
   - {fileID: 11400000, guid: e4b84ad5b454af649b473ef6e5c2b3be, type: 2}
   - {fileID: 11400000, guid: 946337c6fab899f43a00cf70248ae8af, type: 2}
   _enemycardBases:
-  - {fileID: 11400000, guid: 60537eb7cce0b4545a197e7052420582, type: 2}
-  - {fileID: 11400000, guid: d648842dfcde93444be9dd64e34632d7, type: 2}
-  - {fileID: 11400000, guid: 5fc64c033d02aa54da0fabeb8704e1bb, type: 2}
-  - {fileID: 11400000, guid: 8302f2428bc24a2419c54fe0cd3a6bc5, type: 2}
+  - {fileID: 11400000, guid: 8a9160981d84ad74198f380bf51b3f7d, type: 2}
+  - {fileID: 11400000, guid: f85b6e85cd475b64192a590095e4f71c, type: 2}
+  - {fileID: 11400000, guid: 98d3c240b1a534348bc27f11706a53c3, type: 2}
+  - {fileID: 11400000, guid: b05f55bdc89260841ac16bf9ebacea41, type: 2}
   cardprefab: {fileID: 8998810292363682441, guid: 278a4ae0a1e95c54db69f38dcdc68d83, type: 3}
 --- !u!4 &698281325
 Transform:
