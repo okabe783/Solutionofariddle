@@ -523,15 +523,20 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _playercardBases:
-  - {fileID: 11400000, guid: 3ed376af0da28d544bab0d3f275e7ea6, type: 2}
-  - {fileID: 11400000, guid: ba6a8bb5c09743d4ab9132818c98bad7, type: 2}
-  - {fileID: 11400000, guid: dbe24cd6c9c2d794c938cb8003257111, type: 2}
-  - {fileID: 11400000, guid: 8c7b0e0948a9deb428895a4616ad667f, type: 2}
-  - {fileID: 11400000, guid: e2fac7a48ccd555449318433dcd9abd6, type: 2}
-  - {fileID: 11400000, guid: 01f8512181f424449877fca2b52d8d08, type: 2}
-  - {fileID: 11400000, guid: 467b77b74ac9b7b48b0fde9380137cac, type: 2}
-  - {fileID: 11400000, guid: 103e806a07465bc40b0e8c3d5b250195, type: 2}
-  - {fileID: 11400000, guid: eccb0e48298fc374a943175c2a954bd3, type: 2}
+  - {fileID: 11400000, guid: ed4661a993789254ebeb95e4fcebf95b, type: 2}
+  - {fileID: 11400000, guid: 4db8640f05fd1534c94b1b952653ca80, type: 2}
+  - {fileID: 11400000, guid: d07821a7d8e0dd1458977c3d04caad59, type: 2}
+  - {fileID: 11400000, guid: df9c6c051e7c3ba4cac3bb0a40f75afa, type: 2}
+  - {fileID: 11400000, guid: 909f103932440ac4cb03b80395229505, type: 2}
+  - {fileID: 11400000, guid: 26a775deac285694ea9f77b7ba98918a, type: 2}
+  - {fileID: 11400000, guid: 4baa09ac355941e42acd1e102bf1b792, type: 2}
+  - {fileID: 11400000, guid: 02ef9f914ddae714f816c28e5846ae2a, type: 2}
+  - {fileID: 11400000, guid: e0c79e799ce0c9e4d82f88ee37bd8e79, type: 2}
+  - {fileID: 11400000, guid: ebf9ac2962533b2479dd01a3dd0b6224, type: 2}
+  - {fileID: 11400000, guid: 5dd8869083615cf4bab7b165fc2d9637, type: 2}
+  - {fileID: 11400000, guid: e6b1df0e5933abf4b9a945480e559b8d, type: 2}
+  - {fileID: 11400000, guid: e4b84ad5b454af649b473ef6e5c2b3be, type: 2}
+  - {fileID: 11400000, guid: 946337c6fab899f43a00cf70248ae8af, type: 2}
   _enemycardBases:
   - {fileID: 11400000, guid: 60537eb7cce0b4545a197e7052420582, type: 2}
   - {fileID: 11400000, guid: d648842dfcde93444be9dd64e34632d7, type: 2}
