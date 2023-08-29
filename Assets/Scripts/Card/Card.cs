@@ -22,7 +22,6 @@ public class Card : MonoBehaviour
     }
     public void OnClick()
     {
-        Debug.Log("プレイヤーが選択");
         OnClickCard?.Invoke(this);
     }
 }

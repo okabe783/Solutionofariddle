@@ -1,5 +1,5 @@
-using System.Collections;
 using UnityEngine;
+using static CardGenerator;
 using static RuleBook;
 
 public class GameManager : MonoBehaviour
@@ -28,7 +28,7 @@ public class GameManager : MonoBehaviour
         _player.OnSubmitAction = SubmittedAction;
         for (int i = 0; i < 3; i++)
         {
-            Card card = _generator.Spawn(i);  //カードを生成して渡される
+            Card card = _generator.Spawn(SpawnType.Player);  //カードを生成して渡される
             _player.SetCardToHand(card);  //プレイヤーの手札に追加
         }
         _player.Hand.ResetPosition();
@@ -36,7 +36,7 @@ public class GameManager : MonoBehaviour
         //敵に魔石を一つ渡す
         for (int i = 0; i < 1; i++)
         {
-            Card card = _generator.Spawn(i);
+            Card card = _generator.Spawn(SpawnType.Enemy);
             _enemy.SetCardToHand(card);  //プレイヤーの手札に追加
         }
         _enemy.Hand.ResetPosition();
@@ -53,17 +53,31 @@ public class GameManager : MonoBehaviour
     //Cardのダメージ判定
     public void CardBattle()
     {
-        TurnResult result =_ruleBook.Result(_player, _enemy);
+        TurnResult result = _ruleBook.Result(_player, _enemy);
         //勝利判定
         //ライフがなくなった時の処理
         _gameUI.ShowLife(_player.Life, _enemy.Life);
-        if ((result == TurnResult.Win) || (result == TurnResult.Lose) || (_player.Life <= 0 || _enemy.Life <= 0)) //ライフが0ならゲームオーバー
+        if ((result == TurnResult.Win) || (result == TurnResult.Lose) || (_player.Life <= 0 || _enemy.Life <= 0)) 
         {
-            ShowResult(result);
+            ShowGameResult(result);
         }
         else
         {
-            SetUpNextTurn();  
+            ShowResult(result);
+            SetUpNextTurn();
+        }
+    }
+
+    //ゲームの勝敗を表示するパネル
+    private void ShowGameResult(TurnResult result)
+    {
+        if (result == TurnResult.Win)
+        {
+            _gameUI.SetPanel("WIN");
+        }
+        else if (result == TurnResult.Lose)
+        {
+            _gameUI.SetPanel("LOSE");
         }
     }
 
@@ -75,12 +89,12 @@ public class GameManager : MonoBehaviour
     }
     public void ShowResult(TurnResult result)
     {
-        //勝敗パネルを表示
-        if(result == TurnResult.Success)
+        //攻撃が成功か失敗かのパネルを表示
+        if (result == TurnResult.Success)
         {
             _gameUI.SetPanel("Success");
         }
-        else if(result == TurnResult.Failure)
+        else if (result == TurnResult.Failure)
         {
             _gameUI.SetPanel("Failure");
         }
