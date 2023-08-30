@@ -28,4 +28,11 @@ public class PlayerHand : MonoBehaviour
             list[i].transform.localPosition = new Vector2(posX, 0);
         }
     }
+    public Card RandomRemove()
+    {
+        int r =Random.Range(0, list.Count);
+        Card card = list[r];
+        Remove(card);
+        return card;
+    }
 }

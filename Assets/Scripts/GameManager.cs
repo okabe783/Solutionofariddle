@@ -52,6 +52,12 @@ public class GameManager : MonoBehaviour
         else if (_player.IsSubmitted)
         {
             _submitButton.SetActive(false); //プレイヤーが決定を押したら変更できなくする
+            //エネミーからカードを出す
+            _enemy.RandomSubmit();
+        }
+        else if (_enemy.IsSubmitted)
+        {
+            //プレイヤーの提出を待つ
         }
     }
 

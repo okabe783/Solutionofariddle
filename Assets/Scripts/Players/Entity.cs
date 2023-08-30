@@ -38,6 +38,19 @@ public class Entity : MonoBehaviour
         //Managerに通知
         OnSubmitAction?.Invoke();
     }
+
+    public void RandomSubmit()
+    {
+        //手札からランダムにカードを抜き取る←ここを変更
+        Card card = _hand.RandomRemove();
+        //提出用にセット
+        _submitposition.Set(card);
+        //ゲームマネージャに通知する
+        IsSubmitted = true;
+        OnSubmitAction?.Invoke();
+        _hand.ResetPosition();
+
+    }
     public void SetUpNextTurn()
     {
         IsSubmitted = false;
