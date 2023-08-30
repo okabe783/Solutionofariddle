@@ -10,6 +10,7 @@ public class GameManager : MonoBehaviour
     [SerializeField] GameObject _submitButton;
     RuleBook _ruleBook;
     GameUI _gameUI;
+
     private void Awake()
     {
         _ruleBook = GetComponent<RuleBook>();
@@ -43,10 +44,14 @@ public class GameManager : MonoBehaviour
     }
     void SubmittedAction()
     {
-        Debug.Log("SubmitAction");
-        if (_player.IsSubmitted)
+        if (_player.IsSubmitted && _enemy.IsSubmitted)
         {
             _submitButton.SetActive(false); //Playerが決定をおしたら
+            CardBattle();
+        }
+        else if (_player.IsSubmitted)
+        {
+            _submitButton.SetActive(false); //プレイヤーが決定を押したら変更できなくする
         }
     }
 

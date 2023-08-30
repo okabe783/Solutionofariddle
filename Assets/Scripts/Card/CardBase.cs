@@ -4,7 +4,6 @@ public class CardBase : ScriptableObject
 {
     //カードの基礎データ
     [SerializeField] string cardName;
-   
     [SerializeField] int cardNumber;
     [SerializeField] Sprite Icon;
     [TextArea]
