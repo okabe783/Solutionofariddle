@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: Fist
   m_EditorClassIdentifier: 
   cardName: Fist
-  cardNumber: 7
-  Icon: {fileID: 0}
+  cardNumber: 4
+  Icon: {fileID: 21300000, guid: d9ded8915b189044aaedfe1196cd01e1, type: 3}
   description: 
   _playerCardType: 64

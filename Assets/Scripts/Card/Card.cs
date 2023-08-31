@@ -6,7 +6,6 @@ public class Card : MonoBehaviour
 {
     //カードUI
     //ゲーム内の処理
-    [SerializeField] Text nameText;
     [SerializeField] Image icon;
     [SerializeField] Text descriptionText;
     public CardBase Base { get; private set; }
@@ -16,7 +15,6 @@ public class Card : MonoBehaviour
     public void Set(CardBase cardBase)
     {
         Base = cardBase;
-        nameText.text = cardBase.name;
         icon.sprite = cardBase.Icon1;
         descriptionText.text = cardBase.Description;
     }
