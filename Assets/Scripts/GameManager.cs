@@ -8,8 +8,8 @@ public class GameManager : MonoBehaviour
     [SerializeField] Enemy _enemy;
     [SerializeField] CardGenerator _generator;
     [SerializeField] GameObject _submitButton;
+    [SerializeField] GameUI _gameUI;
     RuleBook _ruleBook;
-    GameUI _gameUI;
 
     private void Awake()
     {
@@ -23,24 +23,14 @@ public class GameManager : MonoBehaviour
     //カードを生成して配る
     void SetUp()
     {
+        _gameUI.Init();
         //ライフ管理
         _player.Life = 10;
         _enemy.Life = 10;
+        _gameUI.ShowLife(_player.Life, _enemy.Life);
         _player.OnSubmitAction = SubmittedAction;
-        for (int i = 0; i < 3; i++)
-        {
-            Card card = _generator.Spawn(SpawnType.Player);  //カードを生成して渡される
-            _player.SetCardToHand(card);  //プレイヤーの手札に追加
-        }
-        _player.Hand.ResetPosition();
-
-        //敵に魔石を一つ渡す
-        for (int i = 0; i < 1; i++)
-        {
-            Card card = _generator.Spawn(SpawnType.Enemy);
-            _enemy.SetCardToHand(card);  //プレイヤーの手札に追加
-        }
-        _enemy.Hand.ResetPosition();
+        PlayerSendCard(_player); 
+        EnemySendCard(_enemy); 
     }
     void SubmittedAction()
     {
@@ -109,5 +99,24 @@ public class GameManager : MonoBehaviour
         {
             _gameUI.SetPanel("Failure");
         }
+    }
+    public void PlayerSendCard(Player _player)
+    {
+        for (int i = 0; i < 3; i++)
+        {
+            Card card = _generator.Spawn(SpawnType.Player);  //カードを生成して渡される
+            _player.SetCardToHand(card);  //プレイヤーの手札に追加
+        }
+        _player.Hand.ResetPosition();
+    }
+    public void EnemySendCard(Enemy _enemy)
+    {
+        //敵に魔石を一つ渡す
+        for (int i = 0; i < 1; i++)
+        {
+            Card card = _generator.Spawn(SpawnType.Enemy);
+            _enemy.SetCardToHand(card);  //敵の手札に追加
+        }
+        _enemy.Hand.ResetPosition();
     }
 }
