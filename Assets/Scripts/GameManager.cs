@@ -117,7 +117,7 @@ public class GameManager : MonoBehaviour
     }
     public void ShowResult(TurnResult result)
     {
-        //攻撃が成功か失敗かのパネルを表示
+        //勝敗パネルを表示
         if (result == TurnResult.GameWin)
         {
             _gameUI.SetPanel("WIN");
@@ -125,6 +125,14 @@ public class GameManager : MonoBehaviour
         else if (result == TurnResult.GameLose)
         {
             _gameUI.SetPanel("Failure");
+        }
+        else if(_player.Life <= 0)
+        {
+            _gameUI.ShowGameResult("LOSE");
+        }
+        else if (_enemy.Life <= 0)
+        {
+            _gameUI.SetPanel("WIN");
         }
     }
     public void PlayerSendCard(Player _player)

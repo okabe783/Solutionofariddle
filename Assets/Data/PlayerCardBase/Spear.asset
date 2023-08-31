@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: Spear
   m_EditorClassIdentifier: 
   cardName: Spear
-  cardNumber: 3
-  Icon: {fileID: 0}
+  cardNumber: 11
+  Icon: {fileID: 21300000, guid: b5b6b46c3b654bf49ba24dd35af18096, type: 3}
   description: 
   _playerCardType: 4
