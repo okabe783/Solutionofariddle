@@ -3,6 +3,7 @@ using UnityEngine.UI;
 
 public class GameUI : MonoBehaviour
 {
+    [SerializeField] Text _turnResultText;
     [SerializeField] Text _platerLifeText;
     [SerializeField] Text _enemyLifeText;
     [SerializeField] GameObject _resultPanel;
@@ -16,6 +17,11 @@ public class GameUI : MonoBehaviour
     {
         _platerLifeText.text = $"x{_playerLife}";
         _enemyLifeText.text = $"x{_enemyLife}";
+    }
+    public void ShowTurnResult(string result)
+    {
+        _turnResultText.gameObject.SetActive(true);
+        _turnResultText.text = result;
     }
     public void SetPanel(string result)
     {

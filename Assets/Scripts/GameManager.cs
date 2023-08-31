@@ -55,10 +55,37 @@ public class GameManager : MonoBehaviour
     public void CardBattle()
     {
         TurnResult result = _ruleBook.Result(_player, _enemy);
-        //勝利判定
+
+        switch (result)
+        {
+            case TurnResult.Success1:
+                _gameUI.ShowTurnResult("Success");
+                _enemy.Life--;
+                break;
+            case TurnResult.Success2:
+                _gameUI.ShowTurnResult("Success");
+                _enemy.Life-= 2;
+                break;
+            case TurnResult.Success3:
+                _gameUI.ShowTurnResult("Success");
+                _enemy.Life-= 3;
+                break;
+            case TurnResult.Failure1:
+                _gameUI.ShowTurnResult("Failure");
+                _enemy.Life--;
+                break;
+                case TurnResult.Failure2:
+                _gameUI.ShowTurnResult("Failure");
+                _enemy.Life-= 2;
+                break;
+                case TurnResult.Failure3:
+                _gameUI.ShowTurnResult("Failure");
+                _enemy.Life-= 3;
+                break;
+        }
         //ライフがなくなった時の処理
         _gameUI.ShowLife(_player.Life, _enemy.Life);
-        if ((result == TurnResult.Win) || (result == TurnResult.Lose) || (_player.Life <= 0 || _enemy.Life <= 0)) 
+        if ((result == TurnResult.GameWin) || (result == TurnResult.GameLose) || (_player.Life <= 0 || _enemy.Life <= 0)) 
         {
             ShowGameResult(result);
         }
@@ -72,11 +99,11 @@ public class GameManager : MonoBehaviour
     //ゲームの勝敗を表示するパネル
     private void ShowGameResult(TurnResult result)
     {
-        if (result == TurnResult.Win)
+        if (result == TurnResult.GameWin)
         {
             _gameUI.SetPanel("WIN");
         }
-        else if (result == TurnResult.Lose)
+        else if (result == TurnResult.GameLose)
         {
             _gameUI.SetPanel("LOSE");
         }
@@ -91,11 +118,11 @@ public class GameManager : MonoBehaviour
     public void ShowResult(TurnResult result)
     {
         //攻撃が成功か失敗かのパネルを表示
-        if (result == TurnResult.Success)
+        if (result == TurnResult.GameWin)
         {
-            _gameUI.SetPanel("Success");
+            _gameUI.SetPanel("WIN");
         }
-        else if (result == TurnResult.Failure)
+        else if (result == TurnResult.GameLose)
         {
             _gameUI.SetPanel("Failure");
         }
