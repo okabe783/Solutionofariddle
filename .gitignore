@@ -19,7 +19,11 @@
 
 # Uncomment this line if you wish to ignore the asset store tools plugin
 <<<<<<< HEAD
+<<<<<<< HEAD
 /[Aa]ssets/AssetStoreTools*
+=======
+ /[Aa]ssets/AssetStoreTools*
+>>>>>>> 9fa007c6dcaa715ca81e8c54832e1f5d1f8f9ae9
 =======
  /[Aa]ssets/AssetStoreTools*
 >>>>>>> 9fa007c6dcaa715ca81e8c54832e1f5d1f8f9ae9
