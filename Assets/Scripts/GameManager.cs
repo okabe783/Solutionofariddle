@@ -34,16 +34,21 @@ public class GameManager : MonoBehaviour
     }
     void SubmittedAction()
     {
+        //呼ばれていない
         if (_player.IsSubmitted && _enemy.IsSubmitted)
         {
             _submitButton.SetActive(false); //Playerが決定をおしたら
-            CardBattle();
+            CardBattle();//ここを呼び出したい
+            Debug.Log("バトルスタート");
         }
         else if (_player.IsSubmitted)
         {
+            //ここが呼ばれてしまっている
             _submitButton.SetActive(false); //プレイヤーが決定を押したら変更できなくする
             //エネミーからカードを出す
             _enemy.RandomSubmit();
+            Debug.Log("enemyがカードをだしました。");
+            CardBattle();
         }
         else if (_enemy.IsSubmitted)
         {
@@ -55,7 +60,7 @@ public class GameManager : MonoBehaviour
     public void CardBattle()
     {
         TurnResult result = _ruleBook.Result(_player, _enemy);
-
+        Debug.Log(result);
         switch (result)
         {
             case TurnResult.Success1:
