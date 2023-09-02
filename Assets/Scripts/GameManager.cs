@@ -29,6 +29,7 @@ public class GameManager : MonoBehaviour
         _enemy.Life = 10;
         _gameUI.ShowLife(_player.Life, _enemy.Life);
         _player.OnSubmitAction = SubmittedAction;
+        _enemy.OnSubmitAction = SubmittedAction;
         PlayerSendCard(_player); 
         EnemySendCard(_enemy); 
     }
@@ -40,6 +41,7 @@ public class GameManager : MonoBehaviour
             _submitButton.SetActive(false); //Playerが決定をおしたら
             CardBattle();//ここを呼び出したい
             Debug.Log("バトルスタート");
+            Debug.Log($"ifのとき{_player.IsSubmitted}{_enemy.IsSubmitted}");
         }
         else if (_player.IsSubmitted)
         {
@@ -48,7 +50,8 @@ public class GameManager : MonoBehaviour
             //エネミーからカードを出す
             _enemy.RandomSubmit();
             Debug.Log("enemyがカードをだしました。");
-            CardBattle();
+            Debug.Log($"else ifのとき{_player.IsSubmitted}{_enemy.IsSubmitted}");
+            //CardBattle();
         }
         else if (_enemy.IsSubmitted)
         {
