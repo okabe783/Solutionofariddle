@@ -22,7 +22,6 @@ public class CardGenerator : MonoBehaviour
              randomIndex = Random.Range(0, _playercardBases.Length);
             card.Set(_playercardBases[randomIndex]);
         }
-        
         return card;
     }
     public enum SpawnType

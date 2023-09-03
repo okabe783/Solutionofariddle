@@ -35,17 +35,15 @@ public class GameManager : MonoBehaviour
     }
     void SubmittedAction()
     {
-        //呼ばれていない
         if (_player.IsSubmitted && _enemy.IsSubmitted)
         {
             _submitButton.SetActive(false); //Playerが決定をおしたら
-            CardBattle();//ここを呼び出したい
+            CardBattle();
             Debug.Log("バトルスタート");
             Debug.Log($"ifのとき{_player.IsSubmitted}{_enemy.IsSubmitted}");
         }
         else if (_player.IsSubmitted)
         {
-            //ここが呼ばれてしまっている
             _submitButton.SetActive(false); //プレイヤーが決定を押したら変更できなくする
             //エネミーからカードを出す
             _enemy.RandomSubmit();
@@ -69,6 +67,7 @@ public class GameManager : MonoBehaviour
             case TurnResult.Success1:
                 _gameUI.ShowTurnResult("Success");
                 _enemy.Life--;
+                Debug.Log("ライフを減らしました");
                 break;
             case TurnResult.Success2:
                 _gameUI.ShowTurnResult("Success");
