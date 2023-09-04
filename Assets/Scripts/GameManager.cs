@@ -38,10 +38,9 @@ public class GameManager : MonoBehaviour
         if (_player.IsSubmitted && _enemy.IsSubmitted)
         {
             _submitButton.SetActive(false); //Playerが決定をおしたら
-           
+            CardBattle();
             Debug.Log("バトルスタート");
             Debug.Log($"ifのとき{_player.IsSubmitted}{_enemy.IsSubmitted}");
-            CardBattle();
         }
         else if (_player.IsSubmitted)
         {

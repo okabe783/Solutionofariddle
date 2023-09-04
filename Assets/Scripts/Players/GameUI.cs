@@ -4,9 +4,9 @@ using UnityEngine.UI;
 public class GameUI : MonoBehaviour
 {
     [SerializeField] Text _turnResultText; //ê¨å˜Ç©é∏îsÇ©
-    [SerializeField] Text _platerLifeText;Å@
+    [SerializeField] Text _platerLifeText;
     [SerializeField] Text _enemyLifeText;
-    [SerializeField] GameObject _resultPanel;Å@
+    [SerializeField] GameObject _resultPanel;
     [SerializeField] Text _resultText;
     public void Init()
     {
@@ -24,7 +24,7 @@ public class GameUI : MonoBehaviour
         _turnResultText.text = result;
     }
 
-public void ShowGameResult(string result)
+    public void ShowGameResult(string result)
     {
         _resultPanel.SetActive(true);
         _resultText.text = result;

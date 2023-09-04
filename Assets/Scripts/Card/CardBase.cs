@@ -3,21 +3,23 @@ using UnityEngine;
 public class CardBase : ScriptableObject
 {
     //カードの基礎データ
-    [SerializeField] string cardName;
-    [SerializeField] int cardNumber;
-    [SerializeField] Sprite Icon;
+    [SerializeField] string _cardName;
+    [SerializeField] int _cardNumber;
+    [SerializeField] Sprite _icon;
     [TextArea]
-    [SerializeField] string description;
-    public string CardName { get => cardName; }
-    public int CardNumber { get => cardNumber; }
-    public Sprite Icon1 { get => Icon; }
-    public string Description { get => description; }
+    [SerializeField] string _description;
+    [SerializeField] PlayerType _playerType;
+    public string CardName { get => _cardName; }
+    public int CardNumber { get => _cardNumber; }
+    public Sprite Icon1 { get => _icon; }
+    public string Description { get => _description; }
+    public PlayerType Type { get => Type; }
 }
 
 //ビットフラグで相性を管理する
 
 [Flags]
-public enum CardType
+public enum PlayerType
 {
     None = 0,
     Sword = 1 << 0,   // 1

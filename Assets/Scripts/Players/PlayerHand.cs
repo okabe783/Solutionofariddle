@@ -3,7 +3,7 @@ using UnityEngine;
 
 public class PlayerHand : MonoBehaviour
 {
-  List<Card> list = new List<Card>();
+    List<Card> list = new List<Card>();
 
     //list‚É’Ç‰Á‚µ‚ÄŽ©•ª‚ÌŽq—v‘f‚É‚·‚é
     public void Add(Card card)
@@ -30,7 +30,7 @@ public class PlayerHand : MonoBehaviour
     }
     public Card RandomRemove()
     {
-        int r =Random.Range(0, list.Count);
+        int r = Random.Range(0, list.Count);
         Card card = list[r];
         Remove(card);
         return card;
