@@ -15,5 +15,5 @@ MonoBehaviour:
   cardName: Scythe
   cardNumber: 8
   Icon: {fileID: 21300000, guid: 7324d57210ced8643be1a05a9f937c6e, type: 3}
-  description: 
+  description: "\u30D7\u30EC\u30A4\u30E4\u30FC\u306E\u30AB\u30FC\u30C9\u304C\u5927\u938C\u3067\u6575\u306E\u9B54\u77F3\u304C\u9EC4\u8272\u306E\u6642"
   _playerCardType: 8192

@@ -15,5 +15,5 @@ MonoBehaviour:
   cardName: Yellow
   cardNumber: 4
   Icon: {fileID: 0}
-  description: 
+  description: "\u9EC4\u8272"
   _enemyCardType: 8

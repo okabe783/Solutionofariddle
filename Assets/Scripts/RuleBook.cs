@@ -108,7 +108,7 @@ public class RuleBook : MonoBehaviour
             return TurnResult.Success2;
         }
         //プレイヤーのカードが斧で敵の魔石が赤、青の時
-        if (myCard.HasFlag(CardType.Shuriken) && (enemyType.HasFlag(EnemyType.Red) || (enemyType.HasFlag(EnemyType.Blue))))
+        if (myCard.HasFlag(CardType.Axe) && (enemyType.HasFlag(EnemyType.Red) || (enemyType.HasFlag(EnemyType.Blue))))
         {
             return TurnResult.Failure2;
         }
@@ -129,7 +129,7 @@ public class RuleBook : MonoBehaviour
             return TurnResult.Success3;
         }
         //プレイヤーのカードがマシンガンで敵の魔石が赤、黄色、緑の時 
-        if (myCard.HasFlag(CardType.Staff) && (enemyType.HasFlag(EnemyType.Red) || (enemyType.HasFlag(EnemyType.Green))
+        if (myCard.HasFlag(CardType.Machinegun) && (enemyType.HasFlag(EnemyType.Red) || (enemyType.HasFlag(EnemyType.Green))
             || (enemyType.HasFlag(EnemyType.Yellow))))
         {
             return TurnResult.Failure3;
@@ -139,7 +139,7 @@ public class RuleBook : MonoBehaviour
         {
             return TurnResult.Success3;
         }
-        //プレイヤーのカードがマシンガンで敵の魔石が赤、黄色、青の時 
+        //プレイヤーのカードが爆弾で敵の魔石が赤、黄色、青の時 
         if (myCard.HasFlag(CardType.Bomb) && (enemyType.HasFlag(EnemyType.Red) || (enemyType.HasFlag(EnemyType.Blue))
             || (enemyType.HasFlag(EnemyType.Yellow))))
         {
@@ -151,7 +151,7 @@ public class RuleBook : MonoBehaviour
             return TurnResult.Success3;
         }
         //プレイヤーのカードがマシンガンで敵の魔石が赤、緑、青の時 
-        if (myCard.HasFlag(CardType.Bomb) && (enemyType.HasFlag(EnemyType.Red) || (enemyType.HasFlag(EnemyType.Blue))
+        if (myCard.HasFlag(CardType.Scythe) && (enemyType.HasFlag(EnemyType.Red) || (enemyType.HasFlag(EnemyType.Blue))
             || (enemyType.HasFlag(EnemyType.Green))))
         {
             return TurnResult.Failure3;

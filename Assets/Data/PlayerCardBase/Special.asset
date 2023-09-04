@@ -15,5 +15,5 @@ MonoBehaviour:
   cardName: Special
   cardNumber: 12
   Icon: {fileID: 21300000, guid: 017c086f92656a043852774c1a3daea4, type: 3}
-  description: 
+  description: "\u30D7\u30EC\u30A4\u30E4\u30FC\u306E\u30AB\u30FC\u30C9\u304C\u5FC5\u6BBA\u6280\u3067\u6575\u306E\u9B54\u77F3\u304C\u9752\u3001\u7DD1\u306E\u6642"
   _playerCardType: 16

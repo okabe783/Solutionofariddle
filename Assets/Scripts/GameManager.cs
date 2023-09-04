@@ -30,17 +30,18 @@ public class GameManager : MonoBehaviour
         _gameUI.ShowLife(_player.Life, _enemy.Life);
         _player.OnSubmitAction = SubmittedAction;
         _enemy.OnSubmitAction = SubmittedAction;
-        PlayerSendCard(_player); 
-        EnemySendCard(_enemy); 
+        PlayerSendCard(_player);
+        EnemySendCard(_enemy);
     }
     void SubmittedAction()
     {
         if (_player.IsSubmitted && _enemy.IsSubmitted)
         {
             _submitButton.SetActive(false); //Playerが決定をおしたら
-            CardBattle();
+           
             Debug.Log("バトルスタート");
             Debug.Log($"ifのとき{_player.IsSubmitted}{_enemy.IsSubmitted}");
+            CardBattle();
         }
         else if (_player.IsSubmitted)
         {
@@ -49,7 +50,6 @@ public class GameManager : MonoBehaviour
             _enemy.RandomSubmit();
             Debug.Log("enemyがカードをだしました。");
             Debug.Log($"else ifのとき{_player.IsSubmitted}{_enemy.IsSubmitted}");
-            //CardBattle();
         }
         else if (_enemy.IsSubmitted)
         {
@@ -71,28 +71,28 @@ public class GameManager : MonoBehaviour
                 break;
             case TurnResult.Success2:
                 _gameUI.ShowTurnResult("Success");
-                _enemy.Life-= 2;
+                _enemy.Life -= 2;
                 break;
             case TurnResult.Success3:
                 _gameUI.ShowTurnResult("Success");
-                _enemy.Life-= 3;
+                _enemy.Life -= 3;
                 break;
             case TurnResult.Failure1:
                 _gameUI.ShowTurnResult("Failure");
                 _enemy.Life--;
                 break;
-                case TurnResult.Failure2:
+            case TurnResult.Failure2:
                 _gameUI.ShowTurnResult("Failure");
-                _enemy.Life-= 2;
+                _enemy.Life -= 2;
                 break;
-                case TurnResult.Failure3:
+            case TurnResult.Failure3:
                 _gameUI.ShowTurnResult("Failure");
-                _enemy.Life-= 3;
+                _enemy.Life -= 3;
                 break;
         }
         //ライフがなくなった時の処理
         _gameUI.ShowLife(_player.Life, _enemy.Life);
-        if ((result == TurnResult.GameWin) || (result == TurnResult.GameLose) || (_player.Life <= 0 || _enemy.Life <= 0)) 
+        if ((result == TurnResult.GameWin) || (result == TurnResult.GameLose) || (_player.Life <= 0 || _enemy.Life <= 0))
         {
             ShowGameResult(result);
         }
@@ -133,7 +133,7 @@ public class GameManager : MonoBehaviour
         {
             _gameUI.SetPanel("Failure");
         }
-        else if(_player.Life <= 0)
+        else if (_player.Life <= 0)
         {
             _gameUI.ShowGameResult("LOSE");
         }
