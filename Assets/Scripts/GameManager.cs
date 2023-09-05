@@ -42,16 +42,12 @@ public class GameManager : MonoBehaviour
             _submitButton.SetActive(false); //Playerが決定をおしたら
             
             CardBattle();
-            Debug.Log("バトルスタート");
-            Debug.Log($"ifのとき{_player.IsSubmitted}{_enemy.IsSubmitted}");
         }
         else if (_player.IsSubmitted)
         {
             _submitButton.SetActive(false); //プレイヤーが決定を押したら変更できなくする
             //エネミーからカードを出す
             _enemy.RandomSubmit();
-            Debug.Log("enemyがカードをだしました。");
-            Debug.Log($"else ifのとき{_player.IsSubmitted}{_enemy.IsSubmitted}");
         }
         else if (_enemy.IsSubmitted)
         {
@@ -65,13 +61,11 @@ public class GameManager : MonoBehaviour
         PlayerType playerType = _playerSubmitCard.SubmitCard.Base.PlayerType;
         EnemyType enemyType = _enemySubmitCard.SubmitCard.Base.EnemyType;
         TurnResult result = _ruleBook.Result(playerType, enemyType);
-        Debug.Log(result);
         switch (result)
         {
             case TurnResult.Success1:
                 _gameUI.ShowTurnResult("Success");
                 _enemy.Life--;
-                Debug.Log("ライフを減らしました");
                 break;
             case TurnResult.Success2:
                 _gameUI.ShowTurnResult("Success");
@@ -83,15 +77,15 @@ public class GameManager : MonoBehaviour
                 break;
             case TurnResult.Failure1:
                 _gameUI.ShowTurnResult("Failure");
-                _enemy.Life--;
+                _player.Life--;
                 break;
             case TurnResult.Failure2:
                 _gameUI.ShowTurnResult("Failure");
-                _enemy.Life -= 2;
+                _player.Life -= 2;
                 break;
             case TurnResult.Failure3:
                 _gameUI.ShowTurnResult("Failure");
-                _enemy.Life -= 3;
+                _player.Life -= 3;
                 break;
         }
         //ライフがなくなった時の処理

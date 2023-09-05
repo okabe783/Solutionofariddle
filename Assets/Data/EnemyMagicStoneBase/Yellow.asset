@@ -12,8 +12,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 23caf54c88d06754a96d927c764a879b, type: 3}
   m_Name: Yellow
   m_EditorClassIdentifier: 
-  cardName: Yellow
-  cardNumber: 4
-  Icon: {fileID: 0}
-  description: "\u9EC4\u8272"
+  _cardName: 
+  _cardNumber: 0
+  _icon: {fileID: 0}
+  _description: 
+  _playerType: 0
+  _enemyType: 8
   _enemyCardType: 8
