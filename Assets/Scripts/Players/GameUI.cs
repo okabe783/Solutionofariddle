@@ -34,4 +34,8 @@ public class GameUI : MonoBehaviour
         _resultPanel.gameObject.SetActive(true);
         _resultText.text = result;
     }
+    public void SetUpNextTurn()
+    {
+        _turnResultText.gameObject.SetActive(false);
+    }
 }
