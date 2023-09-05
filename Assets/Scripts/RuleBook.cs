@@ -183,7 +183,7 @@ public class RuleBook : MonoBehaviour
             Debug.Log("Yorugamiで攻撃をしたが失敗");
             return TurnResult.Failure3;
         }
-        Debug.Log("ここだけはよばないでください");
+        Debug.Log("おねがいカードタイプ取得して");
         return TurnResult.None;
     }
     public enum TurnResult

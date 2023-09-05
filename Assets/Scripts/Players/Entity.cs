@@ -13,12 +13,12 @@ public class Entity : MonoBehaviour
     public void SetCardToHand(Card card) //カードをこのタイミングで認識する
     {
         //カードが配られた時に自分の関数を登録しておく
-        _hand.Add(card);
+        Hand.Add(card);
         card.OnClickCard = SelectedCard;
     }
     void SelectedCard(Card card)
     {
-        if (IsSubmitted == true)
+        if (IsSubmitted)
         {
             return;
         }
@@ -33,10 +33,13 @@ public class Entity : MonoBehaviour
     }
     public void OnSubmitButton()
     {
-        //カードの決定、変更不可
-        IsSubmitted = true;
-        //Managerに通知
-        OnSubmitAction?.Invoke();
+        if(_submitposition.SubmitCard)
+        {
+            //カードの決定、変更不可
+            IsSubmitted = true;
+            //Managerに通知
+            OnSubmitAction?.Invoke();
+        }
     }
 
     public void RandomSubmit()
