@@ -22,20 +22,20 @@ public class CardBase : ScriptableObject
 public enum PlayerType
 {
     None = 0,
-    Sword = 1 << 0,   // 1
-    Shield = 1 << 1,  // 2
-    Spear = 1 << 2,   // 4
-    Bow = 1 << 3,     // 8
-    Special = 1 << 4, // 16
-    Gun = 1 << 5,     // 32
-    Fist = 1 << 6,    // 64
-    Heal = 1 << 7,     // 128
-    Shuriken = 1 << 8,   //256
-    Axe = 1 << 9, //512
-    Staff = 1 << 10, //1024
-    Machinegun = 1 << 11, //2048
-    Bomb = 1 << 12, //4096
-    Scythe = 1 << 13, //8192
+    Kizaki = 1 << 0,   // 1
+    Hasiwaka = 1 << 1,  // 2
+    Itadaki = 1 << 2,   // 4
+    Nanase = 1 << 3,     // 8
+    Yukime = 1 << 4, // 16
+    Hyakuti = 1 << 5,     // 32
+    Kimata = 1 << 6,    // 64
+    Yuzuki = 1 << 7,     // 128
+    Inukai = 1 << 8,   //256
+    Tennoji = 1 << 9, //512
+    Risia = 1 << 10, //1024
+    Kurofusi = 1 << 11, //2048
+    Kongoji = 1 << 12, //4096
+    Yorugami = 1 << 13, //8192
 }
 
 [Flags]

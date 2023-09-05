@@ -10,10 +10,11 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: c63f123d2e3b1d24e8fef32c19215800, type: 3}
-  m_Name: Fist
+  m_Name: Kimata
   m_EditorClassIdentifier: 
-  cardName: Fist
-  cardNumber: 4
-  Icon: {fileID: 21300000, guid: d9ded8915b189044aaedfe1196cd01e1, type: 3}
-  description: "\u30D7\u30EC\u30A4\u30E4\u30FC\u306E\u30AB\u30FC\u30C9\u304C\u62F3\u3067\u6575\u306E\u9B54\u77F3\u304C\u8D64\u3001\u7DD1\u306E\u6642"
+  _cardName: Kimata
+  _cardNumber: 0
+  _icon: {fileID: 21300000, guid: aebc0a9273de83940885d3ecf328d22f, type: 3}
+  _description: 
+  _playerType: 0
   _playerCardType: 64

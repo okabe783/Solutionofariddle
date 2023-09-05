@@ -10,10 +10,11 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: c63f123d2e3b1d24e8fef32c19215800, type: 3}
-  m_Name: Spear
+  m_Name: Inukai
   m_EditorClassIdentifier: 
-  cardName: Spear
-  cardNumber: 11
-  Icon: {fileID: 21300000, guid: b5b6b46c3b654bf49ba24dd35af18096, type: 3}
-  description: "\u30D7\u30EC\u30A4\u30E4\u30FC\u306E\u30AB\u30FC\u30C9\u304C\u69CD\u3067\u6575\u306E\u9B54\u77F3\u304C\u8D64\u3001\u7DD1\u3001\u9EC4\u8272\u306E\u6642"
-  _playerCardType: 4
+  _cardName: Inukai
+  _cardNumber: 0
+  _icon: {fileID: 21300000, guid: 18ae19acf58fcaf4684ca98c846348d2, type: 3}
+  _description: 
+  _playerType: 0
+  _playerCardType: 256

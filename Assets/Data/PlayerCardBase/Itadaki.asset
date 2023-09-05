@@ -10,10 +10,11 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: c63f123d2e3b1d24e8fef32c19215800, type: 3}
-  m_Name: Machinegun
+  m_Name: Itadaki
   m_EditorClassIdentifier: 
-  cardName: Machinegun
-  cardNumber: 7
-  Icon: {fileID: 21300000, guid: c2fd2985d87f7704bb0fdfa082900f54, type: 3}
-  description: "\u30D7\u30EC\u30A4\u30E4\u30FC\u306E\u30AB\u30FC\u30C9\u304C\u30DE\u30B7\u30F3\u30AC\u30F3\u3067\u6575\u306E\u9B54\u77F3\u304C\u9752\u306E\u6642"
-  _playerCardType: 2048
+  _cardName: Itadaki
+  _cardNumber: 0
+  _icon: {fileID: 21300000, guid: 233db719c6b8c6b4b85f874805c13008, type: 3}
+  _description: 
+  _playerType: 4
+  _playerCardType: 4

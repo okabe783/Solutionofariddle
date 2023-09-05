@@ -10,10 +10,11 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: c63f123d2e3b1d24e8fef32c19215800, type: 3}
-  m_Name: Staff
+  m_Name: Yorugami
   m_EditorClassIdentifier: 
-  cardName: Staff
-  cardNumber: 13
-  Icon: {fileID: 21300000, guid: ed691ca7d1d79fe458944d21060ee836, type: 3}
-  description: "\u30D7\u30EC\u30A4\u30E4\u30FC\u306E\u30AB\u30FC\u30C9\u304C\u6756\u3067\u6575\u306E\u9B54\u77F3\u304C\u8D64\u306E\u6642"
-  _playerCardType: 1024
+  _cardName: Yorugami
+  _cardNumber: 0
+  _icon: {fileID: 21300000, guid: a7d755158471c9f40a768948f872b959, type: 3}
+  _description: 
+  _playerType: 0
+  _playerCardType: 8192
