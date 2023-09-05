@@ -15,6 +15,6 @@ MonoBehaviour:
   _cardName: Kurofusi
   _cardNumber: 0
   _icon: {fileID: 21300000, guid: c0e421d34c240e44e9d7afa0b28d78f5, type: 3}
-  _description: 
+  _description: "\u6575\u306E\u9B54\u77F3\u304C\u9752\u306E\u6642"
   _playerType: 2048
   _playerCardType: 2048

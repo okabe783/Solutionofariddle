@@ -12,7 +12,7 @@ public class Card : MonoBehaviour
 
     //UnityAction‚ÍŠÖ”‚ğ“o˜^‚·‚é
     public UnityAction<Card> OnClickCard;
-    public void Set(CardBase cardBase)
+    public void CardSet(CardBase cardBase)
     {
         Base = cardBase;
         icon.sprite = cardBase.Icon1;

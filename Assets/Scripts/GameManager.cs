@@ -10,6 +10,8 @@ public class GameManager : MonoBehaviour
     [SerializeField] GameObject _submitButton;
     [SerializeField] GameUI _gameUI;
     RuleBook _ruleBook;
+    [SerializeField] SubmitPosition _playerSubmitCard;
+    [SerializeField] SubmitPosition _enemySubmitCard;
 
     private void Awake()
     {
@@ -38,6 +40,7 @@ public class GameManager : MonoBehaviour
         if (_player.IsSubmitted && _enemy.IsSubmitted)
         {
             _submitButton.SetActive(false); //Playerが決定をおしたら
+            
             CardBattle();
             Debug.Log("バトルスタート");
             Debug.Log($"ifのとき{_player.IsSubmitted}{_enemy.IsSubmitted}");
@@ -57,9 +60,11 @@ public class GameManager : MonoBehaviour
     }
 
     //Cardのダメージ判定
-    public void CardBattle()
+     void CardBattle()
     {
-        TurnResult result = _ruleBook.Result(_player, _enemy);
+        PlayerType playerType = _playerSubmitCard.SubmitCard.Base.PlayerType;
+        EnemyType enemyType = _enemySubmitCard.SubmitCard.Base.EnemyType;
+        TurnResult result = _ruleBook.Result(playerType, enemyType);
         Debug.Log(result);
         switch (result)
         {

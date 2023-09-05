@@ -9,11 +9,14 @@ public class CardBase : ScriptableObject
     [TextArea]
     [SerializeField] string _description;
     [SerializeField] PlayerType _playerType;
+    [SerializeField] EnemyType _enemyType;
     public string CardName { get => _cardName; }
     public int CardNumber { get => _cardNumber; }
     public Sprite Icon1 { get => _icon; }
     public string Description { get => _description; }
-    public PlayerType Type { get => Type; }
+    public PlayerType PlayerType { get => _playerType; }
+
+    public EnemyType EnemyType { get => _enemyType; }
 }
 
 //ビットフラグで相性を管理する

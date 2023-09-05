@@ -15,6 +15,6 @@ MonoBehaviour:
   _cardName: Itadaki
   _cardNumber: 0
   _icon: {fileID: 21300000, guid: 233db719c6b8c6b4b85f874805c13008, type: 3}
-  _description: 
+  _description: "\u6575\u306E\u9B54\u77F3\u304C\u8D64\u3001\u7DD1\u3001\u9EC4\u8272\u306E\u6642"
   _playerType: 4
   _playerCardType: 4

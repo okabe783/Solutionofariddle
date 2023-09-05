@@ -722,7 +722,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -400, y: 90}
+  m_AnchoredPosition: {x: -399.92, y: 196.4}
   m_SizeDelta: {x: 65.5, y: 71.1}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1197763336
@@ -860,6 +860,8 @@ MonoBehaviour:
   _generator: {fileID: 698281324}
   _submitButton: {fileID: 1937404375}
   _gameUI: {fileID: 442010528}
+  _playerSubmitCard: {fileID: 2115480741}
+  _enemySubmitCard: {fileID: 410425782}
 --- !u!114 &1435432204
 MonoBehaviour:
   m_ObjectHideFlags: 0

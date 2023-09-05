@@ -15,12 +15,12 @@ public class CardGenerator : MonoBehaviour
         if (spawnType == SpawnType.Enemy)
         {
              randomIndex = Random.Range(0, _enemycardBases.Length);
-            card.Set(_enemycardBases[randomIndex]);
+            card.CardSet(_enemycardBases[randomIndex]);
         }
         else
         {
              randomIndex = Random.Range(0, _playercardBases.Length);
-            card.Set(_playercardBases[randomIndex]);
+            card.CardSet(_playercardBases[randomIndex]);
         }
         return card;
     }

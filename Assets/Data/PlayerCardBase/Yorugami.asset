@@ -15,6 +15,6 @@ MonoBehaviour:
   _cardName: Yorugami
   _cardNumber: 0
   _icon: {fileID: 21300000, guid: a7d755158471c9f40a768948f872b959, type: 3}
-  _description: 
-  _playerType: 0
+  _description: "\u6575\u306E\u9B54\u77F3\u304C\u9EC4\u8272\u306E\u6642"
+  _playerType: 8192
   _playerCardType: 8192

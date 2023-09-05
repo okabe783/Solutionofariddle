@@ -2,10 +2,10 @@ using UnityEngine;
 public class RuleBook : MonoBehaviour
 {
     //結果の表示
-    public TurnResult Result(Player _player, Enemy _enemy)
+    public TurnResult Result(PlayerType player, EnemyType enemy)
     {
-        PlayerType myCard = PlayerType.None;
-        EnemyType enemyType = EnemyType.None;
+        PlayerType myCard = player;
+        EnemyType enemyType = enemy;
         // カードの評価を行う
         //プレイヤーのカードがKizakiで敵の魔石が赤、青、緑の時
         if (myCard.HasFlag(PlayerType.Kizaki) && (enemyType.HasFlag(EnemyType.Red) || (enemyType.HasFlag(EnemyType.Blue))
