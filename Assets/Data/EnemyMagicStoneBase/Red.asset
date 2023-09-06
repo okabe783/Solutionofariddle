@@ -12,10 +12,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 23caf54c88d06754a96d927c764a879b, type: 3}
   m_Name: Red
   m_EditorClassIdentifier: 
-  _cardName: 
+  _cardName: Red
   _cardNumber: 0
-  _icon: {fileID: 0}
-  _description: 
+  _icon: {fileID: 21300000, guid: b8bc84eebe3a78b439fff1d101ddad10, type: 3}
+  _description: "\u8D64"
   _playerType: 0
   _enemyType: 1
   _enemyCardType: 1

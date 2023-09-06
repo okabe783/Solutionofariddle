@@ -860,6 +860,7 @@ MonoBehaviour:
   _generator: {fileID: 698281324}
   _submitButton: {fileID: 1937404375}
   _gameUI: {fileID: 442010528}
+  _playerHand: {fileID: 1721294950}
   _playerSubmitCard: {fileID: 2115480741}
   _enemySubmitCard: {fileID: 410425782}
 --- !u!114 &1435432204
@@ -1155,7 +1156,7 @@ GameObject:
   - component: {fileID: 1923026075}
   - component: {fileID: 1923026074}
   m_Layer: 5
-  m_Name: Text
+  m_Name: PlayerLifeText
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1369,7 +1370,7 @@ GameObject:
   - component: {fileID: 1993023045}
   - component: {fileID: 1993023044}
   m_Layer: 5
-  m_Name: Text
+  m_Name: EnemyLifeText
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0

@@ -1,3 +1,4 @@
+using System.Collections.Generic;
 using UnityEngine;
 using static CardGenerator;
 using static RuleBook;
@@ -9,10 +10,10 @@ public class GameManager : MonoBehaviour
     [SerializeField] CardGenerator _generator;
     [SerializeField] GameObject _submitButton;
     [SerializeField] GameUI _gameUI;
+    [SerializeField] PlayerHand _playerHand;
     RuleBook _ruleBook;
     [SerializeField] SubmitPosition _playerSubmitCard;
     [SerializeField] SubmitPosition _enemySubmitCard;
-
     private void Awake()
     {
         _ruleBook = GetComponent<RuleBook>();
@@ -40,7 +41,6 @@ public class GameManager : MonoBehaviour
         if (_player.IsSubmitted && _enemy.IsSubmitted)
         {
             _submitButton.SetActive(false); //Playerが決定をおしたら
-            
             CardBattle();
         }
         else if (_player.IsSubmitted)
@@ -113,13 +113,22 @@ public class GameManager : MonoBehaviour
             _gameUI.SetPanel("LOSE");
         }
     }
-
     //ターンが終わったらカードを消す
     void SetUpNextTurn()
     {
         _player.SetUpNextTurn();
         _submitButton.SetActive(true);
+        List<Card> newCards = new List<Card>();   
+        for (int i = 0; i < 3; i++)
+        {
+            Card card = _generator.Spawn(SpawnType.Player);
+            newCards.Add(card);
+        }
+        _playerHand.GiveNewHand(newCards);
+
+        _player.Hand.ResetPosition();
     }
+
     public void ShowResult(TurnResult result)
     {
         //勝敗パネルを表示

@@ -21,7 +21,6 @@ public class PlayerHand : MonoBehaviour
     {
         //¬‚³‚¢‡‚É•À‚×‚é
         list.Sort((card0, card1) => card0.Base.CardNumber - card1.Base.CardNumber);
-
         for (int i = 0; i < list.Count; i++)
         {
             float posX = i * 2f; //ãY—í‚É®—ñ‚³‚¹‚é
@@ -34,5 +33,22 @@ public class PlayerHand : MonoBehaviour
         Card card = list[r];
         Remove(card);
         return card;
+    }
+    public void GiveNewHand(List<Card> newCards)
+    {
+        foreach(var card in list)
+        {
+            Destroy(card.gameObject);
+        }
+        list.Clear();
+        foreach(var card in newCards)
+        {
+            Add(card);
+        }
+        ResetPosition();
+        //for (int i = 0; i < transform.childCount; i++)
+        //{
+        //    Destroy(transform.GetChild(i).gameObject);
+        //}
     }
 }
