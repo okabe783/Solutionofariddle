@@ -14,6 +14,8 @@ public class SubmitPosition : MonoBehaviour
         card.transform.SetParent(transform);
         card.transform.position = transform.position;
     }
+
+    //èD‚ÌƒJ[ƒh‚ğÁ‚·
     public void DestroyCard()
     {
         Destroy(submitCard.gameObject);

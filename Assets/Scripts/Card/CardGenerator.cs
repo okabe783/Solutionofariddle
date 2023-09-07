@@ -7,7 +7,6 @@ public class CardGenerator : MonoBehaviour
     [SerializeField] Card cardprefab;
 
     //Card‚ğ¶¬‚µ‚Ä•Ô‚·
-
     public Card Spawn(SpawnType spawnType)
     {
         int randomIndex = 0;

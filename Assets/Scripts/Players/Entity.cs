@@ -10,12 +10,16 @@ public class Entity : MonoBehaviour
     public PlayerHand Hand { get => _hand; }
     public Card SubmitCard { get => _submitposition.SubmitCard; }
     public int Life { get; set; }
-    public void SetCardToHand(Card card) //カードをこのタイミングで認識する
+
+    //entityにカードを追加
+    //クリックされたときに選択されたカードを移動
+    public void SetCardToHand(Card card) 
     {
         //カードが配られた時に自分の関数を登録しておく
         Hand.Add(card);
         card.OnClickCard = SelectedCard;
     }
+    //手札のカードを選択されたときに提出位置にセット
     void SelectedCard(Card card)
     {
         if (IsSubmitted)
@@ -31,9 +35,11 @@ public class Entity : MonoBehaviour
         _submitposition.Set(card);
         _hand.ResetPosition();
     }
+
+    //ボタンが押されたとき提出されたことをgamemanagerに通知
     public void OnSubmitButton()
     {
-        if(_submitposition.SubmitCard)
+        if (_submitposition.SubmitCard)
         {
             //カードの決定、変更不可
             IsSubmitted = true;
@@ -41,7 +47,7 @@ public class Entity : MonoBehaviour
             OnSubmitAction?.Invoke();
         }
     }
-
+    //enemyがランダムにカードを提出する
     public void RandomSubmit()
     {
         //手札からランダムにカードを抜き取る←ここを変更
@@ -54,7 +60,9 @@ public class Entity : MonoBehaviour
         _hand.ResetPosition();
 
     }
-    public void SetUpNextTurn()
+
+    //提出したカードを削除
+    public void TurnChange()
     {
         IsSubmitted = false;
         _submitposition.DestroyCard();

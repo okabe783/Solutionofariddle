@@ -11,9 +11,10 @@ public class GameManager : MonoBehaviour
     [SerializeField] GameObject _submitButton;
     [SerializeField] GameUI _gameUI;
     [SerializeField] PlayerHand _playerHand;
-    RuleBook _ruleBook;
     [SerializeField] SubmitPosition _playerSubmitCard;
     [SerializeField] SubmitPosition _enemySubmitCard;
+    RuleBook _ruleBook;
+
     private void Awake()
     {
         _ruleBook = GetComponent<RuleBook>();
@@ -23,19 +24,19 @@ public class GameManager : MonoBehaviour
         SetUp();
     }
 
-    //カードを生成して配る
     void SetUp()
     {
         _gameUI.Init();
         //ライフ管理
-        _player.Life = 10;
-        _enemy.Life = 10;
+        _player.Life = _enemy.Life = 10;        
         _gameUI.ShowLife(_player.Life, _enemy.Life);
-        _player.OnSubmitAction = SubmittedAction;
-        _enemy.OnSubmitAction = SubmittedAction;
+        _player.OnSubmitAction = _enemy.OnSubmitAction = SubmittedAction;
         PlayerSendCard(_player);
         EnemySendCard(_enemy);
     }
+
+    //playerとenemyが提出したかどうかを確認し、両方提出していた場合CardBattleをさせる
+    //enemyが提出した場合enemyにランダムにカードを提出させる
     void SubmittedAction()
     {
         if (_player.IsSubmitted && _enemy.IsSubmitted)
@@ -55,100 +56,60 @@ public class GameManager : MonoBehaviour
         }
     }
 
-    //Cardのダメージ判定
-     void CardBattle()
+    //playerとenemyのカードを取得しルールブックを使用してバトル結果を計算
+    //結果をUIに表示
+    void CardBattle()
     {
         PlayerType playerType = _playerSubmitCard.SubmitCard.Base.PlayerType;
         EnemyType enemyType = _enemySubmitCard.SubmitCard.Base.EnemyType;
         TurnResult result = _ruleBook.Result(playerType, enemyType);
-        switch (result)
-        {
-            case TurnResult.Success1:
-                _gameUI.ShowTurnResult("Success");
-                _enemy.Life--;
-                break;
-            case TurnResult.Success2:
-                _gameUI.ShowTurnResult("Success");
-                _enemy.Life -= 2;
-                break;
-            case TurnResult.Success3:
-                _gameUI.ShowTurnResult("Success");
-                _enemy.Life -= 3;
-                break;
-            case TurnResult.Failure1:
-                _gameUI.ShowTurnResult("Failure");
-                _player.Life--;
-                break;
-            case TurnResult.Failure2:
-                _gameUI.ShowTurnResult("Failure");
-                _player.Life -= 2;
-                break;
-            case TurnResult.Failure3:
-                _gameUI.ShowTurnResult("Failure");
-                _player.Life -= 3;
-                break;
-        }
-        //ライフがなくなった時の処理
+
+        string resultText = (result == TurnResult.Success1 || result == TurnResult.Success2 || result == TurnResult.Success3) ? "Success" : "Failure";
+        _gameUI.ShowTurnResult(resultText);
+
+        if (result == TurnResult.Success1)
+            _enemy.Life--;
+        else if (result == TurnResult.Success2)
+            _enemy.Life -= 2;
+        else if (result == TurnResult.Success3)
+            _enemy.Life -= 3;
+        else if (result == TurnResult.Failure1)
+            _player.Life--;
+        else if (result == TurnResult.Failure2)
+            _player.Life -= 2;
+        else if (result == TurnResult.Failure3)
+            _player.Life -= 3;
+
         _gameUI.ShowLife(_player.Life, _enemy.Life);
-        if ((result == TurnResult.GameWin) || (result == TurnResult.GameLose) || (_player.Life <= 0 || _enemy.Life <= 0))
-        {
-            ShowGameResult(result);
-        }
+
+        if (result == TurnResult.GameWin)
+            ShowGameResult("WIN");
+        else if (result == TurnResult.GameLose || _player.Life <= 0)
+            ShowGameResult("LOSE");
         else
-        {
-            ShowResult(result);
             SetUpNextTurn();
-        }
     }
 
-    //ゲームの勝敗を表示するパネル
-    private void ShowGameResult(TurnResult result)
+    void ShowGameResult(string resultText)
     {
-        if (result == TurnResult.GameWin)
-        {
-            _gameUI.SetPanel("WIN");
-        }
-        else if (result == TurnResult.GameLose)
-        {
-            _gameUI.SetPanel("LOSE");
-        }
+        _gameUI.SetPanel(resultText);
     }
-    //ターンが終わったらカードを消す
+    //ターンが終了したとき、プレイヤーのカードをリセットし新しいカードを生成して手札に追加する
+    //提出ボタンをアクティブにする
     void SetUpNextTurn()
     {
-        _player.SetUpNextTurn();
+        _player.TurnChange();
         _submitButton.SetActive(true);
-        List<Card> newCards = new List<Card>();   
+        List<Card> newCards = new List<Card>();
         for (int i = 0; i < 3; i++)
         {
             Card card = _generator.Spawn(SpawnType.Player);
             newCards.Add(card);
         }
         _playerHand.GiveNewHand(newCards);
-
         _player.Hand.ResetPosition();
     }
-
-    public void ShowResult(TurnResult result)
-    {
-        //勝敗パネルを表示
-        if (result == TurnResult.GameWin)
-        {
-            _gameUI.SetPanel("WIN");
-        }
-        else if (result == TurnResult.GameLose)
-        {
-            _gameUI.SetPanel("Failure");
-        }
-        else if (_player.Life <= 0)
-        {
-            _gameUI.ShowGameResult("LOSE");
-        }
-        else if (_enemy.Life <= 0)
-        {
-            _gameUI.SetPanel("WIN");
-        }
-    }
+    //プレイヤーにカードをランダムに配り、手札の位置をリセットする
     public void PlayerSendCard(Player _player)
     {
         for (int i = 0; i < 3; i++)
@@ -158,14 +119,11 @@ public class GameManager : MonoBehaviour
         }
         _player.Hand.ResetPosition();
     }
+    //enemyにカードをランダムに配り、手札の位置をリセットする
     public void EnemySendCard(Enemy _enemy)
     {
-        //敵に魔石を一つ渡す
-        for (int i = 0; i < 1; i++)
-        {
-            Card card = _generator.Spawn(SpawnType.Enemy);
-            _enemy.SetCardToHand(card);  //敵の手札に追加
-        }
+        Card card = _generator.Spawn(SpawnType.Enemy);
+        _enemy.SetCardToHand(card);
         _enemy.Hand.ResetPosition();
     }
 }
