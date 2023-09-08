@@ -48,5 +48,8 @@ public enum EnemyType
     Red = 1 << 0,    // 1
     Blue = 1 << 1,   // 2
     Green = 1 << 2,  // 4
-    Yellow = 1 << 3  // 8
+    Yellow = 1 << 3,  // 8
+    Gold = 1 << 4, //16
+    Purple = 1 << 5, //32
+    White = 1 << 6, //64
 }

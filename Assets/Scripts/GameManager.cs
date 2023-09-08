@@ -1,4 +1,3 @@
-using System.Collections.Generic;
 using UnityEngine;
 using static CardGenerator;
 using static RuleBook;
@@ -84,7 +83,7 @@ public class GameManager : MonoBehaviour
 
         if (result == TurnResult.GameWin)
             ShowGameResult("WIN");
-        else if (result == TurnResult.GameLose || _player.Life <= 0)
+        else if (result == TurnResult.GameLose || _enemy.Life <= 0)
             ShowGameResult("LOSE");
         else
             SetUpNextTurn();
@@ -100,13 +99,10 @@ public class GameManager : MonoBehaviour
     {
         _player.TurnChange();
         _submitButton.SetActive(true);
-        List<Card> newCards = new List<Card>();
-        for (int i = 0; i < 3; i++)
-        {
-            Card card = _generator.Spawn(SpawnType.Player);
-            newCards.Add(card);
-        }
-        _playerHand.GiveNewHand(newCards);
+        
+        
+        _playerHand.ResetCard();
+        PlayerSendCard(_player);
         _player.Hand.ResetPosition();
     }
     //プレイヤーにカードをランダムに配り、手札の位置をリセットする

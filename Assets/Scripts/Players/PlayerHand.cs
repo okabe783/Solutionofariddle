@@ -40,21 +40,12 @@ public class PlayerHand : MonoBehaviour
         return card;
     }
     //手札を削除し新しくカードを追加する
-    public void GiveNewHand(List<Card> newCards)
+    public void ResetCard()
     {
         foreach(var card in list)
         {
             Destroy(card.gameObject);
         }
         list.Clear();
-        foreach(var card in newCards)
-        {
-            Add(card);
-        }
-        ResetPosition();
-        //for (int i = 0; i < transform.childCount; i++)
-        //{
-        //    Destroy(transform.GetChild(i).gameObject);
-        //}
     }
 }
