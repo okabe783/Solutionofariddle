@@ -39,6 +39,9 @@ public enum PlayerType
     Kurofusi = 1 << 11, //2048
     Kongoji = 1 << 12, //4096
     Yorugami = 1 << 13, //8192
+    Yanagi = 1 << 14,
+    Kouga = 1 << 15,
+    Genga = 1 << 16,
 }
 
 [Flags]
