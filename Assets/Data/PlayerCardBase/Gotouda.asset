@@ -10,12 +10,12 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: c63f123d2e3b1d24e8fef32c19215800, type: 3}
-  m_Name: New Player Data
+  m_Name: Gotouda
   m_EditorClassIdentifier: 
-  _cardName: 
+  _cardName: Gotouda
   _cardNumber: 0
-  _icon: {fileID: 0}
+  _icon: {fileID: 21300000, guid: 6a95e983aea9a0545a7f5b483e5da7b5, type: 3}
   _description: 
-  _playerType: 0
+  _playerType: 536870912
   _enemyType: 0
-  _playerCardType: 0
+  _playerCardType: 536870912

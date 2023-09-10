@@ -1,0 +1,21 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c63f123d2e3b1d24e8fef32c19215800, type: 3}
+  m_Name: Miki
+  m_EditorClassIdentifier: 
+  _cardName: Miki
+  _cardNumber: 0
+  _icon: {fileID: 21300000, guid: 94835cfbd73797048b395f8cf475624c, type: 3}
+  _description: 
+  _playerType: 8
+  _enemyType: 0
+  _playerCardType: 8
