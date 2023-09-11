@@ -107,7 +107,7 @@ public class RuleBook : MonoBehaviour
             return TurnResult.Success2;
         }
         //プレイヤーのカードがHyakutiで敵の魔石が緑、黄色、白の時
-        if (myCard.HasFlag(PlayerType.Hyakuti) && (enemyType.HasFlag(EnemyType.Green) ||(enemyType.HasFlag(EnemyType.White) || (enemyType.HasFlag(EnemyType.Yellow)))))
+        if (myCard.HasFlag(PlayerType.Hyakuti) && (enemyType.HasFlag(EnemyType.Green) || (enemyType.HasFlag(EnemyType.White) || (enemyType.HasFlag(EnemyType.Yellow)))))
         {
             Debug.Log("Hyakutiで攻撃をしたが失敗");
             return TurnResult.Failure2;
@@ -126,7 +126,7 @@ public class RuleBook : MonoBehaviour
             return TurnResult.Failure2;
         }
         //プレイヤーのカードがKimataで敵の魔石が赤、緑、金、紫の時
-        if (myCard.HasFlag(PlayerType.Kimata) && (enemyType.HasFlag(EnemyType.Red) ||  (enemyType.HasFlag(EnemyType.Gold)) || (enemyType.HasFlag(EnemyType.Purple)) || (enemyType.HasFlag(EnemyType.Green))))
+        if (myCard.HasFlag(PlayerType.Kimata) && (enemyType.HasFlag(EnemyType.Red) || (enemyType.HasFlag(EnemyType.Gold)) || (enemyType.HasFlag(EnemyType.Purple)) || (enemyType.HasFlag(EnemyType.Green))))
         {
             Debug.Log("Kimataで攻撃をした");
             return TurnResult.Success2;
@@ -234,7 +234,7 @@ public class RuleBook : MonoBehaviour
             return TurnResult.Failure2;
         }
         //プレイヤーのカードがSimaで敵の魔石が赤、青、黄色、紫の時
-        if(myCard.HasFlag(PlayerType.Sima) && enemyType.HasFlag(EnemyType.Red) || enemyType.HasFlag(EnemyType.Blue) || enemyType.HasFlag(EnemyType.Yellow) || enemyType.HasFlag(EnemyType.Purple))
+        if (myCard.HasFlag(PlayerType.Sima) && enemyType.HasFlag(EnemyType.Red) || enemyType.HasFlag(EnemyType.Blue) || enemyType.HasFlag(EnemyType.Yellow) || enemyType.HasFlag(EnemyType.Purple))
         {
             Debug.Log("Simaで攻撃をした");
             return TurnResult.Success2;
@@ -309,6 +309,50 @@ public class RuleBook : MonoBehaviour
             Debug.Log("Yorugamiで攻撃をしたが失敗");
             return TurnResult.Failure3;
         }
+        //プレイヤーのカードがHaisikiで敵の魔石が赤、青、金、白の時
+        if (myCard.HasFlag(PlayerType.Haisiki) && (enemyType.HasFlag(EnemyType.Red) || (enemyType.HasFlag(EnemyType.Blue))
+           || (enemyType.HasFlag(EnemyType.Gold) || (enemyType.HasFlag(EnemyType.White)))))
+        {
+            Debug.Log("Haisikiで攻撃をした");
+            return TurnResult.Success2;
+        }
+        //プレイヤーのカードがHaisikiで敵の魔石が緑、黄色、紫、の時
+        //プレイヤーのカードがRyutanで敵の魔石が赤、青、紫、白の時
+        //プレイヤーのカードがRyutanで敵の魔石が黄色、緑、金の時
+        //プレイヤーのカードがSekidouで敵の魔石が赤、緑、黄色、金の時
+        //プレイヤーのカードがSekidouで敵の魔石が青、白、紫の時
+        //プレイヤーのカードがMitoriで敵の魔石が赤、緑、黄色、紫の時
+        //プレイヤーのカードがMitoriで敵の魔石が青、白、金の時
+        //プレイヤーのカードがSiratoriで敵の魔石が赤、緑、黄色、白の時
+        //プレイヤーのカードがSiratoriで敵の魔石が青、紫、金の時
+        //プレイヤーのカードがGotoudaで敵の魔石が赤、緑、金、白の時
+        //プレイヤーのカードがGotoudaで敵の魔石が青、黄色、紫の時
+        //プレイヤーのカードがYokosimaで敵の魔石が赤、緑、紫、白の時
+        //プレイヤーのカードがYokosimaで敵の魔石が青、黄色、金の時
+        //プレイヤーのカードがSabitaniで敵の魔石が赤、黄色、金、白の時
+        //プレイヤーのカードがSabitaniで敵の魔石が青、緑、紫の時
+        //プレイヤーのカードがCugaで敵の魔石が赤、黄色、紫、白の時
+        //プレイヤーのカードがCugaで敵の魔石が青、緑、金の時
+        //プレイヤーのカードがNanoで敵の魔石が青、緑、黄色、金の時
+        //プレイヤーのカードがNanoで敵の魔石が赤、紫、白の時
+        //プレイヤーのカードがHimenoで敵の魔石が青、黄色、紫、白の時
+        //プレイヤーのカードがHimenoで敵の魔石が赤、緑、金の時
+        //プレイヤーのカードがMikiで敵の魔石が青、緑、黄色、紫の時
+        //プレイヤーのカードがMikiで敵の魔石が赤、金、白の時
+        //プレイヤーのカードがMomotiで敵の魔石が青、緑、黄色、白の時
+        //プレイヤーのカードがMomotiで敵の魔石が赤、紫、金の時
+        //プレイヤーのカードがAkamatuで敵の魔石が青、緑、金、白の時
+        //プレイヤーのカードがAkamatuで敵の魔石が赤、青、紫の時
+        //プレイヤーのカードがOtukiで敵の魔石が青、緑、紫、白の時
+        //プレイヤーのカードがOtukiで敵の魔石が赤、黄色、金の時
+        //プレイヤーのカードがKondouで敵の魔石が青、黄色、金、白の時
+        //プレイヤーのカードがKondouで敵の魔石が赤、緑、紫の時
+        //プレイヤーのカードがJyackで敵の魔石が緑、黄色、金、白の時
+        //プレイヤーのカードがJyackで敵の魔石が赤、青、紫の時
+        //プレイヤーのカードがJyozetuで敵の魔石が緑、黄色、紫、白の時
+        //プレイヤーのカードがJyozetuで敵の魔石が赤、青、金の時
+        //プレイヤーのカードがTuzimuraで敵の魔石が黄色、金、紫、白の時
+        //プレイヤーのカードがTuzimuraで敵の魔石が赤、青、緑の時
         return TurnResult.None;
     }
     public enum TurnResult
