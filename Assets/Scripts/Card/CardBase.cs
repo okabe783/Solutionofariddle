@@ -49,7 +49,6 @@ public enum PlayerType
     Mabosi = 1 << 21,
     Sima = 1 << 22,
     Yuraki = 1 << 23,
-    //‚±‚±
     Haisiki = 1 << 24,
     Ryutan = 1 << 25,
     Sekidou@= 1 << 26,

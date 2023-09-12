@@ -15,7 +15,7 @@ MonoBehaviour:
   _cardName: Kondou
   _cardNumber: 0
   _icon: {fileID: 21300000, guid: a899e1fb3fd84124cb09bb6a9d18f9cc, type: 3}
-  _description: 
+  _description: "\u6575\u306E\u9B54\u77F3\u304C\u9752\u3001\u9EC4\u8272\u3001\u91D1\u3001\u767D\u306E\u6642"
   _playerType: 128
   _enemyType: 0
   _playerCardType: 128

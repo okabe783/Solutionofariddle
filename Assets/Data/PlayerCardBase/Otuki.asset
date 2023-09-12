@@ -15,7 +15,7 @@ MonoBehaviour:
   _cardName: Otuki
   _cardNumber: 0
   _icon: {fileID: 21300000, guid: d68c7c027801af44da4dfb4cceb7a092, type: 3}
-  _description: 
+  _description: "\u6575\u306E\u9B54\u77F3\u304C\u9752\u3001\u7DD1\u3001\u7D2B\u3001\u767D\u306E\u6642"
   _playerType: 64
   _enemyType: 0
   _playerCardType: 64

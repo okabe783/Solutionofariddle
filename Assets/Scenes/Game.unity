@@ -382,7 +382,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!114 &461686207
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -608,20 +608,49 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _playercardBases:
-  - {fileID: 11400000, guid: ed4661a993789254ebeb95e4fcebf95b, type: 2}
-  - {fileID: 11400000, guid: 4db8640f05fd1534c94b1b952653ca80, type: 2}
-  - {fileID: 11400000, guid: d07821a7d8e0dd1458977c3d04caad59, type: 2}
-  - {fileID: 11400000, guid: df9c6c051e7c3ba4cac3bb0a40f75afa, type: 2}
-  - {fileID: 11400000, guid: 909f103932440ac4cb03b80395229505, type: 2}
-  - {fileID: 11400000, guid: 26a775deac285694ea9f77b7ba98918a, type: 2}
-  - {fileID: 11400000, guid: 4baa09ac355941e42acd1e102bf1b792, type: 2}
-  - {fileID: 11400000, guid: 02ef9f914ddae714f816c28e5846ae2a, type: 2}
+  - {fileID: 11400000, guid: a0cb20546475a9345934157c7fe31eda, type: 2}
+  - {fileID: 11400000, guid: cae6c338a2143db4cb023ca5c5b67bb5, type: 2}
+  - {fileID: 11400000, guid: 8ddf9b2ca6301b646ba04095bee9ebbd, type: 2}
+  - {fileID: 11400000, guid: 5a78d28c3ac8bdd4b8eea49afcf011ef, type: 2}
+  - {fileID: 11400000, guid: a56a8f1086c384f49a01156626cc6dc2, type: 2}
   - {fileID: 11400000, guid: e0c79e799ce0c9e4d82f88ee37bd8e79, type: 2}
+  - {fileID: 11400000, guid: c79bd8e6b6f68ff4a9fd6c5dcffbb5db, type: 2}
+  - {fileID: 11400000, guid: 909f103932440ac4cb03b80395229505, type: 2}
   - {fileID: 11400000, guid: ebf9ac2962533b2479dd01a3dd0b6224, type: 2}
   - {fileID: 11400000, guid: 5dd8869083615cf4bab7b165fc2d9637, type: 2}
-  - {fileID: 11400000, guid: e6b1df0e5933abf4b9a945480e559b8d, type: 2}
-  - {fileID: 11400000, guid: e4b84ad5b454af649b473ef6e5c2b3be, type: 2}
+  - {fileID: 11400000, guid: 90f76449d0d9dff4395deefb8466e9c8, type: 2}
+  - {fileID: 11400000, guid: 5bffdef18cf87c8419e48987aea33da1, type: 2}
+  - {fileID: 11400000, guid: df9c6c051e7c3ba4cac3bb0a40f75afa, type: 2}
   - {fileID: 11400000, guid: 946337c6fab899f43a00cf70248ae8af, type: 2}
+  - {fileID: 11400000, guid: 03f23fe1df9e26c429ce2b821d3b8aa8, type: 2}
+  - {fileID: 11400000, guid: 4db8640f05fd1534c94b1b952653ca80, type: 2}
+  - {fileID: 11400000, guid: ab7e128e4dfccfd499b50968b29b7f0f, type: 2}
+  - {fileID: 11400000, guid: 4baa09ac355941e42acd1e102bf1b792, type: 2}
+  - {fileID: 11400000, guid: d6038212bb1ff874797cbc0dc9c12dc0, type: 2}
+  - {fileID: 11400000, guid: ddc215c6fc672764ab3529667296be3c, type: 2}
+  - {fileID: 11400000, guid: 7420e8112bf3e8149aa15b88316d40f1, type: 2}
+  - {fileID: 11400000, guid: 62aabca3b7327c84e9a42aad742a632b, type: 2}
+  - {fileID: 11400000, guid: 825bbc920c382c8418b491d76f2111a7, type: 2}
+  - {fileID: 11400000, guid: d07821a7d8e0dd1458977c3d04caad59, type: 2}
+  - {fileID: 11400000, guid: a8cb45c97d9d17049a4604f4deb35e3a, type: 2}
+  - {fileID: 11400000, guid: fcd11e4dd71daba4aa397495d3e3d858, type: 2}
+  - {fileID: 11400000, guid: 78d7271ae7fd371429d1d4786f4f6e0d, type: 2}
+  - {fileID: 11400000, guid: ffbf7c276763d3f4b8658d5c9d76ca11, type: 2}
+  - {fileID: 11400000, guid: e4b84ad5b454af649b473ef6e5c2b3be, type: 2}
+  - {fileID: 11400000, guid: be5970f24ef5b8840978765268abe1d4, type: 2}
+  - {fileID: 11400000, guid: c4a50b84a3dd5734984f4cd42a432a33, type: 2}
+  - {fileID: 11400000, guid: 9eb86d3e8c947f7459181b163471a0d1, type: 2}
+  - {fileID: 11400000, guid: cc3bcef3802c76a4d860b9aa4d7947ed, type: 2}
+  - {fileID: 11400000, guid: e2ce355ba521c8644bc6b9922e6cb12f, type: 2}
+  - {fileID: 11400000, guid: ed4661a993789254ebeb95e4fcebf95b, type: 2}
+  - {fileID: 11400000, guid: 5b349de4490617844ba70f3d856ba994, type: 2}
+  - {fileID: 11400000, guid: 036d547ac3edbf541b801c66e824ff3b, type: 2}
+  - {fileID: 11400000, guid: 77293fdcc0c642b4b99ecbe384de458c, type: 2}
+  - {fileID: 11400000, guid: 0df781c904d0d63458a3efc89e49a71b, type: 2}
+  - {fileID: 11400000, guid: 02ef9f914ddae714f816c28e5846ae2a, type: 2}
+  - {fileID: 11400000, guid: e6b1df0e5933abf4b9a945480e559b8d, type: 2}
+  - {fileID: 11400000, guid: 132edd20959e9a048a3107ff81da4958, type: 2}
+  - {fileID: 11400000, guid: 26a775deac285694ea9f77b7ba98918a, type: 2}
   _enemycardBases:
   - {fileID: 11400000, guid: 8a9160981d84ad74198f380bf51b3f7d, type: 2}
   - {fileID: 11400000, guid: f85b6e85cd475b64192a590095e4f71c, type: 2}
@@ -659,7 +688,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!4 &734763872
 Transform:
   m_ObjectHideFlags: 0
