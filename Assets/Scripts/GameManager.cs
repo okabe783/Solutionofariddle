@@ -15,8 +15,6 @@ public class GameManager : MonoBehaviour
     [SerializeField] SubmitPosition _enemySubmitCard;
     RuleBook _ruleBook;
     private int _enemyCardCount = 0;
-
-
     private void Awake()
     {
         _ruleBook = GetComponent<RuleBook>();

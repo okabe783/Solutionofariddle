@@ -1,18 +1,11 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
+using DG.Tweening;
 
-public class CardMovement : MonoBehaviour
+public class PlayerHandMovement : MonoBehaviour
 {
-    // Start is called before the first frame update
-    void Start()
+    private void Start()
     {
-        
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-        
+        //3•b‚©‚¯‚Ä(2,0)‚ÉˆÚ“®‚·‚é
+        this.transform.DOMove(new Vector2(-5.7f, -3.1f), 1f);
     }
 }
