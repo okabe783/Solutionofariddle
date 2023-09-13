@@ -10,6 +10,7 @@ public class CardBase : ScriptableObject
     [SerializeField] string _description;
     [SerializeField] PlayerType _playerType;
     [SerializeField] EnemyType _enemyType;
+    [SerializeField] PlayerTypeTo _playerTypeTo;
     public string CardName { get => _cardName; }
     public int CardNumber { get => _cardNumber; }
     public Sprite Icon1 { get => _icon; }
@@ -57,17 +58,8 @@ public enum PlayerType
     Gotouda = 1 << 29,
     Yokosima = 1 << 30,
     Sabitani = 1 << 31,
-    Cuga = 1 << 32,
-    Nano = 1 << 33,
-    Himeno = 1 << 34,
-    Miki = 1 << 35,
-    Momoti = 1 << 36,
-    Akamatu = 1 << 37,
-    Otuki = 1 <<38,
-    Kondou = 1 << 39,
-    Jyack = 1 << 40,
-    Jyozetu = 1 << 41,
-    Tuzimura = 1 << 42,
+    
+   
 }
 
 [Flags]
@@ -81,4 +73,20 @@ public enum EnemyType
     Gold = 1 << 4, //16
     Purple = 1 << 5, //32
     White = 1 << 6, //64
+}
+
+[Flags]
+public enum PlayerTypeTo
+{
+    Nano = 1 << 1,
+    Himeno = 1 << 2,
+    Miki = 1 << 3,
+    Momoti = 1 << 4,
+    Akamatu = 1 << 5,
+    Otuki = 1 << 6,
+    Kondou = 1 << 7,
+    Jyack = 1 << 8,
+    Jyozetu = 1 << 9,
+    Tuzimura = 1 << 10,
+    Cuga = 1 << 11,
 }

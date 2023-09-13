@@ -13,6 +13,7 @@ public class GameManager : MonoBehaviour
     [SerializeField] SubmitPosition _playerSubmitCard;
     [SerializeField] SubmitPosition _enemySubmitCard;
     RuleBook _ruleBook;
+    private int _enemyCardCount = 0;
 
     private void Awake()
     {
@@ -99,11 +100,10 @@ public class GameManager : MonoBehaviour
     {
         _player.TurnChange();
         _submitButton.SetActive(true);
-        
-        
         _playerHand.ResetCard();
         PlayerSendCard(_player);
         _player.Hand.ResetPosition();
+       // EnemyRedistributeCards(_enemy);
     }
     //プレイヤーにカードをランダムに配り、手札の位置をリセットする
     public void PlayerSendCard(Player _player)
@@ -121,5 +121,16 @@ public class GameManager : MonoBehaviour
         Card card = _generator.Spawn(SpawnType.Enemy);
         _enemy.SetCardToHand(card);
         _enemy.Hand.ResetPosition();
+    }
+    public void EnemyRedistributeCards(Enemy _enemy)
+    {
+        _enemyCardCount++;
+        if (_enemyCardCount == 5)
+        {
+           
+            EnemySendCard(_enemy);
+            _enemy.TurnChange();
+            Debug.Log("殺す");
+        }
     }
 }

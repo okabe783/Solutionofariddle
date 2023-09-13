@@ -422,152 +422,152 @@ public class RuleBook : MonoBehaviour
             return TurnResult.Failure2;
         }
         //プレイヤーのカードがCugaで敵の魔石が赤、黄色、紫、白の時
-        if (myCard.HasFlag(PlayerType.Cuga) && enemyType.HasFlag(EnemyType.Red) || enemyType.HasFlag(EnemyType.Yellow)
+        if (myCard.HasFlag(PlayerTypeTo.Cuga) && enemyType.HasFlag(EnemyType.Red) || enemyType.HasFlag(EnemyType.Yellow)
         || enemyType.HasFlag(EnemyType.Purple) || enemyType.HasFlag(EnemyType.White))
         {
             Debug.Log("Cugaで攻撃をした");
             return TurnResult.Success2;
         }
         //プレイヤーのカードがCugaで敵の魔石が青、緑、金の時
-        if (myCard.HasFlag(PlayerType.Cuga) && enemyType.HasFlag(EnemyType.Blue) || enemyType.HasFlag(EnemyType.Green)
+        if (myCard.HasFlag(PlayerTypeTo.Cuga) && enemyType.HasFlag(EnemyType.Blue) || enemyType.HasFlag(EnemyType.Green)
         || enemyType.HasFlag(EnemyType.Gold))
         {
             Debug.Log("Cugaで攻撃をしたが失敗");
             return TurnResult.Failure2;
         }
         //プレイヤーのカードがNanoで敵の魔石が青、緑、黄色、金の時
-        if (myCard.HasFlag(PlayerType.Nano) && enemyType.HasFlag(EnemyType.Blue) || enemyType.HasFlag(EnemyType.Green)
+        if (myCard.HasFlag(PlayerTypeTo.Nano) && enemyType.HasFlag(EnemyType.Blue) || enemyType.HasFlag(EnemyType.Green)
        || enemyType.HasFlag(EnemyType.Yellow) || enemyType.HasFlag(EnemyType.Gold))
         {
             Debug.Log("Nanoで攻撃をした");
             return TurnResult.Success2;
         }
         //プレイヤーのカードがNanoで敵の魔石が赤、紫、白の時
-        if (myCard.HasFlag(PlayerType.Nano) && enemyType.HasFlag(EnemyType.Red) || enemyType.HasFlag(EnemyType.Purple) || enemyType.HasFlag(EnemyType.White))
+        if (myCard.HasFlag(PlayerTypeTo.Nano) && enemyType.HasFlag(EnemyType.Red) || enemyType.HasFlag(EnemyType.Purple) || enemyType.HasFlag(EnemyType.White))
         {
             Debug.Log("Nanoで攻撃をしたが失敗");
             return TurnResult.Failure2;
         }
         //プレイヤーのカードがHimenoで敵の魔石が青、黄色、紫、白の時
-        if (myCard.HasFlag(PlayerType.Himeno) && enemyType.HasFlag(EnemyType.Blue) || enemyType.HasFlag(EnemyType.Yellow)
+        if (myCard.HasFlag(PlayerTypeTo.Himeno) && enemyType.HasFlag(EnemyType.Blue) || enemyType.HasFlag(EnemyType.Yellow)
        || enemyType.HasFlag(EnemyType.Purple) || enemyType.HasFlag(EnemyType.White))
         {
             Debug.Log("Himenoで攻撃をした");
             return TurnResult.Success2;
         }
         //プレイヤーのカードがHimenoで敵の魔石が赤、緑、金の時
-        if (myCard.HasFlag(PlayerType.Himeno) && (enemyType.HasFlag(EnemyType.Red) || (enemyType.HasFlag(EnemyType.Green))
+        if (myCard.HasFlag(PlayerTypeTo.Himeno) && (enemyType.HasFlag(EnemyType.Red) || (enemyType.HasFlag(EnemyType.Green))
       || (enemyType.HasFlag(EnemyType.Gold))))
         {
             Debug.Log("Himenoで攻撃をしたが失敗");
             return TurnResult.Failure2;
         }
         //プレイヤーのカードがMikiで敵の魔石が青、緑、黄色、紫の時
-        if (myCard.HasFlag(PlayerType.Miki) && enemyType.HasFlag(EnemyType.Blue) || enemyType.HasFlag(EnemyType.Green)
+        if (myCard.HasFlag(PlayerTypeTo.Miki) && enemyType.HasFlag(EnemyType.Blue) || enemyType.HasFlag(EnemyType.Green)
        || enemyType.HasFlag(EnemyType.Yellow) || enemyType.HasFlag(EnemyType.Purple))
         {
             Debug.Log("Mikiで攻撃をした");
             return TurnResult.Success2;
         }
         //プレイヤーのカードがMikiで敵の魔石が赤、金、白の時
-        if (myCard.HasFlag(PlayerType.Miki) && enemyType.HasFlag(EnemyType.Red) || enemyType.HasFlag(EnemyType.Gold)
+        if (myCard.HasFlag(PlayerTypeTo.Miki) && enemyType.HasFlag(EnemyType.Red) || enemyType.HasFlag(EnemyType.Gold)
       || enemyType.HasFlag(EnemyType.White))
         {
             Debug.Log("Mikiで攻撃をしたが失敗");
             return TurnResult.Failure2;
         }
         //プレイヤーのカードがMomotiで敵の魔石が青、緑、黄色、白の時
-        if (myCard.HasFlag(PlayerType.Momoti) && enemyType.HasFlag(EnemyType.Blue) || enemyType.HasFlag(EnemyType.Green)
+        if (myCard.HasFlag(PlayerTypeTo.Momoti) && enemyType.HasFlag(EnemyType.Blue) || enemyType.HasFlag(EnemyType.Green)
        || enemyType.HasFlag(EnemyType.Yellow) || enemyType.HasFlag(EnemyType.White))
         {
             Debug.Log("Momotiで攻撃をした");
             return TurnResult.Success2;
         }
         //プレイヤーのカードがMomotiで敵の魔石が赤、紫、金の時
-        if (myCard.HasFlag(PlayerType.Momoti) && enemyType.HasFlag(EnemyType.Red) || enemyType.HasFlag(EnemyType.Purple)
+        if (myCard.HasFlag(PlayerTypeTo.Momoti) && enemyType.HasFlag(EnemyType.Red) || enemyType.HasFlag(EnemyType.Purple)
       || enemyType.HasFlag(EnemyType.Gold))
         {
             Debug.Log("Momotiで攻撃をしたが失敗");
             return TurnResult.Failure2;
         }
         //プレイヤーのカードがAkamatuで敵の魔石が青、緑、金、白の時
-        if (myCard.HasFlag(PlayerType.Akamatu) && enemyType.HasFlag(EnemyType.Blue) || enemyType.HasFlag(EnemyType.Green)
+        if (myCard.HasFlag(PlayerTypeTo.Akamatu) && enemyType.HasFlag(EnemyType.Blue) || enemyType.HasFlag(EnemyType.Green)
        || enemyType.HasFlag(EnemyType.Gold) || enemyType.HasFlag(EnemyType.White))
         {
             Debug.Log("Akamatuで攻撃をした");
             return TurnResult.Success2;
         }
         //プレイヤーのカードがAkamatuで敵の魔石が赤、青、紫の時
-        if (myCard.HasFlag(PlayerType.Akamatu) && enemyType.HasFlag(EnemyType.Red) || enemyType.HasFlag(EnemyType.Blue)
+        if (myCard.HasFlag(PlayerTypeTo.Akamatu) && enemyType.HasFlag(EnemyType.Red) || enemyType.HasFlag(EnemyType.Blue)
       || enemyType.HasFlag(EnemyType.Purple))
         {
             Debug.Log("Akamatuで攻撃をしたが失敗");
             return TurnResult.Failure2;
         }
         //プレイヤーのカードがOtukiで敵の魔石が青、緑、紫、白の時
-        if (myCard.HasFlag(PlayerType.Otuki) && enemyType.HasFlag(EnemyType.Blue) || enemyType.HasFlag(EnemyType.Green)
+        if (myCard.HasFlag(PlayerTypeTo.Otuki) && enemyType.HasFlag(EnemyType.Blue) || enemyType.HasFlag(EnemyType.Green)
        || enemyType.HasFlag(EnemyType.Purple) || enemyType.HasFlag(EnemyType.White))
         {
             Debug.Log("Otukiで攻撃をした");
             return TurnResult.Success2;
         }
         //プレイヤーのカードがOtukiで敵の魔石が赤、黄色、金の時
-        if (myCard.HasFlag(PlayerType.Otuki) && enemyType.HasFlag(EnemyType.Red) || enemyType.HasFlag(EnemyType.Yellow)
+        if (myCard.HasFlag(PlayerTypeTo.Otuki) && enemyType.HasFlag(EnemyType.Red) || enemyType.HasFlag(EnemyType.Yellow)
       || enemyType.HasFlag(EnemyType.Gold))
         {
             Debug.Log("Otukiで攻撃をしたが失敗");
             return TurnResult.Failure2;
         }
         //プレイヤーのカードがKondouで敵の魔石が青、黄色、金、白の時
-        if (myCard.HasFlag(PlayerType.Kondou) && enemyType.HasFlag(EnemyType.Blue) || enemyType.HasFlag(EnemyType.Yellow)
+        if (myCard.HasFlag(PlayerTypeTo.Kondou) && enemyType.HasFlag(EnemyType.Blue) || enemyType.HasFlag(EnemyType.Yellow)
        || enemyType.HasFlag(EnemyType.Gold) || enemyType.HasFlag(EnemyType.White))
         {
             Debug.Log("Kondouで攻撃をした");
             return TurnResult.Success2;
         }
         //プレイヤーのカードがKondouで敵の魔石が赤、緑、紫の時
-        if (myCard.HasFlag(PlayerType.Kondou) && enemyType.HasFlag(EnemyType.Red) || enemyType.HasFlag(EnemyType.Green)
+        if (myCard.HasFlag(PlayerTypeTo.Kondou) && enemyType.HasFlag(EnemyType.Red) || enemyType.HasFlag(EnemyType.Green)
      || enemyType.HasFlag(EnemyType.Purple))
         {
             Debug.Log("Kondouで攻撃をしたが失敗");
             return TurnResult.Failure2;
         }
         //プレイヤーのカードがJyackで敵の魔石が緑、黄色、金、白の時
-        if (myCard.HasFlag(PlayerType.Jyack) && enemyType.HasFlag(EnemyType.Green) || enemyType.HasFlag(EnemyType.Yellow)
+        if (myCard.HasFlag(PlayerTypeTo.Jyack) && enemyType.HasFlag(EnemyType.Green) || enemyType.HasFlag(EnemyType.Yellow)
        || enemyType.HasFlag(EnemyType.Gold) || enemyType.HasFlag(EnemyType.White))
         {
             Debug.Log("Jyackで攻撃をした");
             return TurnResult.Success2;
         }
         //プレイヤーのカードがJyackで敵の魔石が赤、青、紫の時
-        if (myCard.HasFlag(PlayerType.Jyack) && enemyType.HasFlag(EnemyType.Red) || enemyType.HasFlag(EnemyType.Blue)
+        if (myCard.HasFlag(PlayerTypeTo.Jyack) && enemyType.HasFlag(EnemyType.Red) || enemyType.HasFlag(EnemyType.Blue)
     || enemyType.HasFlag(EnemyType.Purple))
         {
             Debug.Log("Jyackで攻撃をしたが失敗");
             return TurnResult.Failure2;
         }
         //プレイヤーのカードがJyozetuで敵の魔石が緑、黄色、紫、白の時
-        if (myCard.HasFlag(PlayerType.Jyozetu) && enemyType.HasFlag(EnemyType.Green) || enemyType.HasFlag(EnemyType.Yellow)
+        if (myCard.HasFlag(PlayerTypeTo.Jyozetu) && enemyType.HasFlag(EnemyType.Green) || enemyType.HasFlag(EnemyType.Yellow)
       || enemyType.HasFlag(EnemyType.Gold) || (enemyType.HasFlag(EnemyType.White)))
         {
             Debug.Log("Jyozetuで攻撃をした");
             return TurnResult.Success2;
         }
         //プレイヤーのカードがJyozetuで敵の魔石が赤、青、金の時
-        if (myCard.HasFlag(PlayerType.Jyozetu) && enemyType.HasFlag(EnemyType.Red) || enemyType.HasFlag(EnemyType.Blue) || enemyType.HasFlag(EnemyType.Purple))
+        if (myCard.HasFlag(PlayerTypeTo.Jyozetu) && enemyType.HasFlag(EnemyType.Red) || enemyType.HasFlag(EnemyType.Blue) || enemyType.HasFlag(EnemyType.Purple))
         {
             Debug.Log("Jyozetuで攻撃をしたが失敗");
             return TurnResult.Failure2;
         }
         //プレイヤーのカードがTuzimuraで敵の魔石が黄色、金、紫、白の時
-        if (myCard.HasFlag(PlayerType.Tuzimura) && enemyType.HasFlag(EnemyType.Yellow) || enemyType.HasFlag(EnemyType.Gold)
+        if (myCard.HasFlag(PlayerTypeTo.Tuzimura) && enemyType.HasFlag(EnemyType.Yellow) || enemyType.HasFlag(EnemyType.Gold)
       || enemyType.HasFlag(EnemyType.Purple) || enemyType.HasFlag(EnemyType.White))
         {
             Debug.Log("Tuzimuraで攻撃をした");
             return TurnResult.Success2;
         }
         //プレイヤーのカードがTuzimuraで敵の魔石が赤、青、緑の時
-        if (myCard.HasFlag(PlayerType.Tuzimura) && enemyType.HasFlag(EnemyType.Red) || enemyType.HasFlag(EnemyType.Blue) || enemyType.HasFlag(EnemyType.Green))
+        if (myCard.HasFlag(PlayerTypeTo.Tuzimura) && enemyType.HasFlag(EnemyType.Red) || enemyType.HasFlag(EnemyType.Blue) || enemyType.HasFlag(EnemyType.Green))
 
         {
             Debug.Log("Tuzimuraで攻撃をしたが失敗");
