@@ -10,10 +10,12 @@ public class GameManager : MonoBehaviour
     [SerializeField] GameObject _submitButton;
     [SerializeField] GameUI _gameUI;
     [SerializeField] PlayerHand _playerHand;
+    [SerializeField] PlayerHand _enemyHand;
     [SerializeField] SubmitPosition _playerSubmitCard;
     [SerializeField] SubmitPosition _enemySubmitCard;
     RuleBook _ruleBook;
     private int _enemyCardCount = 0;
+
 
     private void Awake()
     {
@@ -63,10 +65,8 @@ public class GameManager : MonoBehaviour
         PlayerType playerType = _playerSubmitCard.SubmitCard.Base.PlayerType;
         EnemyType enemyType = _enemySubmitCard.SubmitCard.Base.EnemyType;
         TurnResult result = _ruleBook.Result(playerType, enemyType);
-
         string resultText = (result == TurnResult.Success1 || result == TurnResult.Success2 || result == TurnResult.Success3) ? "Success" : "Failure";
         _gameUI.ShowTurnResult(resultText);
-
         if (result == TurnResult.Success1)
             _enemy.Life--;
         else if (result == TurnResult.Success2)
@@ -103,7 +103,7 @@ public class GameManager : MonoBehaviour
         _playerHand.ResetCard();
         PlayerSendCard(_player);
         _player.Hand.ResetPosition();
-       // EnemyRedistributeCards(_enemy);
+        EnemyRedistributeCards();
     }
     //プレイヤーにカードをランダムに配り、手札の位置をリセットする
     public void PlayerSendCard(Player _player)
@@ -122,14 +122,14 @@ public class GameManager : MonoBehaviour
         _enemy.SetCardToHand(card);
         _enemy.Hand.ResetPosition();
     }
-    public void EnemyRedistributeCards(Enemy _enemy)
+    public void EnemyRedistributeCards()
     {
         _enemyCardCount++;
         if (_enemyCardCount == 5)
         {
-           
-            EnemySendCard(_enemy);
             _enemy.TurnChange();
+            _enemyHand.ResetCard();
+            EnemySendCard(_enemy);
             Debug.Log("殺す");
         }
     }

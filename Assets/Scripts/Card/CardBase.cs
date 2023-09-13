@@ -10,7 +10,6 @@ public class CardBase : ScriptableObject
     [SerializeField] string _description;
     [SerializeField] PlayerType _playerType;
     [SerializeField] EnemyType _enemyType;
-    [SerializeField] PlayerTypeTo _playerTypeTo;
     public string CardName { get => _cardName; }
     public int CardNumber { get => _cardNumber; }
     public Sprite Icon1 { get => _icon; }
@@ -18,10 +17,10 @@ public class CardBase : ScriptableObject
     public PlayerType PlayerType { get => _playerType; }
 
     public EnemyType EnemyType { get => _enemyType; }
+    
 }
 
 //ビットフラグで相性を管理する
-
 [Flags]
 public enum PlayerType
 {
@@ -43,7 +42,7 @@ public enum PlayerType
     Yanagi = 1 << 14,
     Kouga = 1 << 15,
     Genma = 1 << 16,
-    Yaiba　= 1 << 17,
+    Yaiba = 1 << 17,
     Manami = 1 << 18,
     Otogi = 1 << 19,
     Paraberamu = 1 << 20,
@@ -52,14 +51,12 @@ public enum PlayerType
     Yuraki = 1 << 23,
     Haisiki = 1 << 24,
     Ryutan = 1 << 25,
-    Sekidou　= 1 << 26,
+    Sekidou = 1 << 26,
     Mitori = 1 << 27,
-    Siratori = 1 <<28,
+    Siratori = 1 << 28,
     Gotouda = 1 << 29,
     Yokosima = 1 << 30,
     Sabitani = 1 << 31,
-    
-   
 }
 
 [Flags]
@@ -73,20 +70,4 @@ public enum EnemyType
     Gold = 1 << 4, //16
     Purple = 1 << 5, //32
     White = 1 << 6, //64
-}
-
-[Flags]
-public enum PlayerTypeTo
-{
-    Nano = 1 << 1,
-    Himeno = 1 << 2,
-    Miki = 1 << 3,
-    Momoti = 1 << 4,
-    Akamatu = 1 << 5,
-    Otuki = 1 << 6,
-    Kondou = 1 << 7,
-    Jyack = 1 << 8,
-    Jyozetu = 1 << 9,
-    Tuzimura = 1 << 10,
-    Cuga = 1 << 11,
 }

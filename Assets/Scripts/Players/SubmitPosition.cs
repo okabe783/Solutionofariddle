@@ -2,6 +2,7 @@ using UnityEngine;
 
 public class SubmitPosition : MonoBehaviour
 {
+    public Transform defaultParent;
     //選択されたカードを管理する
     Card submitCard;
 

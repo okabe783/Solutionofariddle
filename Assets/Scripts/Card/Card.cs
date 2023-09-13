@@ -14,6 +14,7 @@ public class Card : MonoBehaviour
     //カードがクリックされたときに特定のアクションを実行する
     public UnityAction<Card> OnClickCard;
     //カードの外観を設定
+
     public void CardSet(CardBase cardBase)
     {
         Base = cardBase;
