@@ -1073,6 +1073,7 @@ MonoBehaviour:
   _enemyHand: {fileID: 461686207}
   _playerSubmitCard: {fileID: 2115480741}
   _enemySubmitCard: {fileID: 410425782}
+  _playerHandMovement: {fileID: 1721294953}
 --- !u!114 &1435432204
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1238,9 +1239,10 @@ MonoBehaviour:
   m_GameObject: {fileID: 1721294949}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 56ba4a69721d7194b81a2db84654c67a, type: 3}
+  m_Script: {fileID: 11500000, guid: 3f5910a425e13794f8701cdbb1f18edf, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _position: {x: -19.01, y: -3.12}
 --- !u!1 &1831200588
 GameObject:
   m_ObjectHideFlags: 0
