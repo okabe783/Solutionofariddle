@@ -83,7 +83,7 @@ public class GameManager : MonoBehaviour
 
         if (result == TurnResult.GameWin)
             ShowGameResult("WIN");
-        else if (result == TurnResult.GameLose || _enemy.Life <= 0)
+        else if (result == TurnResult.GameLose || _player.Life <= 0)
             ShowGameResult("LOSE");
         else
             SetUpNextTurn();
