@@ -1,4 +1,6 @@
+using System.Collections;
 using UnityEngine;
+using DG.Tweening;
 using static CardGenerator;
 using static RuleBook;
 
@@ -14,6 +16,7 @@ public class GameManager : MonoBehaviour
     [SerializeField] SubmitPosition _playerSubmitCard;
     [SerializeField] SubmitPosition _enemySubmitCard;
     [SerializeField] PlayerHandMovement _playerHandMovement;
+    [SerializeField] SubmitPosition _submitPosition;
     RuleBook _ruleBook;
     private int _enemyCardCount = 0;
     private void Awake()
@@ -29,7 +32,7 @@ public class GameManager : MonoBehaviour
     {
         _gameUI.Init();
         //ライフ管理
-        _player.Life = _enemy.Life = 10;        
+        _player.Life = _enemy.Life = 10;
         _gameUI.ShowLife(_player.Life, _enemy.Life);
         _player.OnSubmitAction = _enemy.OnSubmitAction = SubmittedAction;
         PlayerSendCard(_player);
@@ -44,6 +47,7 @@ public class GameManager : MonoBehaviour
         {
             _submitButton.SetActive(false); //Playerが決定をおしたら
             CardBattle();
+            _submitPosition.AttackEffect();
         }
         else if (_player.IsSubmitted)
         {
@@ -56,7 +60,6 @@ public class GameManager : MonoBehaviour
             //プレイヤーの提出を待つ
         }
     }
-
     //playerとenemyのカードを取得しルールブックを使用してバトル結果を計算
     //結果をUIに表示
     void CardBattle()
@@ -86,7 +89,7 @@ public class GameManager : MonoBehaviour
         else if (result == TurnResult.GameLose || _player.Life <= 0)
             ShowGameResult("LOSE");
         else
-            SetUpNextTurn();
+            Invoke("SetUpNextTurn", 0.8f);
     }
 
     void ShowGameResult(string resultText)

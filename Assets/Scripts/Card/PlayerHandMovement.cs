@@ -12,6 +12,6 @@ public class PlayerHandMovement : MonoBehaviour
     {
         transform.position = _position;
         //0.8•b‚©‚¯‚Ä(2,0)‚ÉˆÚ“®‚·‚é
-        this.transform.DOMove(new Vector2(-5.7f, -3.1f), 0.8f);
+        this.transform.DOLocalMove(new Vector2(-5.7f, -3.6f), 0.8f);
     }
 }
