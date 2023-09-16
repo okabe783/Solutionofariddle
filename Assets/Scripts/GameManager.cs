@@ -17,6 +17,7 @@ public class GameManager : MonoBehaviour
     [SerializeField] SubmitPosition _enemySubmitCard;
     [SerializeField] PlayerHandMovement _playerHandMovement;
     [SerializeField] SubmitPosition _submitPosition;
+    [SerializeField] GameObject _effect;
     RuleBook _ruleBook;
     private int _enemyCardCount = 0;
     private void Awake()
@@ -70,20 +71,36 @@ public class GameManager : MonoBehaviour
         string resultText = (result == TurnResult.Success1 || result == TurnResult.Success2 || result == TurnResult.Success3) ? "Success" : "Failure";
         _gameUI.ShowTurnResult(resultText);
         if (result == TurnResult.Success1)
+        {
             _enemy.Life--;
+            Invoke("EnemyEffect", 0.5f);
+        }
         else if (result == TurnResult.Success2)
+        {
             _enemy.Life -= 2;
+            Invoke("EnemyEffect", 0.5f);
+        }
         else if (result == TurnResult.Success3)
+        {
             _enemy.Life -= 3;
+            Invoke("EnemyEffect", 0.5f);
+        }
         else if (result == TurnResult.Failure1)
+        {
             _player.Life--;
+            Invoke("PlayerEffect", 0.5f);
+        }
         else if (result == TurnResult.Failure2)
-            _player.Life -= 2;
+        {
+            _player.Life-= 2;
+            Invoke("PlayerEffect", 0.5f);
+        }
         else if (result == TurnResult.Failure3)
+        {
             _player.Life -= 3;
-
+            Invoke("PlayerEffect", 0.5f);
+        }
         _gameUI.ShowLife(_player.Life, _enemy.Life);
-
         if (result == TurnResult.GameWin)
             ShowGameResult("WIN");
         else if (result == TurnResult.GameLose || _player.Life <= 0)
@@ -135,5 +152,16 @@ public class GameManager : MonoBehaviour
             EnemySendCard(_enemy);
             Debug.Log("ŽE‚·");
         }
+    }
+    void PlayerEffect()
+    {
+        Transform p= GameObject.FindGameObjectWithTag("Player").GetComponent <Transform>();
+        Instantiate(_effect,p.position,Quaternion.identity);
+    }
+    void EnemyEffect()
+    {
+        Transform trn = GameObject.FindGameObjectWithTag("Enemy").GetComponent<Transform>();
+        Instantiate(_effect, trn.position, Quaternion.identity);
+
     }
 }
