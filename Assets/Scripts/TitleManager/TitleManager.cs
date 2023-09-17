@@ -7,4 +7,12 @@ public class TitleManager : MonoBehaviour
     {
         SceneManager.LoadScene("Game");
     }
+    public void OnwayofplayingButton()
+    {
+        SceneManager.LoadScene("Wayofplaying");
+    }
+    public void OnBackButton()
+    {
+        SceneManager.LoadScene("Title");
+    }
 }
