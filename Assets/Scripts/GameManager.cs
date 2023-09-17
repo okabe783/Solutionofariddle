@@ -100,6 +100,7 @@ public class GameManager : MonoBehaviour
             _player.Life -= 3;
             Invoke("PlayerEffect", 0.5f);
         }
+        //ライフが0になったプレイヤーがいれば勝敗パネルを表示　最後に敵の属性を表示
         _gameUI.ShowLife(_player.Life, _enemy.Life);
         if (result == TurnResult.GameWin || _enemy.Life <= 0)
             ShowGameResult("WIN");
