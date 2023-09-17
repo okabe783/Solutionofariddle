@@ -1,8 +1,7 @@
-using System.Collections;
 using UnityEngine;
-using DG.Tweening;
 using static CardGenerator;
 using static RuleBook;
+using UnityEngine.SceneManagement;
 
 public class GameManager : MonoBehaviour
 {
@@ -163,6 +162,15 @@ public class GameManager : MonoBehaviour
     {
         Transform trn = GameObject.FindGameObjectWithTag("Enemy").GetComponent<Transform>();
         Instantiate(_effect, trn.position, Quaternion.identity);
+    }
+    public void OnRetryButton()
+    {
+        string currntSnene = SceneManager.GetActiveScene().name;
+        SceneManager.LoadScene(currntSnene);
+    }
+    public void OnTitleButton()
+    {
+        SceneManager.LoadScene("Title");
 
     }
 }

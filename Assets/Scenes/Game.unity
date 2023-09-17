@@ -984,9 +984,9 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1395356546}
-        m_TargetAssemblyTypeName: Player, Assembly-CSharp
-        m_MethodName: OnSubmitButton
+      - m_Target: {fileID: 1435432203}
+        m_TargetAssemblyTypeName: GameManager, Assembly-CSharp
+        m_MethodName: OnTitleButton
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -1946,9 +1946,9 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1395356546}
-        m_TargetAssemblyTypeName: Player, Assembly-CSharp
-        m_MethodName: OnSubmitButton
+      - m_Target: {fileID: 1435432203}
+        m_TargetAssemblyTypeName: GameManager, Assembly-CSharp
+        m_MethodName: OnRetryButton
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
