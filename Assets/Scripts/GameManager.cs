@@ -101,7 +101,7 @@ public class GameManager : MonoBehaviour
             Invoke("PlayerEffect", 0.5f);
         }
         _gameUI.ShowLife(_player.Life, _enemy.Life);
-        if (result == TurnResult.GameWin)
+        if (result == TurnResult.GameWin || _enemy.Life <= 0)
             ShowGameResult("WIN");
         else if (result == TurnResult.GameLose || _player.Life <= 0)
             ShowGameResult("LOSE");
