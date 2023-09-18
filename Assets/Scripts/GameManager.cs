@@ -131,7 +131,7 @@ public class GameManager : MonoBehaviour
         for (int i = 0; i < 3; i++)
         {
             Card card = _generator.Spawn(SpawnType.Player);  //カードを生成して渡される
-            _player.SetCardToHand(card);  //プレイヤーの手札に追加
+                _player.SetCardToHand(card);  //プレイヤーの手札に追加
         }
         _player.Hand.ResetPosition();
     }
@@ -171,6 +171,5 @@ public class GameManager : MonoBehaviour
     public void OnTitleButton()
     {
         SceneManager.LoadScene("Title");
-
     }
 }

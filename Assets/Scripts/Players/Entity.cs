@@ -1,4 +1,3 @@
-using System.Collections;
 using UnityEngine;
 using UnityEngine.Events;
 
@@ -51,7 +50,7 @@ public class Entity : MonoBehaviour
     //enemyがランダムにカードを提出する
     public void RandomSubmit()
     {
-        //手札からランダムにカードを抜き取る←ここを変更
+        //手札からランダムにカードを抜き取る
         Card card = _hand.RandomRemove();
         //提出用にセット
         _submitposition.Set(card);
