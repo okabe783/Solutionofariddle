@@ -15,7 +15,7 @@ public class RuleBook : MonoBehaviour
             return TurnResult.Success1;
         }
         //プレイヤーのカードがYanagiで敵の魔石が赤、黄色、白の時
-        if (myCard.HasFlag(PlayerType.Yanagi) && enemyType.HasFlag(EnemyType.Red)|| enemyType.HasFlag(EnemyType.Yellow)|| enemyType.HasFlag(EnemyType.White))
+        if (myCard.HasFlag(PlayerType.Yanagi) && (enemyType.HasFlag(EnemyType.Red)|| enemyType.HasFlag(EnemyType.Yellow)|| enemyType.HasFlag(EnemyType.White)))
         {
             Debug.Log("Yanagiで攻撃をしたが失敗");
             return TurnResult.Failure1;
@@ -296,7 +296,7 @@ public class RuleBook : MonoBehaviour
         if (myCard.HasFlag(PlayerType.Yorugami) && (enemyType.HasFlag(EnemyType.Blue) || enemyType.HasFlag(EnemyType.Green) || enemyType.HasFlag(EnemyType.White) || enemyType.HasFlag(EnemyType.Gold)))
         {
             Debug.Log("Yorugamiで攻撃をしたが失敗");
-            return TurnResult.Failure3;
+            return TurnResult.Failure2;
         }
 
         //1属性を対象
