@@ -15,7 +15,7 @@ MonoBehaviour:
   _cardName: Yuraki
   _cardNumber: 0
   _icon: {fileID: 21300000, guid: d2bd03c5bbca5d64689f17ac6326ec21, type: 3}
-  _description: "\u6575\u306E\u9B54\u77F3\u304C\u8D64\u3001\u9752\u3001\u9EC4\u8272\u3001\u767D\u306E\u6642"
+  _description: "\u9752\u3001\u91D1\u3001\u7D2B"
   _playerType: 8388608
   _enemyType: 0
   _playerCardType: 8388608

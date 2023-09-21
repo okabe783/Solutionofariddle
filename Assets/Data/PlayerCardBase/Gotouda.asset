@@ -15,7 +15,7 @@ MonoBehaviour:
   _cardName: Gotouda
   _cardNumber: 0
   _icon: {fileID: 21300000, guid: 6a95e983aea9a0545a7f5b483e5da7b5, type: 3}
-  _description: "\u6575\u306E\u9B54\u77F3\u304C\u8D64\u3001\u7DD1\u3001\u91D1\u3001\u767D\u306E\u6642"
+  _description: "\u91D1"
   _playerType: 536870912
   _enemyType: 0
   _playerCardType: 536870912

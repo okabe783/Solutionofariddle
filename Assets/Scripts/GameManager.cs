@@ -86,7 +86,7 @@ public class GameManager : MonoBehaviour
         }
         else if (result == TurnResult.Failure1)
         {
-            _player.Life--;
+            _player.Life-= 2;
             Invoke("PlayerEffect", 0.5f);
         }
         else if (result == TurnResult.Failure2)

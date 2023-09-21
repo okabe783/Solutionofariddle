@@ -15,7 +15,7 @@ MonoBehaviour:
   _cardName: Yaiba
   _cardNumber: 0
   _icon: {fileID: 21300000, guid: afa7a806760a7d9419a81dd44ae4dec7, type: 3}
-  _description: "\u6575\u306E\u9B54\u77F3\u304C\u8D64\u3001\u9752\u3001\u7DD1\u3001\u9EC4\u8272\u306E\u6642"
+  _description: "\u8D64\u3001\u9EC4\u8272\u3001\u7D2B\u3001\u767D"
   _playerType: 131072
   _enemyType: 0
   _playerCardType: 131072

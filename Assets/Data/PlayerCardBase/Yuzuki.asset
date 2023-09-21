@@ -15,6 +15,7 @@ MonoBehaviour:
   _cardName: Yuzuki
   _cardNumber: 0
   _icon: {fileID: 21300000, guid: 017c086f92656a043852774c1a3daea4, type: 3}
-  _description: "\u8D64\u3001\u9EC4\u8272\u306E\u6642"
+  _description: "\u8D64\u3001\u9752\u3001\u7DD1"
   _playerType: 128
+  _enemyType: 0
   _playerCardType: 128
