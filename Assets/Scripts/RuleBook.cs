@@ -15,19 +15,19 @@ public class RuleBook : MonoBehaviour
             return TurnResult.Success1;
         }
         //プレイヤーのカードがYanagiで敵の魔石が赤、黄色、白の時
-        if (myCard.HasFlag(PlayerType.Yanagi) && (enemyType.HasFlag(EnemyType.Red)|| enemyType.HasFlag(EnemyType.Yellow)|| enemyType.HasFlag(EnemyType.White)))
+        if (myCard.HasFlag(PlayerType.Yanagi) && (enemyType.HasFlag(EnemyType.Red) || enemyType.HasFlag(EnemyType.Yellow) || enemyType.HasFlag(EnemyType.White)))
         {
             Debug.Log("Yanagiで攻撃をしたが失敗");
             return TurnResult.Failure1;
         }
         //プレイヤーのカードがKougaで敵の魔石が黄色、紫、白、赤の時　
-        if (myCard.HasFlag(PlayerType.Kouga) && (enemyType.HasFlag(EnemyType.Yellow) || enemyType.HasFlag(EnemyType.Purple)|| enemyType.HasFlag(EnemyType.White) || enemyType.HasFlag(EnemyType.Red)))
+        if (myCard.HasFlag(PlayerType.Kouga) && (enemyType.HasFlag(EnemyType.Yellow) || enemyType.HasFlag(EnemyType.Purple) || enemyType.HasFlag(EnemyType.White) || enemyType.HasFlag(EnemyType.Red)))
         {
             Debug.Log("Kougaで攻撃をした");
             return TurnResult.Success1;
         }
         //プレイヤーのカードがKougaで敵の魔石が青、緑、金の時
-        if (myCard.HasFlag(PlayerType.Kouga) && enemyType.HasFlag(EnemyType.Blue) || enemyType.HasFlag(EnemyType.   Green) || enemyType.HasFlag(EnemyType.Gold))
+        if (myCard.HasFlag(PlayerType.Kouga) && (enemyType.HasFlag(EnemyType.Blue) || enemyType.HasFlag(EnemyType.Green) || enemyType.HasFlag(EnemyType.Gold)))
         {
             Debug.Log("Kougaで攻撃をしたが失敗");
             return TurnResult.Failure1;
@@ -35,13 +35,13 @@ public class RuleBook : MonoBehaviour
         //プレイヤーのカードがGengaで敵の魔石が金、赤、紫、緑の時　
         if (myCard.HasFlag(PlayerType.Genma) && (enemyType.HasFlag(EnemyType.Gold) || enemyType.HasFlag(EnemyType.Red) || enemyType.HasFlag(EnemyType.Purple) || enemyType.HasFlag(EnemyType.Green)))
         {
-            Debug.Log("Gengaで攻撃をした");
+            Debug.Log("Genmaで攻撃をした");
             return TurnResult.Success1;
         }
         //プレイヤーのカードがGengaで敵の魔石が青、黄色、白の時
-        if (myCard.HasFlag(PlayerType.Genma) && enemyType.HasFlag(EnemyType.Blue) || enemyType.HasFlag(EnemyType.Yellow) || enemyType.HasFlag(EnemyType.White))
+        if (myCard.HasFlag(PlayerType.Genma) && (enemyType.HasFlag(EnemyType.Blue) || enemyType.HasFlag(EnemyType.Yellow) || enemyType.HasFlag(EnemyType.White)))
         {
-            Debug.Log("Gengaで攻撃をしたが失敗");
+            Debug.Log("Genmaで攻撃をしたが失敗");
             return TurnResult.Failure1;
         }
         //プレイヤーのカードがKizakiで敵の魔石が紫、金、白、青の時　
@@ -93,7 +93,7 @@ public class RuleBook : MonoBehaviour
             return TurnResult.Failure1;
         }
         //プレイヤーのカードがHyakutiで敵の魔石が緑、金、赤、青の時
-        if (myCard.HasFlag(PlayerType.Hyakuti) && (enemyType.HasFlag(EnemyType.Green) || enemyType.HasFlag(EnemyType.Gold)|| enemyType.HasFlag(EnemyType.Red) || enemyType.HasFlag(EnemyType.Blue)))
+        if (myCard.HasFlag(PlayerType.Hyakuti) && (enemyType.HasFlag(EnemyType.Green) || enemyType.HasFlag(EnemyType.Gold) || enemyType.HasFlag(EnemyType.Red) || enemyType.HasFlag(EnemyType.Blue)))
         {
             Debug.Log("Hyakutiで攻撃をした");
             return TurnResult.Success1;
@@ -105,7 +105,7 @@ public class RuleBook : MonoBehaviour
             return TurnResult.Failure1;
         }
         //プレイヤーのカードがYaibaで敵の魔石が赤、黄色、紫、白の時
-        if (myCard.HasFlag(PlayerType.Yaiba) && (enemyType.HasFlag(EnemyType.Red) || enemyType.HasFlag(EnemyType.Yellow)|| enemyType.HasFlag(EnemyType.Purple) || enemyType.HasFlag(EnemyType.White)))
+        if (myCard.HasFlag(PlayerType.Yaiba) && (enemyType.HasFlag(EnemyType.Red) || enemyType.HasFlag(EnemyType.Yellow) || enemyType.HasFlag(EnemyType.Purple) || enemyType.HasFlag(EnemyType.White)))
         {
             Debug.Log("Yaibaで攻撃をした");
             return TurnResult.Success1;
@@ -197,7 +197,7 @@ public class RuleBook : MonoBehaviour
             return TurnResult.Success2;
         }
         //プレイヤーのカードがTennojiで敵の魔石が赤、青、黄色、緑の時
-        if (myCard.HasFlag(PlayerType.Tennoji) && (enemyType.HasFlag(EnemyType. Red) || enemyType.HasFlag(EnemyType.Blue) || enemyType.HasFlag(EnemyType.Yellow) || enemyType.HasFlag(EnemyType.Green)))
+        if (myCard.HasFlag(PlayerType.Tennoji) && (enemyType.HasFlag(EnemyType.Red) || enemyType.HasFlag(EnemyType.Blue) || enemyType.HasFlag(EnemyType.Yellow) || enemyType.HasFlag(EnemyType.Green)))
         {
             Debug.Log("Tennojiで攻撃をしたが失敗");
             return TurnResult.Failure2;
@@ -221,7 +221,7 @@ public class RuleBook : MonoBehaviour
             return TurnResult.Success2;
         }
         //プレイヤーのカードがMabosiで敵の魔石が赤、青、白、紫の時
-        if (myCard.HasFlag(PlayerType.Mabosi) && (enemyType.HasFlag(EnemyType.Red) || enemyType.HasFlag(EnemyType.Blue)|| enemyType.HasFlag(EnemyType.White) || enemyType.HasFlag(EnemyType.Purple)))
+        if (myCard.HasFlag(PlayerType.Mabosi) && (enemyType.HasFlag(EnemyType.Red) || enemyType.HasFlag(EnemyType.Blue) || enemyType.HasFlag(EnemyType.White) || enemyType.HasFlag(EnemyType.Purple)))
         {
             Debug.Log("Mabosiで攻撃をしたが失敗");
             return TurnResult.Failure2;
@@ -281,7 +281,7 @@ public class RuleBook : MonoBehaviour
             return TurnResult.Success2;
         }
         //プレイヤーのカードがKongojiで敵の魔石が赤、黄色、紫、金の時 
-        if (myCard.HasFlag(PlayerType.Kongoji) && (enemyType.HasFlag(EnemyType.Red) || enemyType.HasFlag(EnemyType.Yellow)|| enemyType.HasFlag(EnemyType.Purple) ||enemyType.HasFlag(EnemyType.Gold)))
+        if (myCard.HasFlag(PlayerType.Kongoji) && (enemyType.HasFlag(EnemyType.Red) || enemyType.HasFlag(EnemyType.Yellow) || enemyType.HasFlag(EnemyType.Purple) || enemyType.HasFlag(EnemyType.Gold)))
         {
             Debug.Log("Kongojiで攻撃をしたが失敗");
             return TurnResult.Failure2;
@@ -298,119 +298,112 @@ public class RuleBook : MonoBehaviour
             Debug.Log("Yorugamiで攻撃をしたが失敗");
             return TurnResult.Failure2;
         }
-
-        //1属性を対象
-        //プレイヤーのカードがHaisikiで敵の魔石が赤、青、金、白の時
-        if (myCard.HasFlag(PlayerType.Haisiki) && (enemyType.HasFlag(EnemyType.Red) || enemyType.HasFlag(EnemyType.Blue)
-           || enemyType.HasFlag(EnemyType.Gold) || enemyType.HasFlag(EnemyType.White)))
-        {
-            Debug.Log("Haisikiで攻撃をした");
-            return TurnResult.Success2;
-        }
-        //プレイヤーのカードがHaisikiで敵の魔石が緑、黄色、紫、の時
-        if (myCard.HasFlag(PlayerType.Haisiki) && (enemyType.HasFlag(EnemyType.Green) || enemyType.HasFlag(EnemyType.Yellow)
-            || enemyType.HasFlag(EnemyType.Purple)))
-        {
-            Debug.Log("Haisikiで攻撃をしたが失敗");
-            return TurnResult.Failure2;
-        }
-        //プレイヤーのカードがRyutanで敵の魔石が赤、青、紫、白の時
-        if (myCard.HasFlag(PlayerType.Ryutan) && (enemyType.HasFlag(EnemyType.Red) || enemyType.HasFlag(EnemyType.Blue)
-          || enemyType.HasFlag(EnemyType.Purple) || enemyType.HasFlag(EnemyType.White)))
-        {
-            Debug.Log("Ryutanで攻撃をした");
-            return TurnResult.Success2;
-        }
-        //プレイヤーのカードがRyutanで敵の魔石が黄色、緑、金の時
-        if (myCard.HasFlag(PlayerType.Ryutan) && (enemyType.HasFlag(EnemyType.Yellow) || enemyType.HasFlag(EnemyType.Green)
-            || enemyType.HasFlag(EnemyType.Gold)))
-        {
-            Debug.Log("Ryutanで攻撃をしたが失敗");
-            return TurnResult.Failure2;
-        }
-        //プレイヤーのカードがSekidouで敵の魔石が赤、緑、黄色、金の時
-        if (myCard.HasFlag(PlayerType.Sekidou) && (enemyType.HasFlag(EnemyType.Red) || enemyType.HasFlag(EnemyType.Green)
-          || enemyType.HasFlag(EnemyType.Yellow) || enemyType.HasFlag(EnemyType.Gold)))
-        {
-            Debug.Log("Sekidouで攻撃をした");
-            return TurnResult.Success2;
-        }
-        //プレイヤーのカードがSekidouで敵の魔石が青、白、紫の時
-        if (myCard.HasFlag(PlayerType.Sekidou) && (enemyType.HasFlag(EnemyType.Blue) || enemyType.HasFlag(EnemyType.White)
-            || enemyType.HasFlag(EnemyType.Purple)))
-        {
-            Debug.Log("Sekidouで攻撃をしたが失敗");
-            return TurnResult.Failure2;
-        }
-        //プレイヤーのカードがMitoriで敵の魔石が赤、緑、黄色、紫の時
-        if (myCard.HasFlag(PlayerType.Mitori) && (enemyType.HasFlag(EnemyType.Red) || enemyType.HasFlag(EnemyType.Green)
-          || enemyType.HasFlag(EnemyType.Yellow) || enemyType.HasFlag(EnemyType.Purple)))
-        {
-            Debug.Log("Sekidouで攻撃をした");
-            return TurnResult.Success2;
-        }
-        //プレイヤーのカードがMitoriで敵の魔石が青、白、金の時
-        if (myCard.HasFlag(PlayerType.Mitori) && (enemyType.HasFlag(EnemyType.Blue) || enemyType.HasFlag(EnemyType.White)
-           || enemyType.HasFlag(EnemyType.Gold)))
-        {
-            Debug.Log("Mitoriで攻撃をしたが失敗");
-            return TurnResult.Failure2;
-        }
-        //プレイヤーのカードがSiratoriで敵の魔石が赤、緑、黄色、白の時
-        if (myCard.HasFlag(PlayerType.Siratori) && (enemyType.HasFlag(EnemyType.Red) || enemyType.HasFlag(EnemyType.Green)
-          || enemyType.HasFlag(EnemyType.Yellow) || enemyType.HasFlag(EnemyType.White)))
-        {
-            Debug.Log("Siratoriで攻撃をした");
-            return TurnResult.Success2;
-        }
-        //プレイヤーのカードがSiratoriで敵の魔石が青、紫、金の時
-        if (myCard.HasFlag(PlayerType.Siratori) && (enemyType.HasFlag(EnemyType.Blue) || enemyType.HasFlag(EnemyType.Purple)
-          || enemyType.HasFlag(EnemyType.Gold)))
-        {
-            Debug.Log("Siratoriで攻撃をしたが失敗");
-            return TurnResult.Failure2;
-        }
-        //プレイヤーのカードがGotoudaで敵の魔石が赤、緑、金、白の時
-        if (myCard.HasFlag(PlayerType.Gotouda) && (enemyType.HasFlag(EnemyType.Red) || enemyType.HasFlag(EnemyType.Green)
-          || enemyType.HasFlag(EnemyType.Gold) || enemyType.HasFlag(EnemyType.White)))
-        {
-            Debug.Log("Gotoudaで攻撃をした");
-            return TurnResult.Success2;
-        }
-        //プレイヤーのカードがGotoudaで敵の魔石が青、黄色、紫の時
-        if (myCard.HasFlag(PlayerType.Gotouda) && (enemyType.HasFlag(EnemyType.Blue) || enemyType.HasFlag(EnemyType.Yellow)
-         || enemyType.HasFlag(EnemyType.Purple)))
-        {
-            Debug.Log("Gotoudaで攻撃をしたが失敗");
-            return TurnResult.Failure2;
-        }
-        //プレイヤーのカードがYokosimaで敵の魔石が赤、緑、紫、白の時
-        if (myCard.HasFlag(PlayerType.Yokosima) && (enemyType.HasFlag(EnemyType.Red) || enemyType.HasFlag(EnemyType.Green)
-         || enemyType.HasFlag(EnemyType.Purple) || enemyType.HasFlag(EnemyType.White)))
-        {
-            Debug.Log("Yokosimaで攻撃をした");
-            return TurnResult.Success2;
-        }
-        //プレイヤーのカードがYokosimaで敵の魔石が青、黄色、金の時
-        if (myCard.HasFlag(PlayerType.Yokosima) && (enemyType.HasFlag(EnemyType.Blue) || enemyType.HasFlag(EnemyType.Yellow)
-         || enemyType.HasFlag(EnemyType.Gold)))
-        {
-            Debug.Log("Yokosimaで攻撃をしたが失敗");
-            return TurnResult.Failure2;
-        }
-        //プレイヤーのカードがSabitaniで敵の魔石が赤、黄色、金、白の時
-        if (myCard.HasFlag(PlayerType.Sabitani) && (enemyType.HasFlag(EnemyType.Red) || enemyType.HasFlag(EnemyType.Yellow)
-         || enemyType.HasFlag(EnemyType.Gold) || enemyType.HasFlag(EnemyType.White)))
+        //プレイヤーのカードがSabitaniで敵の魔石が赤、青、黄色の時
+        if (myCard.HasFlag(PlayerType.Sabitani) && (enemyType.HasFlag(EnemyType.Red) || enemyType.HasFlag(EnemyType.Blue)
+         || enemyType.HasFlag(EnemyType.Yellow)))
         {
             Debug.Log("Sabitaniで攻撃をした");
             return TurnResult.Success2;
         }
-        //プレイヤーのカードがSabitaniで敵の魔石が青、緑、紫の時
-        if (myCard.HasFlag(PlayerType.Sabitani) && (enemyType.HasFlag(EnemyType.Blue) || enemyType.HasFlag(EnemyType.Green)
-         || enemyType.HasFlag(EnemyType.Purple)))
+        //プレイヤーのカードがSabitaniで敵の魔石が緑、白、紫、金の時
+        if (myCard.HasFlag(PlayerType.Sabitani) && (enemyType.HasFlag(EnemyType.Green) || enemyType.HasFlag(EnemyType.White)
+         || enemyType.HasFlag(EnemyType.Purple) || enemyType.HasFlag(EnemyType.Gold)))
         {
             Debug.Log("Sabitaniで攻撃をしたが失敗");
             return TurnResult.Failure2;
+        }
+
+        //1属性を対象
+        //プレイヤーのカードがHaisikiで敵の魔石が赤の時
+        if (myCard.HasFlag(PlayerType.Haisiki) && enemyType.HasFlag(EnemyType.Red))
+        {
+            Debug.Log("Haisikiで攻撃をした");
+            return TurnResult.Success3;
+        }
+        //プレイヤーのカードがHaisikiで敵の魔石が青、緑、黄色、紫、金、白の時
+        if (myCard.HasFlag(PlayerType.Haisiki) && (enemyType.HasFlag(EnemyType.Blue) || enemyType.HasFlag(EnemyType.Green)
+            || enemyType.HasFlag(EnemyType.Yellow)) || enemyType.HasFlag(EnemyType.Purple) || enemyType.HasFlag(EnemyType.Gold) || enemyType.HasFlag(EnemyType.White))
+        {
+            Debug.Log("Haisikiで攻撃をしたが失敗");
+            return TurnResult.Failure3;
+        }
+        //プレイヤーのカードがRyutanで敵の魔石が青の時
+        if (myCard.HasFlag(PlayerType.Ryutan) && enemyType.HasFlag(EnemyType.Blue))
+        {
+            Debug.Log("Ryutanで攻撃をした");
+            return TurnResult.Success3;
+        }
+        //プレイヤーのカードがRyutanで敵の魔石が赤、緑、黄色、紫、金、白の時
+        if (myCard.HasFlag(PlayerType.Ryutan) && (enemyType.HasFlag(EnemyType.Red) || enemyType.HasFlag(EnemyType.Green)
+            || enemyType.HasFlag(EnemyType.Yellow)) || enemyType.HasFlag(EnemyType.Purple) || enemyType.HasFlag(EnemyType.Gold) || enemyType.HasFlag(EnemyType.White))
+        {
+            Debug.Log("Ryutanで攻撃をしたが失敗");
+            return TurnResult.Failure3;
+        }
+        //プレイヤーのカードがSekidouで敵の魔石が緑の時
+        if (myCard.HasFlag(PlayerType.Sekidou) && enemyType.HasFlag(EnemyType.Green))
+        {
+            Debug.Log("Sekidouで攻撃をした");
+            return TurnResult.Success3;
+        }
+        //プレイヤーのカードがSekidouで敵の魔石が赤、青、黄色、紫、金、白の時
+        if (myCard.HasFlag(PlayerType.Sekidou) && (enemyType.HasFlag(EnemyType.Red) || enemyType.HasFlag(EnemyType.Blue)
+            || enemyType.HasFlag(EnemyType.Yellow)) || enemyType.HasFlag(EnemyType.Purple) || enemyType.HasFlag(EnemyType.Gold) || enemyType.HasFlag(EnemyType.White))
+        {
+            Debug.Log("Sekidouで攻撃をしたが失敗");
+            return TurnResult.Failure3;
+        }
+        //プレイヤーのカードがMitoriで敵の魔石が黄色の時
+        if (myCard.HasFlag(PlayerType.Mitori) && enemyType.HasFlag(EnemyType.Yellow))
+        {
+            Debug.Log("Sekidouで攻撃をした");
+            return TurnResult.Success3;
+        }
+        //プレイヤーのカードがMitoriで敵の魔石が赤、青、緑、紫、金、白の時
+        if (myCard.HasFlag(PlayerType.Mitori) && (enemyType.HasFlag(EnemyType.Red) || enemyType.HasFlag(EnemyType.Blue)
+            || enemyType.HasFlag(EnemyType.Green)) || enemyType.HasFlag(EnemyType.Purple) || enemyType.HasFlag(EnemyType.Gold) || enemyType.HasFlag(EnemyType.White))
+        {
+            Debug.Log("Mitoriで攻撃をしたが失敗");
+            return TurnResult.Failure3;
+        }
+        //プレイヤーのカードがSiratoriで敵の魔石が紫の時
+        if (myCard.HasFlag(PlayerType.Siratori) && enemyType.HasFlag(EnemyType.Purple))
+        {
+            Debug.Log("Siratoriで攻撃をした");
+            return TurnResult.Success3;
+        }
+        //プレイヤーのカードがSiratoriで敵の魔石が赤、青、緑、黄色、金、白の時
+        if (myCard.HasFlag(PlayerType.Siratori) && (enemyType.HasFlag(EnemyType.Red) || enemyType.HasFlag(EnemyType.Blue)
+            || enemyType.HasFlag(EnemyType.Green)) || enemyType.HasFlag(EnemyType.Yellow) || enemyType.HasFlag(EnemyType.Gold) || enemyType.HasFlag(EnemyType.White))
+        {
+            Debug.Log("Siratoriで攻撃をしたが失敗");
+            return TurnResult.Failure3;
+        }
+        //プレイヤーのカードがGotoudaで敵の魔石が金の時
+        if (myCard.HasFlag(PlayerType.Gotouda) && enemyType.HasFlag(EnemyType.Gold))
+        {
+            Debug.Log("Gotoudaで攻撃をした");
+            return TurnResult.Success3;
+        }
+        //プレイヤーのカードがGotoudaで敵の魔石が赤、青、緑、黄色、紫、白の時
+        if (myCard.HasFlag(PlayerType.Gotouda) && (enemyType.HasFlag(EnemyType.Red) || enemyType.HasFlag(EnemyType.Blue)
+            || enemyType.HasFlag(EnemyType.Green)) || enemyType.HasFlag(EnemyType.Yellow) || enemyType.HasFlag(EnemyType.Purple) || enemyType.HasFlag(EnemyType.White))
+        {
+            Debug.Log("Gotoudaで攻撃をしたが失敗");
+            return TurnResult.Failure3;
+        }
+        //プレイヤーのカードがYokosimaで敵の魔石が白の時
+        if (myCard.HasFlag(PlayerType.Yokosima) && enemyType.HasFlag(EnemyType.White))
+        {
+            Debug.Log("Yokosimaで攻撃をした");
+            return TurnResult.Success3;
+        }
+        //プレイヤーのカードがYokosimaで敵の魔石が赤、青、緑、黄色、紫、金の時
+        if (myCard.HasFlag(PlayerType.Yokosima) && (enemyType.HasFlag(EnemyType.Red) || enemyType.HasFlag(EnemyType.Blue)
+            || enemyType.HasFlag(EnemyType.Green)) || enemyType.HasFlag(EnemyType.Yellow) || enemyType.HasFlag(EnemyType.Purple) || enemyType.HasFlag(EnemyType.Gold))
+        {
+            Debug.Log("Yokosimaで攻撃をしたが失敗");
+            return TurnResult.Failure3;
         }
         return TurnResult.None;
     }
