@@ -15,7 +15,7 @@ MonoBehaviour:
   _cardName: Itadaki
   _cardNumber: 0
   _icon: {fileID: 21300000, guid: 233db719c6b8c6b4b85f874805c13008, type: 3}
-  _description: "\u9752\u3001\u7DD1\u3001\u91D1\u3001\u7D2B"
+  _description: "\u6575\u306E\u5C5E\u6027\u304C\u9752\u3001\u7DD1\u3001\u91D1\u3001\u7D2B\u306A\u30891\u30C0\u30E1\u30FC\u30B8\u4E0E\u3048\u308B\r\n\u9055\u3046\u306A\u30892\u30C0\u30E1\u30FC\u30B8\u53D7\u3051\u308B"
   _playerType: 4
   _enemyType: 0
   _playerCardType: 4
