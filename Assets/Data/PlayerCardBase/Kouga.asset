@@ -15,7 +15,7 @@ MonoBehaviour:
   _cardName: Kouga
   _cardNumber: 0
   _icon: {fileID: 21300000, guid: 783909fc75dd15243a562877d23dd258, type: 3}
-  _description: "\u6575\u306E\u5C5E\u6027\u304C\u9EC4\u8272\u3001\u7D2B\u3001\u767D\u3001\u8D64\u306A\u30891\u30C0\u30E1\u30FC\u30B8\u4E0E\u3048\u308B\r\n\u9055\u3046\u306A\u30892\u30C0\u30E1\u30FC\u30B8\u53D7\u3051\u308B"
+  _description: "\u6575\u306E\u5C5E\u6027\u304C\u9EC4\u8272\u3001\u7D2B\u3001\u767D\u3001\u8D64\u306A\u30891\u30C0\u30E1\u30FC\u30B8\n\u9055\u3046\u306A\u30892\u30C0\u30E1\u30FC\u30B8"
   _playerType: 32768
   _enemyType: 0
   _playerCardType: 32768

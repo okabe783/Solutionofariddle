@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class MouseManager : MonoBehaviour
 {
-    public float hoverScale = 1.2f; // マウスを合わせたときの拡大率
+    public float hoverScale = 0.6f; // マウスを合わせたときの拡大率
     private Vector3 originalScale; // オブジェクトの元のスケール
 
     private void Start()

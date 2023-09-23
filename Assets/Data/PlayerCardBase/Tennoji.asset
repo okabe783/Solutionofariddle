@@ -15,7 +15,7 @@ MonoBehaviour:
   _cardName: Tennoji
   _cardNumber: 0
   _icon: {fileID: 21300000, guid: eb7c20a0f2651a34c8f22b3680c1769f, type: 3}
-  _description: "\u6575\u306E\u5C5E\u6027\u304C\u7D2B\u3001\u91D1\u3001\u767D\u306A\u3089\uFF12\u30C0\u30E1\u30FC\u30B8\u4E0E\u3048\u308B\r\n\u9055\u3046\u306A\u3089\uFF12\u30C0\u30E1\u30FC\u30B8\u53D7\u3051\u308B"
+  _description: "\u6575\u306E\u5C5E\u6027\u304C\u7D2B\u3001\u91D1\u3001\u767D\u306A\u3089\uFF12\u30C0\u30E1\u30FC\u30B8\r\n\u9055\u3046\u306A\u3089\uFF12\u30C0\u30E1\u30FC\u30B8"
   _playerType: 512
   _enemyType: 0
   _playerCardType: 512

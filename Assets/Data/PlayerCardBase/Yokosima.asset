@@ -15,7 +15,7 @@ MonoBehaviour:
   _cardName: Yokosima
   _cardNumber: 0
   _icon: {fileID: 21300000, guid: 6fb60c8b5322f464584eee245c18ab6b, type: 3}
-  _description: "\u6575\u306E\u5C5E\u6027\u304C\u767D\u306A\u3089\uFF13\u30C0\u30E1\u30FC\u30B8\u4E0E\u3048\u308B\r\n\u9055\u3046\u306A\u3089\uFF13\u30C0\u30E1\u30FC\u30B8\u53D7\u3051\u308B"
+  _description: "\u6575\u306E\u5C5E\u6027\u304C\u767D\u306A\u3089\uFF13\u30C0\u30E1\u30FC\u30B8\r\n\u9055\u3046\u306A\u3089\uFF13\u30C0\u30E1\u30FC\u30B8"
   _playerType: 1073741824
   _enemyType: 0
   _playerCardType: 1073741824

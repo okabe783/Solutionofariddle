@@ -35,8 +35,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0}
   m_AnchorMax: {x: 0.5, y: 0}
-  m_AnchoredPosition: {x: 0, y: 33.574993}
-  m_SizeDelta: {x: 200, y: 67.15}
+  m_AnchoredPosition: {x: 0, y: 47.145004}
+  m_SizeDelta: {x: 200, y: 94.29}
   m_Pivot: {x: 0.5, y: 0.5000001}
 --- !u!222 &1012426761695514495
 CanvasRenderer:
@@ -319,7 +319,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 051fe36003d94ee409ed927ea73437f7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  hoverScale: 2
+  hoverScale: 1.6
 --- !u!61 &7887146386412891483
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -460,8 +460,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: 0, y: 168.57999}
-  m_SizeDelta: {x: 0, y: -202.85}
+  m_AnchoredPosition: {x: 0, y: 182.15}
+  m_SizeDelta: {x: 0, y: -175.71}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &3698585637611244167
 CanvasRenderer:
