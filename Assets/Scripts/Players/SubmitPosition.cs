@@ -1,7 +1,5 @@
 using UnityEngine;
 using DG.Tweening;
-using System.Collections;
-
 public class SubmitPosition : MonoBehaviour
 {
     //選択されたカードを管理する
