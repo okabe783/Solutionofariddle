@@ -150,7 +150,7 @@ RectTransform:
   m_GameObject: {fileID: 254966}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 2, y: 2, z: 2}
+  m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 2123457568}
@@ -158,8 +158,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -11, y: -189.5}
-  m_SizeDelta: {x: 352.93, y: 181.4}
+  m_AnchoredPosition: {x: 1.2491, y: -189.5}
+  m_SizeDelta: {x: 801.5, y: 181.4}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &254968
 MonoBehaviour:
@@ -183,10 +183,10 @@ MonoBehaviour:
       m_Calls: []
   m_FontData:
     m_Font: {fileID: 12800000, guid: eec2e8200d02dbe47a9575449e498ca0, type: 3}
-    m_FontSize: 14
+    m_FontSize: 30
     m_FontStyle: 0
     m_BestFit: 0
-    m_MinSize: 10
+    m_MinSize: 0
     m_MaxSize: 40
     m_Alignment: 4
     m_AlignByGeometry: 0
@@ -230,7 +230,7 @@ RectTransform:
   m_GameObject: {fileID: 121033703}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 2, y: 2, z: 2}
+  m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 2123457568}
@@ -238,8 +238,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -18, y: 50.1}
-  m_SizeDelta: {x: 246.5, y: 181.4}
+  m_AnchoredPosition: {x: 1.2486, y: 26.285}
+  m_SizeDelta: {x: 801.5009, y: 316.63}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &121033705
 MonoBehaviour:
@@ -263,10 +263,10 @@ MonoBehaviour:
       m_Calls: []
   m_FontData:
     m_Font: {fileID: 12800000, guid: eec2e8200d02dbe47a9575449e498ca0, type: 3}
-    m_FontSize: 14
+    m_FontSize: 30
     m_FontStyle: 0
     m_BestFit: 0
-    m_MinSize: 10
+    m_MinSize: 0
     m_MaxSize: 40
     m_Alignment: 4
     m_AlignByGeometry: 0
@@ -274,7 +274,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: "\u3042\u3001\u91CE\u751F\u306E\u30E2\u30F3\u30B9\u30BF\u30FC\u304C\u73FE\u308C\u305F\uFF01\n\u541B\u306B\u306F3\u679A\u306E\u30AB\u30FC\u30C9\u304C\u4E0E\u3048\u3089\u308C\u308B\n\u6575\u306E\u4F53\u5185\u306B\u306F5\u30BF\u30FC\u30F3\u3054\u3068\u306B\u8272\u304C\u5909\u308F\u308B\u9B54\u77F3\u304C\u57CB\u3081\u8FBC\u307E\u308C\u3066\u3044\u308B\n\u30AB\u30FC\u30C9\u306F\u305D\u308C\u305E\u308C\u9B54\u77F3\u306E\u8272\u306B\u53CD\u5FDC\u3057\u30C0\u30E1\u30FC\u30B8\u3092\u4E0E\u3048\u308B\u3053\u3068\u304C\u3067\u304D\u308B\u304C\n\u9006\u306B\u5BFE\u5FDC\u3057\u3066\u3044\u306A\u3044\u9B54\u77F3\u306B\u653B\u6483\u3057\u3066\u3057\u307E\u3046\u3068\u541B\u306F\u30C0\u30E1\u30FC\u30B8\u3092\u3046\u3051\u3066\u3057\u307E\u3046\n\u30AB\u30FC\u30C9\u3092\u99C6\u4F7F\u3057\u3066\u541B\u306E\u4F53\u529B\u304C\u306A\u304F\u306A\u308B\u524D\u306B\u6575\u306E\u9B54\u77F3\u3092\u89E3\u304D\u660E\u304B\u3057\u6483\u7834\u305B\u3088"
+  m_Text: "\u3042\u3001\u91CE\u751F\u306E\u30E2\u30F3\u30B9\u30BF\u30FC\u304C\u73FE\u308C\u305F\uFF01\n\u541B\u306B\u306F3\u679A\u306E\u30AB\u30FC\u30C9\u304C\u4E0E\u3048\u3089\u308C\u308B\n\u6575\u306E\u4F53\u5185\u306B\u306F5\u30BF\u30FC\u30F3\u3054\u3068\u306B\u8272\u304C\u5909\u308F\u308B7\u8272\u9B54\u77F3\u304C\u57CB\u3081\u8FBC\u307E\u308C\u3066\u3044\u308B\n\u30AB\u30FC\u30C9\u306F\u305D\u308C\u305E\u308C\u9B54\u77F3\u306E\u8272\u306B\u53CD\u5FDC\u3057\u30C0\u30E1\u30FC\u30B8\u3092\u4E0E\u3048\u308B\u3053\u3068\u304C\u3067\u304D\u308B\u304C\n\u9006\u306B\u5BFE\u5FDC\u3057\u3066\u3044\u306A\u3044\u9B54\u77F3\u306B\u653B\u6483\u3057\u3066\u3057\u307E\u3046\u3068\u541B\u306F\u30C0\u30E1\u30FC\u30B8\u3092\u3046\u3051\u3066\u3057\u307E\u3046\n\u30AB\u30FC\u30C9\u3092\u99C6\u4F7F\u3057\u3066\u541B\u306E\u4F53\u529B\u304C\u306A\u304F\u306A\u308B\u524D\u306B\u6575\u306E\u9B54\u77F3\u3092\u89E3\u304D\u660E\u304B\u3057\u6483\u7834\u305B\u3088"
 --- !u!222 &121033706
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -466,6 +466,10 @@ PrefabInstance:
       propertyPath: m_FontData.m_Font
       value: 
       objectReference: {fileID: 12800000, guid: eec2e8200d02dbe47a9575449e498ca0, type: 3}
+    - target: {fileID: 8799968724117853538, guid: d140222c6bdf7ae48b841363036fc8ed, type: 3}
+      propertyPath: m_FontData.m_FontStyle
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: d140222c6bdf7ae48b841363036fc8ed, type: 3}
 --- !u!224 &915015488 stripped
@@ -649,7 +653,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0cd44c1031e13a943bb63640046fad76, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_UiScaleMode: 0
+  m_UiScaleMode: 1
   m_ReferencePixelsPerUnit: 100
   m_ScaleFactor: 1
   m_ReferenceResolution: {x: 800, y: 600}
