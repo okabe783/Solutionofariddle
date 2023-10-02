@@ -2,6 +2,7 @@ using UnityEngine;
 using static CardGenerator;
 using static RuleBook;
 using UnityEngine.SceneManagement;
+using DG.Tweening;
 
 public class GameManager : MonoBehaviour
 {
@@ -17,6 +18,8 @@ public class GameManager : MonoBehaviour
     [SerializeField] PlayerHandMovement _playerHandMovement;
     [SerializeField] SubmitPosition _submitPosition;
     [SerializeField] GameObject _effect;
+    [SerializeField] EnemyAnimController _enemyAnimController;
+    [SerializeField] ResultData _resultData;
     RuleBook _ruleBook;
     private int _enemyCardCount = 0;
     private void Awake()
@@ -86,12 +89,12 @@ public class GameManager : MonoBehaviour
         }
         else if (result == TurnResult.Failure1)
         {
-            _player.Life-= 2;
+            _player.Life -= 2;
             Invoke("PlayerEffect", 0.5f);
         }
         else if (result == TurnResult.Failure2)
         {
-            _player.Life-= 2;
+            _player.Life -= 2;
             Invoke("PlayerEffect", 0.5f);
         }
         else if (result == TurnResult.Failure3)
@@ -102,16 +105,17 @@ public class GameManager : MonoBehaviour
         //ライフが0になったプレイヤーがいれば勝敗パネルを表示　最後に敵の属性を表示
         _gameUI.ShowLife(_player.Life, _enemy.Life);
         if (result == TurnResult.GameWin || _enemy.Life <= 0)
-            ShowGameResult("WIN");
+        {
+            _resultData.SetResult(MatchData.WIN);
+            OnTitleButton();
+        }
         else if (result == TurnResult.GameLose || _player.Life <= 0)
-            ShowGameResult("LOSE");
+        {
+            _resultData.SetResult(MatchData.LOSE);
+            OnTitleButton();
+        }
         else
             Invoke("SetUpNextTurn", 0.8f);
-    }
-
-    void ShowGameResult(string resultText)
-    {
-        _gameUI.SetPanel(resultText);
     }
     //ターンが終了したとき、プレイヤーのカードをリセットし新しいカードを生成して手札に追加する
     //提出ボタンをアクティブにする
@@ -131,7 +135,7 @@ public class GameManager : MonoBehaviour
         for (int i = 0; i < 3; i++)
         {
             Card card = _generator.Spawn(SpawnType.Player);  //カードを生成して渡される
-                _player.SetCardToHand(card);  //プレイヤーの手札に追加
+            _player.SetCardToHand(card);  //プレイヤーの手札に追加
         }
         _player.Hand.ResetPosition();
     }
@@ -141,6 +145,7 @@ public class GameManager : MonoBehaviour
         Card card = _generator.Spawn(SpawnType.Enemy);
         _enemy.SetCardToHand(card);
         _enemy.Hand.ResetPosition();
+        _resultData.SetEnemyAttribute(card.Base.CardName);
     }
     public void EnemyRedistributeCards()
     {
@@ -150,13 +155,13 @@ public class GameManager : MonoBehaviour
             _enemy.TurnChange();
             _enemyHand.ResetCard();
             EnemySendCard(_enemy);
-            Debug.Log("殺す");
+            _enemyAnimController.ChangeAttribute();
         }
     }
     void PlayerEffect()
     {
-        Transform p= GameObject.FindGameObjectWithTag("Player").GetComponent <Transform>();
-        Instantiate(_effect,p.position,Quaternion.identity);
+        Transform p = GameObject.FindGameObjectWithTag("Player").GetComponent<Transform>();
+        Instantiate(_effect, p.position, Quaternion.identity);
     }
     void EnemyEffect()
     {
@@ -170,6 +175,11 @@ public class GameManager : MonoBehaviour
     }
     public void OnTitleButton()
     {
-        SceneManager.LoadScene("Title");
+        SceneManager.LoadScene("GameResult");
+    }
+    public enum MatchData
+    {
+        WIN,
+        LOSE,
     }
 }

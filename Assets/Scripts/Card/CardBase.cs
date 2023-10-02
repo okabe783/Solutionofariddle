@@ -17,7 +17,6 @@ public class CardBase : ScriptableObject
     public PlayerType PlayerType { get => _playerType; }
 
     public EnemyType EnemyType { get => _enemyType; }
-    
 }
 
 //ビットフラグで相性を管理する

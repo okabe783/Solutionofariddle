@@ -673,6 +673,7 @@ GameObject:
   m_Component:
   - component: {fileID: 734763872}
   - component: {fileID: 734763873}
+  - component: {fileID: 734763874}
   m_Layer: 0
   m_Name: Enemy
   m_TagString: Untagged
@@ -710,6 +711,19 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _hand: {fileID: 461686207}
   _submitposition: {fileID: 410425782}
+--- !u!114 &734763874
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 734763870}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ba4e0a5d921183b4c831b1f046d68784, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _particle: {fileID: 1000011128802252, guid: 96730f8640590934eacb6f860058e7f9, type: 3}
 --- !u!1 &859090586
 GameObject:
   m_ObjectHideFlags: 0
@@ -1455,6 +1469,8 @@ MonoBehaviour:
   _playerHandMovement: {fileID: 1721294953}
   _submitPosition: {fileID: 2115480741}
   _effect: {fileID: 1000011128802252, guid: 96730f8640590934eacb6f860058e7f9, type: 3}
+  _enemyAnimController: {fileID: 734763874}
+  _resultData: {fileID: 11400000, guid: 6d29ad20d33ff954dbfbc7c57c8ca6a9, type: 2}
 --- !u!114 &1435432204
 MonoBehaviour:
   m_ObjectHideFlags: 0
