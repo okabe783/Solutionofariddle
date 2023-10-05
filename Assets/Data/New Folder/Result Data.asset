@@ -10,9 +10,7 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 9c654431521038d499327316fc5abc87, type: 3}
-  m_Name: New Result Data
+  m_Name: Result Data
   m_EditorClassIdentifier: 
   _cardList:
-  - Red
-  - Blue
-  - Blue
+  - Yellow
