@@ -8,11 +8,13 @@ public class GameUI : MonoBehaviour
     [SerializeField] Text _enemyLifeText;
     [SerializeField] GameObject _resultPanel;
     [SerializeField] Text _resultText;
+    [SerializeField] Text _changeAttributeText;
     //èD‚ğ‰Šú‰»‚·‚é
     public void Init()
     {
         _resultPanel.gameObject.SetActive(false);
         _resultText.gameObject.SetActive(false);
+        _changeAttributeText.gameObject.SetActive(false);
     }
     //player‚Æenemy‚Ìƒ‰ƒCƒt‚ğ•\¦
     public void ShowLife(int _playerLife, int _enemyLife)
@@ -40,5 +42,9 @@ public class GameUI : MonoBehaviour
     public void SetUpNextTurn()
     {
         _turnResultText.gameObject.SetActive(false);
+    }
+    public void ChangeAttribute()
+    {
+        _changeAttributeText.gameObject.SetActive(true);
     }
 }

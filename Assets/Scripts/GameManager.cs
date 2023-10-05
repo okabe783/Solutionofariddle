@@ -2,7 +2,7 @@ using UnityEngine;
 using static CardGenerator;
 using static RuleBook;
 using UnityEngine.SceneManagement;
-using DG.Tweening;
+using UnityEngine.UI;
 
 public class GameManager : MonoBehaviour
 {
@@ -150,8 +150,9 @@ public class GameManager : MonoBehaviour
     public void EnemyRedistributeCards()
     {
         _enemyCardCount++;
-        if (_enemyCardCount == 5)
+        if (_enemyCardCount == 6)
         {
+            _gameUI.ChangeAttribute();
             _enemy.TurnChange();
             _enemyHand.ResetCard();
             EnemySendCard(_enemy);
