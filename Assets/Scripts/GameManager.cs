@@ -1,7 +1,6 @@
 using UnityEngine;
 using static CardGenerator;
 using static RuleBook;
-using UnityEngine.SceneManagement;
 
 public class GameManager : MonoBehaviour
 {
@@ -74,44 +73,36 @@ public class GameManager : MonoBehaviour
         if (result == TurnResult.Success1)
         {
             _enemy.Life--;
-            Invoke(nameof(EnemyEffect), 0.5f);
         }
         else if (result == TurnResult.Success2)
         {
             _enemy.Life -= 2;
-            Invoke(nameof(EnemyEffect), 0.5f);
         }
         else if (result == TurnResult.Success3)
         {
             _enemy.Life -= 3;
-            Invoke(nameof(EnemyEffect), 0.5f);
         }
         else if (result == TurnResult.Failure1)
         {
             _player.Life -= 2;
-            Invoke(nameof(PlayerEffect), 0.5f);
         }
         else if (result == TurnResult.Failure2)
         {
             _player.Life -= 2;
-            Invoke(nameof(PlayerEffect), 0.5f);
         }
         else if (result == TurnResult.Failure3)
         {
             _player.Life -= 3;
-            Invoke(nameof(PlayerEffect), 0.5f);
         }
         //ライフが0になったプレイヤーがいれば勝敗パネルを表示　最後に敵の属性を表示
         _gameUI.ShowLife(_player.Life, _enemy.Life);
         if (result == TurnResult.GameWin || _enemy.Life <= 0)
         {
             _resultData.SetResult(MatchData.WIN);
-            OnTitleButton();
         }
         else if (result == TurnResult.GameLose || _player.Life <= 0)
         {
             _resultData.SetResult(MatchData.LOSE);
-            OnTitleButton();
         }
         else
             Invoke(nameof(SetUpNextTurn), 0.8f);
@@ -157,29 +148,5 @@ public class GameManager : MonoBehaviour
             EnemySendCard(_enemy);
             _enemyAnimController.ChangeAttribute();
         }
-    }
-    void PlayerEffect()
-    {
-        Transform p = GameObject.FindGameObjectWithTag("Player").GetComponent<Transform>();
-        Instantiate(_effect, p.position, Quaternion.identity);
-    }
-    void EnemyEffect()
-    {
-        Transform trn = GameObject.FindGameObjectWithTag("Enemy").GetComponent<Transform>();
-        Instantiate(_effect, trn.position, Quaternion.identity);
-    }
-    public void OnRetryButton()
-    {
-        string currntSnene = SceneManager.GetActiveScene().name;
-        SceneManager.LoadScene(currntSnene);
-    }
-    public void OnTitleButton()
-    {
-        SceneManager.LoadScene("GameResult");
-    }
-    public enum MatchData
-    {
-        WIN,
-        LOSE,
     }
 }

@@ -5,14 +5,14 @@ using UnityEngine.UI;
 //Title画面を管理
 public class TitlePage : MonoBehaviour
 {
-    [SerializeField,Header("スタートボタン")] private Button _startButton;
-    [SerializeField, Header("遊び方ボタン")] private Button _descriptionButton;
+    [SerializeField,Header("スタートボタン")] private UIButton _startButton;
+    [SerializeField, Header("遊び方ボタン")] private UIButton _descriptionButton;
     [SerializeField, Header("Audio")] private AudioSource _audioSource;
 
     public void Start()
     {
-        _startButton.onClick.AddListener(OnChangeStartScene);
-        _descriptionButton.onClick.AddListener(OnChangeDescriptionScene);
+        _startButton.OnClickAddListener(OnChangeStartScene);
+        _descriptionButton.OnClickAddListener(OnChangeDescriptionScene);
         _audioSource.Play();
     }
     

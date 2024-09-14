@@ -6,7 +6,7 @@ EditorBuildSettings:
   serializedVersion: 2
   m_Scenes:
   - enabled: 1
-    path: Assets/Scenes/Title.unity
+    path: Assets/FixForder/FixScene/Title.unity
     guid: b8032f79e54bb4a489f56a8ef82cedae
   - enabled: 1
     path: Assets/Scenes/Game.unity

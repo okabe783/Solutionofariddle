@@ -15,7 +15,7 @@ public class Result : MonoBehaviour
     }
     private void ShowResult()
     {
-        if (_resultData.Result == GameManager.MatchData.WIN)
+        if (_resultData.Result == MatchData.WIN)
         {
             _resultText.text = "WIN";
         }
