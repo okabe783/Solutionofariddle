@@ -2,7 +2,7 @@ using System;
 using UnityEngine;
 public class CardBase : ScriptableObject
 {
-    //カードの基礎データ
+    //繧ｫ繝ｼ繝峨�ｮ蝓ｺ遉弱ョ繝ｼ繧ｿ
     [SerializeField] string _cardName;
     [SerializeField] int _cardNumber;
     [SerializeField] Sprite _icon;
@@ -19,7 +19,7 @@ public class CardBase : ScriptableObject
     public EnemyType EnemyType { get => _enemyType; }
 }
 
-//ビットフラグで相性を管理する
+//繝薙ャ繝医ヵ繝ｩ繧ｰ縺ｧ逶ｸ諤ｧ繧堤ｮ｡逅�縺吶ｋ
 [Flags]
 public enum PlayerType
 {

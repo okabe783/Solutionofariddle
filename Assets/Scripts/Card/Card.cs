@@ -6,15 +6,15 @@ public class Card : MonoBehaviour
 {
     //カードUI
     //ゲーム内の処理
-    [SerializeField] Image icon;
-    [SerializeField] Text descriptionText;
+    [SerializeField] private Image icon;
+    [SerializeField] private Text descriptionText;
     public CardBase Base { get; private set; }
 
     //UnityActionは関数を登録する
     //カードがクリックされたときに特定のアクションを実行する
     public UnityAction<Card> OnClickCard;
+    
     //カードの外観を設定
-
     public void CardSet(CardBase cardBase)
     {
         Base = cardBase;

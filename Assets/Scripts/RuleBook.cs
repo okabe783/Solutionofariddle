@@ -1,408 +1,408 @@
 using UnityEngine;
 public class RuleBook : MonoBehaviour
 {
-    //Œ‹‰Ê‚Ì•\¦
+    //çµæœã®è¡¨ç¤º
     public TurnResult Result(PlayerType player, EnemyType enemy)
     {
         PlayerType myCard = player;
         EnemyType enemyType = enemy;
-        //4‘®«‚ğ‘ÎÛ
-        //ƒvƒŒƒCƒ„[‚ÌƒJ[ƒh‚ªYanagi‚Å“G‚Ì–‚Î‚ªÂA—ÎA‹àA‡‚Ì
+        //4å±æ€§ã‚’å¯¾è±¡
+        //ãƒ—ãƒ¬ã‚¤ãƒ¤ãƒ¼ã®ã‚«ãƒ¼ãƒ‰ãŒYanagiã§æ•µã®é­”çŸ³ãŒé’ã€ç·‘ã€é‡‘ã€ç´«ã®æ™‚
         if (myCard.HasFlag(PlayerType.Yanagi) && (enemyType.HasFlag(EnemyType.Blue) || enemyType.HasFlag(EnemyType.Green)
            || enemyType.HasFlag(EnemyType.Gold) || enemyType.HasFlag(EnemyType.Purple)))
         {
-            Debug.Log("Yanagi‚ÅUŒ‚‚ğ‚µ‚½");
+            Debug.Log("Yanagiã§æ”»æ’ƒã‚’ã—ãŸ");
             return TurnResult.Success1;
         }
-        //ƒvƒŒƒCƒ„[‚ÌƒJ[ƒh‚ªYanagi‚Å“G‚Ì–‚Î‚ªÔA‰©FA”’‚Ì
+        //ãƒ—ãƒ¬ã‚¤ãƒ¤ãƒ¼ã®ã‚«ãƒ¼ãƒ‰ãŒYanagiã§æ•µã®é­”çŸ³ãŒèµ¤ã€é»„è‰²ã€ç™½ã®æ™‚
         if (myCard.HasFlag(PlayerType.Yanagi) && (enemyType.HasFlag(EnemyType.Red) || enemyType.HasFlag(EnemyType.Yellow) || enemyType.HasFlag(EnemyType.White)))
         {
-            Debug.Log("Yanagi‚ÅUŒ‚‚ğ‚µ‚½‚ª¸”s");
+            Debug.Log("Yanagiã§æ”»æ’ƒã‚’ã—ãŸãŒå¤±æ•—");
             return TurnResult.Failure1;
         }
-        //ƒvƒŒƒCƒ„[‚ÌƒJ[ƒh‚ªKouga‚Å“G‚Ì–‚Î‚ª‰©FA‡A”’AÔ‚Ì@
+        //ãƒ—ãƒ¬ã‚¤ãƒ¤ãƒ¼ã®ã‚«ãƒ¼ãƒ‰ãŒKougaã§æ•µã®é­”çŸ³ãŒé»„è‰²ã€ç´«ã€ç™½ã€èµ¤ã®æ™‚ã€€
         if (myCard.HasFlag(PlayerType.Kouga) && (enemyType.HasFlag(EnemyType.Yellow) || enemyType.HasFlag(EnemyType.Purple) || enemyType.HasFlag(EnemyType.White) || enemyType.HasFlag(EnemyType.Red)))
         {
-            Debug.Log("Kouga‚ÅUŒ‚‚ğ‚µ‚½");
+            Debug.Log("Kougaã§æ”»æ’ƒã‚’ã—ãŸ");
             return TurnResult.Success1;
         }
-        //ƒvƒŒƒCƒ„[‚ÌƒJ[ƒh‚ªKouga‚Å“G‚Ì–‚Î‚ªÂA—ÎA‹à‚Ì
+        //ãƒ—ãƒ¬ã‚¤ãƒ¤ãƒ¼ã®ã‚«ãƒ¼ãƒ‰ãŒKougaã§æ•µã®é­”çŸ³ãŒé’ã€ç·‘ã€é‡‘ã®æ™‚
         if (myCard.HasFlag(PlayerType.Kouga) && (enemyType.HasFlag(EnemyType.Blue) || enemyType.HasFlag(EnemyType.Green) || enemyType.HasFlag(EnemyType.Gold)))
         {
-            Debug.Log("Kouga‚ÅUŒ‚‚ğ‚µ‚½‚ª¸”s");
+            Debug.Log("Kougaã§æ”»æ’ƒã‚’ã—ãŸãŒå¤±æ•—");
             return TurnResult.Failure1;
         }
-        //ƒvƒŒƒCƒ„[‚ÌƒJ[ƒh‚ªGenga‚Å“G‚Ì–‚Î‚ª‹àAÔA‡A—Î‚Ì@
+        //ãƒ—ãƒ¬ã‚¤ãƒ¤ãƒ¼ã®ã‚«ãƒ¼ãƒ‰ãŒGengaã§æ•µã®é­”çŸ³ãŒé‡‘ã€èµ¤ã€ç´«ã€ç·‘ã®æ™‚ã€€
         if (myCard.HasFlag(PlayerType.Genma) && (enemyType.HasFlag(EnemyType.Gold) || enemyType.HasFlag(EnemyType.Red) || enemyType.HasFlag(EnemyType.Purple) || enemyType.HasFlag(EnemyType.Green)))
         {
-            Debug.Log("Genma‚ÅUŒ‚‚ğ‚µ‚½");
+            Debug.Log("Genmaã§æ”»æ’ƒã‚’ã—ãŸ");
             return TurnResult.Success1;
         }
-        //ƒvƒŒƒCƒ„[‚ÌƒJ[ƒh‚ªGenga‚Å“G‚Ì–‚Î‚ªÂA‰©FA”’‚Ì
+        //ãƒ—ãƒ¬ã‚¤ãƒ¤ãƒ¼ã®ã‚«ãƒ¼ãƒ‰ãŒGengaã§æ•µã®é­”çŸ³ãŒé’ã€é»„è‰²ã€ç™½ã®æ™‚
         if (myCard.HasFlag(PlayerType.Genma) && (enemyType.HasFlag(EnemyType.Blue) || enemyType.HasFlag(EnemyType.Yellow) || enemyType.HasFlag(EnemyType.White)))
         {
-            Debug.Log("Genma‚ÅUŒ‚‚ğ‚µ‚½‚ª¸”s");
+            Debug.Log("Genmaã§æ”»æ’ƒã‚’ã—ãŸãŒå¤±æ•—");
             return TurnResult.Failure1;
         }
-        //ƒvƒŒƒCƒ„[‚ÌƒJ[ƒh‚ªKizaki‚Å“G‚Ì–‚Î‚ª‡A‹àA”’AÂ‚Ì@
+        //ãƒ—ãƒ¬ã‚¤ãƒ¤ãƒ¼ã®ã‚«ãƒ¼ãƒ‰ãŒKizakiã§æ•µã®é­”çŸ³ãŒç´«ã€é‡‘ã€ç™½ã€é’ã®æ™‚ã€€
         if (myCard.HasFlag(PlayerType.Kizaki) && (enemyType.HasFlag(EnemyType.Purple) || enemyType.HasFlag(EnemyType.Gold) || enemyType.HasFlag(EnemyType.White) || enemyType.HasFlag(EnemyType.Blue)))
         {
-            Debug.Log("Kizaki‚ÅUŒ‚‚ğ‚µ‚½");
+            Debug.Log("Kizakiã§æ”»æ’ƒã‚’ã—ãŸ");
             return TurnResult.Success1;
         }
-        //ƒvƒŒƒCƒ„[‚ÌƒJ[ƒh‚ªKizaki‚Å“G‚Ì–‚Î‚ªÔA‰©FA—Î‚Ì
+        //ãƒ—ãƒ¬ã‚¤ãƒ¤ãƒ¼ã®ã‚«ãƒ¼ãƒ‰ãŒKizakiã§æ•µã®é­”çŸ³ãŒèµ¤ã€é»„è‰²ã€ç·‘ã®æ™‚
         if (myCard.HasFlag(PlayerType.Kizaki) && enemyType.HasFlag(EnemyType.Red) || enemyType.HasFlag(EnemyType.Yellow) || enemyType.HasFlag(EnemyType.Green))
         {
-            Debug.Log("Kizaki‚ÅUŒ‚‚ğ‚µ‚½‚ª¸”s");
+            Debug.Log("Kizakiã§æ”»æ’ƒã‚’ã—ãŸãŒå¤±æ•—");
             return TurnResult.Failure1;
         }
-        //ƒvƒŒƒCƒ„[‚ÌƒJ[ƒh‚ªHasiwaka‚Å“G‚Ì–‚Î‚ªÔA—ÎA‰©FA‹à‚Ì
+        //ãƒ—ãƒ¬ã‚¤ãƒ¤ãƒ¼ã®ã‚«ãƒ¼ãƒ‰ãŒHasiwakaã§æ•µã®é­”çŸ³ãŒèµ¤ã€ç·‘ã€é»„è‰²ã€é‡‘ã®æ™‚
         if (myCard.HasFlag(PlayerType.Hasiwaka) && (enemyType.HasFlag(EnemyType.Red) || enemyType.HasFlag(EnemyType.Green) || enemyType.HasFlag(EnemyType.Yellow) || enemyType.HasFlag(EnemyType.Gold)))
         {
-            Debug.Log("Hasiwaka‚ÅUŒ‚‚ğ‚µ‚½");
+            Debug.Log("Hasiwakaã§æ”»æ’ƒã‚’ã—ãŸ");
             return TurnResult.Success1;
         }
-        //ƒvƒŒƒCƒ„[‚ÌƒJ[ƒh‚ªHasiwaka‚Å“G‚Ì–‚Î‚ªÂA‡A”’‚Ì
+        //ãƒ—ãƒ¬ã‚¤ãƒ¤ãƒ¼ã®ã‚«ãƒ¼ãƒ‰ãŒHasiwakaã§æ•µã®é­”çŸ³ãŒé’ã€ç´«ã€ç™½ã®æ™‚
         if (myCard.HasFlag(PlayerType.Hasiwaka) && enemyType.HasFlag(EnemyType.Blue) || enemyType.HasFlag(EnemyType.Purple) || enemyType.HasFlag(EnemyType.White))
         {
-            Debug.Log("Hasiwaka‚ÅUŒ‚‚ğ‚µ‚½‚ª¸”s");
+            Debug.Log("Hasiwakaã§æ”»æ’ƒã‚’ã—ãŸãŒå¤±æ•—");
             return TurnResult.Failure1;
         }
-        //ƒvƒŒƒCƒ„[‚ÌƒJ[ƒh‚ªItadaki‚Å“G‚Ì–‚Î‚ªÂA—ÎA‹àA‡‚Ì
+        //ãƒ—ãƒ¬ã‚¤ãƒ¤ãƒ¼ã®ã‚«ãƒ¼ãƒ‰ãŒItadakiã§æ•µã®é­”çŸ³ãŒé’ã€ç·‘ã€é‡‘ã€ç´«ã®æ™‚
         if (myCard.HasFlag(PlayerType.Itadaki) && (enemyType.HasFlag(EnemyType.Blue) || enemyType.HasFlag(EnemyType.Green) || enemyType.HasFlag(EnemyType.Gold) || enemyType.HasFlag(EnemyType.Purple)))
         {
-            Debug.Log("Itadaki‚ÅUŒ‚‚ğ‚µ‚½");
+            Debug.Log("Itadakiã§æ”»æ’ƒã‚’ã—ãŸ");
             return TurnResult.Success1;
         }
-        //ƒvƒŒƒCƒ„[‚ÌƒJ[ƒh‚ªItadaki‚Å“G‚Ì–‚Î‚ªÔA‰©FA”’‚Ì
+        //ãƒ—ãƒ¬ã‚¤ãƒ¤ãƒ¼ã®ã‚«ãƒ¼ãƒ‰ãŒItadakiã§æ•µã®é­”çŸ³ãŒèµ¤ã€é»„è‰²ã€ç™½ã®æ™‚
         if (myCard.HasFlag(PlayerType.Itadaki) && enemyType.HasFlag(EnemyType.Red) || enemyType.HasFlag(EnemyType.Yellow) || enemyType.HasFlag(EnemyType.White))
         {
-            Debug.Log("Itadaki‚ÅUŒ‚‚ğ‚µ‚½‚ª¸”s");
+            Debug.Log("Itadakiã§æ”»æ’ƒã‚’ã—ãŸãŒå¤±æ•—");
             return TurnResult.Failure1;
         }
-        //ƒvƒŒƒCƒ„[‚ÌƒJ[ƒh‚ªNanase‚Å“G‚Ì–‚Î‚ª”’A‡A‰©FAÔ‚Ì
+        //ãƒ—ãƒ¬ã‚¤ãƒ¤ãƒ¼ã®ã‚«ãƒ¼ãƒ‰ãŒNanaseã§æ•µã®é­”çŸ³ãŒç™½ã€ç´«ã€é»„è‰²ã€èµ¤ã®æ™‚
         if (myCard.HasFlag(PlayerType.Nanase) && (enemyType.HasFlag(EnemyType.White) || enemyType.HasFlag(EnemyType.Purple) || enemyType.HasFlag(EnemyType.Yellow) || enemyType.HasFlag(EnemyType.Red)))
         {
-            Debug.Log("Nanase‚ÅUŒ‚‚ğ‚µ‚½");
+            Debug.Log("Nanaseã§æ”»æ’ƒã‚’ã—ãŸ");
             return TurnResult.Success1;
         }
-        //ƒvƒŒƒCƒ„[‚ÌƒJ[ƒh‚ªNanase‚Å“G‚Ì–‚Î‚ªÂA—ÎA‹à‚Ì
+        //ãƒ—ãƒ¬ã‚¤ãƒ¤ãƒ¼ã®ã‚«ãƒ¼ãƒ‰ãŒNanaseã§æ•µã®é­”çŸ³ãŒé’ã€ç·‘ã€é‡‘ã®æ™‚
         if (myCard.HasFlag(PlayerType.Nanase) && enemyType.HasFlag(EnemyType.Blue) || enemyType.HasFlag(EnemyType.Green) || enemyType.HasFlag(EnemyType.Gold))
         {
-            Debug.Log("Nanase‚ÅUŒ‚‚ğ‚µ‚½‚ª¸”s");
+            Debug.Log("Nanaseã§æ”»æ’ƒã‚’ã—ãŸãŒå¤±æ•—");
             return TurnResult.Failure1;
         }
-        //ƒvƒŒƒCƒ„[‚ÌƒJ[ƒh‚ªHyakuti‚Å“G‚Ì–‚Î‚ª—ÎA‹àAÔAÂ‚Ì
+        //ãƒ—ãƒ¬ã‚¤ãƒ¤ãƒ¼ã®ã‚«ãƒ¼ãƒ‰ãŒHyakutiã§æ•µã®é­”çŸ³ãŒç·‘ã€é‡‘ã€èµ¤ã€é’ã®æ™‚
         if (myCard.HasFlag(PlayerType.Hyakuti) && (enemyType.HasFlag(EnemyType.Green) || enemyType.HasFlag(EnemyType.Gold) || enemyType.HasFlag(EnemyType.Red) || enemyType.HasFlag(EnemyType.Blue)))
         {
-            Debug.Log("Hyakuti‚ÅUŒ‚‚ğ‚µ‚½");
+            Debug.Log("Hyakutiã§æ”»æ’ƒã‚’ã—ãŸ");
             return TurnResult.Success1;
         }
-        //ƒvƒŒƒCƒ„[‚ÌƒJ[ƒh‚ªHyakuti‚Å“G‚Ì–‚Î‚ª‡A‰©FA”’‚Ì
+        //ãƒ—ãƒ¬ã‚¤ãƒ¤ãƒ¼ã®ã‚«ãƒ¼ãƒ‰ãŒHyakutiã§æ•µã®é­”çŸ³ãŒç´«ã€é»„è‰²ã€ç™½ã®æ™‚
         if (myCard.HasFlag(PlayerType.Hyakuti) && (enemyType.HasFlag(EnemyType.Purple) || enemyType.HasFlag(EnemyType.Yellow) || enemyType.HasFlag(EnemyType.White)))
         {
-            Debug.Log("Hyakuti‚ÅUŒ‚‚ğ‚µ‚½‚ª¸”s");
+            Debug.Log("Hyakutiã§æ”»æ’ƒã‚’ã—ãŸãŒå¤±æ•—");
             return TurnResult.Failure1;
         }
-        //ƒvƒŒƒCƒ„[‚ÌƒJ[ƒh‚ªYaiba‚Å“G‚Ì–‚Î‚ªÔA‰©FA‡A”’‚Ì
+        //ãƒ—ãƒ¬ã‚¤ãƒ¤ãƒ¼ã®ã‚«ãƒ¼ãƒ‰ãŒYaibaã§æ•µã®é­”çŸ³ãŒèµ¤ã€é»„è‰²ã€ç´«ã€ç™½ã®æ™‚
         if (myCard.HasFlag(PlayerType.Yaiba) && (enemyType.HasFlag(EnemyType.Red) || enemyType.HasFlag(EnemyType.Yellow) || enemyType.HasFlag(EnemyType.Purple) || enemyType.HasFlag(EnemyType.White)))
         {
-            Debug.Log("Yaiba‚ÅUŒ‚‚ğ‚µ‚½");
+            Debug.Log("Yaibaã§æ”»æ’ƒã‚’ã—ãŸ");
             return TurnResult.Success1;
         }
-        //ƒvƒŒƒCƒ„[‚ÌƒJ[ƒh‚ªYaiba‚Å“G‚Ì–‚Î‚ªÂA—ÎA‹à‚Ì
+        //ãƒ—ãƒ¬ã‚¤ãƒ¤ãƒ¼ã®ã‚«ãƒ¼ãƒ‰ãŒYaibaã§æ•µã®é­”çŸ³ãŒé’ã€ç·‘ã€é‡‘ã®æ™‚
         if (myCard.HasFlag(PlayerType.Yaiba) && (enemyType.HasFlag(EnemyType.Blue) || enemyType.HasFlag(EnemyType.Green) || enemyType.HasFlag(EnemyType.Gold)))
         {
-            Debug.Log("Yaiba‚ÅUŒ‚‚ğ‚µ‚½‚ª¸”s");
+            Debug.Log("Yaibaã§æ”»æ’ƒã‚’ã—ãŸãŒå¤±æ•—");
             return TurnResult.Failure2;
         }
-        //ƒvƒŒƒCƒ„[‚ÌƒJ[ƒh‚ªKimata‚Å“G‚Ì–‚Î‚ªÂA‡A‹àA‰©F‚Ì
+        //ãƒ—ãƒ¬ã‚¤ãƒ¤ãƒ¼ã®ã‚«ãƒ¼ãƒ‰ãŒKimataã§æ•µã®é­”çŸ³ãŒé’ã€ç´«ã€é‡‘ã€é»„è‰²ã®æ™‚
         if (myCard.HasFlag(PlayerType.Kimata) && (enemyType.HasFlag(EnemyType.Blue) || enemyType.HasFlag(EnemyType.Purple) || enemyType.HasFlag(EnemyType.Gold) || enemyType.HasFlag(EnemyType.Yellow)))
         {
-            Debug.Log("Kimata‚ÅUŒ‚‚ğ‚µ‚½");
+            Debug.Log("Kimataã§æ”»æ’ƒã‚’ã—ãŸ");
             return TurnResult.Success1;
         }
-        //ƒvƒŒƒCƒ„[‚ÌƒJ[ƒh‚ªKimata‚Å“G‚Ì–‚Î‚ªÂA‰©FA”’‚Ì
+        //ãƒ—ãƒ¬ã‚¤ãƒ¤ãƒ¼ã®ã‚«ãƒ¼ãƒ‰ãŒKimataã§æ•µã®é­”çŸ³ãŒé’ã€é»„è‰²ã€ç™½ã®æ™‚
         if (myCard.HasFlag(PlayerType.Kimata) && (enemyType.HasFlag(EnemyType.Blue) || enemyType.HasFlag(EnemyType.Yellow) || enemyType.HasFlag(EnemyType.White)))
         {
-            Debug.Log("Kimata‚ÅUŒ‚‚ğ‚µ‚½‚ª¸”s");
+            Debug.Log("Kimataã§æ”»æ’ƒã‚’ã—ãŸãŒå¤±æ•—");
             return TurnResult.Failure1;
         }
-        //ƒvƒŒƒCƒ„[‚ÌƒJ[ƒh‚ªManami‚Å“G‚Ì–‚Î‚ª—ÎA‹àAÂA‡‚Ì
+        //ãƒ—ãƒ¬ã‚¤ãƒ¤ãƒ¼ã®ã‚«ãƒ¼ãƒ‰ãŒManamiã§æ•µã®é­”çŸ³ãŒç·‘ã€é‡‘ã€é’ã€ç´«ã®æ™‚
         if (myCard.HasFlag(PlayerType.Manami) && (enemyType.HasFlag(EnemyType.Green) || enemyType.HasFlag(EnemyType.Gold) || enemyType.HasFlag(EnemyType.Blue) || enemyType.HasFlag(EnemyType.Purple)))
         {
-            Debug.Log("Manami‚ÅUŒ‚‚ğ‚µ‚½");
+            Debug.Log("Manamiã§æ”»æ’ƒã‚’ã—ãŸ");
             return TurnResult.Success1;
         }
-        //ƒvƒŒƒCƒ„[‚ÌƒJ[ƒh‚ªManami‚Å“G‚Ì–‚Î‚ªÔA‰©FA”’‚Ì
+        //ãƒ—ãƒ¬ã‚¤ãƒ¤ãƒ¼ã®ã‚«ãƒ¼ãƒ‰ãŒManamiã§æ•µã®é­”çŸ³ãŒèµ¤ã€é»„è‰²ã€ç™½ã®æ™‚
         if (myCard.HasFlag(PlayerType.Manami) && (enemyType.HasFlag(EnemyType.Red) || enemyType.HasFlag(EnemyType.Yellow) || enemyType.HasFlag(EnemyType.White)))
         {
-            Debug.Log("Manami‚ÅUŒ‚‚ğ‚µ‚½‚ª¸”s");
+            Debug.Log("Manamiã§æ”»æ’ƒã‚’ã—ãŸãŒå¤±æ•—");
             return TurnResult.Failure1;
         }
-        //ƒvƒŒƒCƒ„[‚ÌƒJ[ƒh‚ªOtogi‚Å“G‚Ì–‚Î‚ª‰©FA”’AÔA—Î‚Ì
+        //ãƒ—ãƒ¬ã‚¤ãƒ¤ãƒ¼ã®ã‚«ãƒ¼ãƒ‰ãŒOtogiã§æ•µã®é­”çŸ³ãŒé»„è‰²ã€ç™½ã€èµ¤ã€ç·‘ã®æ™‚
         if (myCard.HasFlag(PlayerType.Otogi) && (enemyType.HasFlag(EnemyType.Yellow) || enemyType.HasFlag(EnemyType.White) || enemyType.HasFlag(EnemyType.Red) || enemyType.HasFlag(EnemyType.Green)))
         {
-            Debug.Log("Otogi‚ÅUŒ‚‚ğ‚µ‚½");
+            Debug.Log("Otogiã§æ”»æ’ƒã‚’ã—ãŸ");
             return TurnResult.Success1;
         }
-        //ƒvƒŒƒCƒ„[‚ÌƒJ[ƒh‚ªOtogi‚Å“G‚Ì–‚Î‚ªÂA‹àA‡‚Ì
+        //ãƒ—ãƒ¬ã‚¤ãƒ¤ãƒ¼ã®ã‚«ãƒ¼ãƒ‰ãŒOtogiã§æ•µã®é­”çŸ³ãŒé’ã€é‡‘ã€ç´«ã®æ™‚
         if (myCard.HasFlag(PlayerType.Otogi) && (enemyType.HasFlag(EnemyType.Blue) || enemyType.HasFlag(EnemyType.Gold) || enemyType.HasFlag(EnemyType.Purple)))
         {
-            Debug.Log("Otogi‚ÅUŒ‚‚ğ‚µ‚½‚ª¸”s");
+            Debug.Log("Otogiã§æ”»æ’ƒã‚’ã—ãŸãŒå¤±æ•—");
             return TurnResult.Failure1;
         }
 
-        //3‘®«‚ğ‘ÎÛ
-        //ƒvƒŒƒCƒ„[‚ÌƒJ[ƒh‚ªYuzuki‚Å“G‚Ì–‚Î‚ªÔAÂA—Î‚Ì
+        //3å±æ€§ã‚’å¯¾è±¡
+        //ãƒ—ãƒ¬ã‚¤ãƒ¤ãƒ¼ã®ã‚«ãƒ¼ãƒ‰ãŒYuzukiã§æ•µã®é­”çŸ³ãŒèµ¤ã€é’ã€ç·‘ã®æ™‚
         if (myCard.HasFlag(PlayerType.Yuzuki) && (enemyType.HasFlag(EnemyType.Red) || enemyType.HasFlag(EnemyType.Blue) || enemyType.HasFlag(EnemyType.Green)))
         {
-            Debug.Log("Yuzuki‚ÅUŒ‚‚ğ‚µ‚½");
+            Debug.Log("Yuzukiã§æ”»æ’ƒã‚’ã—ãŸ");
             return TurnResult.Success2;
         }
-        //ƒvƒŒƒCƒ„[‚ÌƒJ[ƒh‚ªYuzuki‚Å“G‚Ì–‚Î‚ª‰©FA‡A”’,A‹à‚Ì
+        //ãƒ—ãƒ¬ã‚¤ãƒ¤ãƒ¼ã®ã‚«ãƒ¼ãƒ‰ãŒYuzukiã§æ•µã®é­”çŸ³ãŒé»„è‰²ã€ç´«ã€ç™½,ã€é‡‘ã®æ™‚
         if (myCard.HasFlag(PlayerType.Yuzuki) && (enemyType.HasFlag(EnemyType.Yellow) || enemyType.HasFlag(EnemyType.Purple) || enemyType.HasFlag(EnemyType.White) || enemyType.HasFlag(EnemyType.Gold)))
         {
-            Debug.Log("Yuzuki‚ÅUŒ‚‚ğ‚µ‚½‚ª¸”s");
+            Debug.Log("Yuzukiã§æ”»æ’ƒã‚’ã—ãŸãŒå¤±æ•—");
             return TurnResult.Failure2;
         }
-        //ƒvƒŒƒCƒ„[‚ÌƒJ[ƒh‚ªYukime‚Å“G‚Ì–‚Î‚ª‰©FA‡A‹à‚Ì
+        //ãƒ—ãƒ¬ã‚¤ãƒ¤ãƒ¼ã®ã‚«ãƒ¼ãƒ‰ãŒYukimeã§æ•µã®é­”çŸ³ãŒé»„è‰²ã€ç´«ã€é‡‘ã®æ™‚
         if (myCard.HasFlag(PlayerType.Yukime) && (enemyType.HasFlag(EnemyType.Yellow) || enemyType.HasFlag(EnemyType.Purple) || enemyType.HasFlag(EnemyType.Gold)))
         {
-            Debug.Log("Yukime‚ÅUŒ‚‚ğ‚µ‚½");
+            Debug.Log("Yukimeã§æ”»æ’ƒã‚’ã—ãŸ");
             return TurnResult.Success2;
         }
-        //  ƒvƒŒƒCƒ„[‚ÌƒJ[ƒh‚ªYukime‚Å“G‚Ì–‚Î‚ªÔAÂA—ÎA”’‚Ì
+        //  ãƒ—ãƒ¬ã‚¤ãƒ¤ãƒ¼ã®ã‚«ãƒ¼ãƒ‰ãŒYukimeã§æ•µã®é­”çŸ³ãŒèµ¤ã€é’ã€ç·‘ã€ç™½ã®æ™‚
         if (myCard.HasFlag(PlayerType.Yukime) && (enemyType.HasFlag(EnemyType.Red) || enemyType.HasFlag(EnemyType.Blue) || enemyType.HasFlag(EnemyType.Green) || enemyType.HasFlag(EnemyType.White)))
         {
-            Debug.Log("Yukime‚ÅUŒ‚‚ğ‚µ‚½‚ª¸”s");
+            Debug.Log("Yukimeã§æ”»æ’ƒã‚’ã—ãŸãŒå¤±æ•—");
             return TurnResult.Failure2;
         }
-        //ƒvƒŒƒCƒ„[‚ÌƒJ[ƒh‚ªInukai‚Å“G‚Ì–‚Î‚ª‹àAÔA”’‚Ì
+        //ãƒ—ãƒ¬ã‚¤ãƒ¤ãƒ¼ã®ã‚«ãƒ¼ãƒ‰ãŒInukaiã§æ•µã®é­”çŸ³ãŒé‡‘ã€èµ¤ã€ç™½ã®æ™‚
         if (myCard.HasFlag(PlayerType.Inukai) && (enemyType.HasFlag(EnemyType.Gold) || enemyType.HasFlag(EnemyType.Red) || enemyType.HasFlag(EnemyType.White)))
         {
-            Debug.Log("Inukai‚ÅUŒ‚‚ğ‚µ‚½");
+            Debug.Log("Inukaiã§æ”»æ’ƒã‚’ã—ãŸ");
             return TurnResult.Success2;
         }
-        //ƒvƒŒƒCƒ„[‚ÌƒJ[ƒh‚ªInukai‚Å“G‚Ì–‚Î‚ªÂA‰©FA—ÎA‡‚Ì
+        //ãƒ—ãƒ¬ã‚¤ãƒ¤ãƒ¼ã®ã‚«ãƒ¼ãƒ‰ãŒInukaiã§æ•µã®é­”çŸ³ãŒé’ã€é»„è‰²ã€ç·‘ã€ç´«ã®æ™‚
         if (myCard.HasFlag(PlayerType.Yukime) && (enemyType.HasFlag(EnemyType.Blue) || enemyType.HasFlag(EnemyType.Yellow) || enemyType.HasFlag(EnemyType.Green) || enemyType.HasFlag(EnemyType.Purple)))
         {
-            Debug.Log("Inukai‚ÅUŒ‚‚ğ‚µ‚½‚ª¸”s");
+            Debug.Log("Inukaiã§æ”»æ’ƒã‚’ã—ãŸãŒå¤±æ•—");
             return TurnResult.Failure2;
         }
-        //ƒvƒŒƒCƒ„[‚ÌƒJ[ƒh‚ªTennoji‚Å“G‚Ì–‚Î‚ª‡A‹àA”’‚Ì
+        //ãƒ—ãƒ¬ã‚¤ãƒ¤ãƒ¼ã®ã‚«ãƒ¼ãƒ‰ãŒTennojiã§æ•µã®é­”çŸ³ãŒç´«ã€é‡‘ã€ç™½ã®æ™‚
         if (myCard.HasFlag(PlayerType.Tennoji) && (enemyType.HasFlag(EnemyType.Purple) || enemyType.HasFlag(EnemyType.Gold) || enemyType.HasFlag(EnemyType.White)))
         {
-            Debug.Log("Tennoji‚ÅUŒ‚‚ğ‚µ‚½");
+            Debug.Log("Tennojiã§æ”»æ’ƒã‚’ã—ãŸ");
             return TurnResult.Success2;
         }
-        //ƒvƒŒƒCƒ„[‚ÌƒJ[ƒh‚ªTennoji‚Å“G‚Ì–‚Î‚ªÔAÂA‰©FA—Î‚Ì
+        //ãƒ—ãƒ¬ã‚¤ãƒ¤ãƒ¼ã®ã‚«ãƒ¼ãƒ‰ãŒTennojiã§æ•µã®é­”çŸ³ãŒèµ¤ã€é’ã€é»„è‰²ã€ç·‘ã®æ™‚
         if (myCard.HasFlag(PlayerType.Tennoji) && (enemyType.HasFlag(EnemyType.Red) || enemyType.HasFlag(EnemyType.Blue) || enemyType.HasFlag(EnemyType.Yellow) || enemyType.HasFlag(EnemyType.Green)))
         {
-            Debug.Log("Tennoji‚ÅUŒ‚‚ğ‚µ‚½‚ª¸”s");
+            Debug.Log("Tennojiã§æ”»æ’ƒã‚’ã—ãŸãŒå¤±æ•—");
             return TurnResult.Failure2;
         }
-        //ƒvƒŒƒCƒ„[‚ÌƒJ[ƒh‚ªParaberamu‚Å“G‚Ì–‚Î‚ªÂA—ÎA‡‚Ì
+        //ãƒ—ãƒ¬ã‚¤ãƒ¤ãƒ¼ã®ã‚«ãƒ¼ãƒ‰ãŒParaberamuã§æ•µã®é­”çŸ³ãŒé’ã€ç·‘ã€ç´«ã®æ™‚
         if (myCard.HasFlag(PlayerType.Paraberamu) && (enemyType.HasFlag(EnemyType.Blue) || enemyType.HasFlag(EnemyType.Green) || enemyType.HasFlag(EnemyType.Purple)))
         {
-            Debug.Log("Paraberamu‚ÅUŒ‚‚ğ‚µ‚½");
+            Debug.Log("Paraberamuã§æ”»æ’ƒã‚’ã—ãŸ");
             return TurnResult.Success2;
         }
-        //ƒvƒŒƒCƒ„[‚ÌƒJ[ƒh‚ªParaberamu‚Å“G‚Ì–‚Î‚ªÔA‰©FA‹àA”’‚Ì
+        //ãƒ—ãƒ¬ã‚¤ãƒ¤ãƒ¼ã®ã‚«ãƒ¼ãƒ‰ãŒParaberamuã§æ•µã®é­”çŸ³ãŒèµ¤ã€é»„è‰²ã€é‡‘ã€ç™½ã®æ™‚
         if (myCard.HasFlag(PlayerType.Paraberamu) && (enemyType.HasFlag(EnemyType.Red) || enemyType.HasFlag(EnemyType.Yellow) || enemyType.HasFlag(EnemyType.Gold) || enemyType.HasFlag(EnemyType.White)))
         {
-            Debug.Log("Paraberamu‚ÅUŒ‚‚ğ‚µ‚½‚ª¸”s");
+            Debug.Log("Paraberamuã§æ”»æ’ƒã‚’ã—ãŸãŒå¤±æ•—");
             return TurnResult.Failure2;
         }
-        //ƒvƒŒƒCƒ„[‚ÌƒJ[ƒh‚ªMabosi‚Å“G‚Ì–‚Î‚ª‰©FA—ÎA‹à‚Ì
+        //ãƒ—ãƒ¬ã‚¤ãƒ¤ãƒ¼ã®ã‚«ãƒ¼ãƒ‰ãŒMabosiã§æ•µã®é­”çŸ³ãŒé»„è‰²ã€ç·‘ã€é‡‘ã®æ™‚
         if (myCard.HasFlag(PlayerType.Mabosi) && (enemyType.HasFlag(EnemyType.Yellow) || enemyType.HasFlag(EnemyType.Green) || enemyType.HasFlag(EnemyType.Gold)))
         {
-            Debug.Log("Mabosi‚ÅUŒ‚‚ğ‚µ‚½");
+            Debug.Log("Mabosiã§æ”»æ’ƒã‚’ã—ãŸ");
             return TurnResult.Success2;
         }
-        //ƒvƒŒƒCƒ„[‚ÌƒJ[ƒh‚ªMabosi‚Å“G‚Ì–‚Î‚ªÔAÂA”’A‡‚Ì
+        //ãƒ—ãƒ¬ã‚¤ãƒ¤ãƒ¼ã®ã‚«ãƒ¼ãƒ‰ãŒMabosiã§æ•µã®é­”çŸ³ãŒèµ¤ã€é’ã€ç™½ã€ç´«ã®æ™‚
         if (myCard.HasFlag(PlayerType.Mabosi) && (enemyType.HasFlag(EnemyType.Red) || enemyType.HasFlag(EnemyType.Blue) || enemyType.HasFlag(EnemyType.White) || enemyType.HasFlag(EnemyType.Purple)))
         {
-            Debug.Log("Mabosi‚ÅUŒ‚‚ğ‚µ‚½‚ª¸”s");
+            Debug.Log("Mabosiã§æ”»æ’ƒã‚’ã—ãŸãŒå¤±æ•—");
             return TurnResult.Failure2;
         }
-        //ƒvƒŒƒCƒ„[‚ÌƒJ[ƒh‚ªSima‚Å“G‚Ì–‚Î‚ªÔA‰©FA”’‚Ì
+        //ãƒ—ãƒ¬ã‚¤ãƒ¤ãƒ¼ã®ã‚«ãƒ¼ãƒ‰ãŒSimaã§æ•µã®é­”çŸ³ãŒèµ¤ã€é»„è‰²ã€ç™½ã®æ™‚
         if (myCard.HasFlag(PlayerType.Sima) && (enemyType.HasFlag(EnemyType.Red) || enemyType.HasFlag(EnemyType.Yellow) || enemyType.HasFlag(EnemyType.White)))
         {
-            Debug.Log("Sima‚ÅUŒ‚‚ğ‚µ‚½");
+            Debug.Log("Simaã§æ”»æ’ƒã‚’ã—ãŸ");
             return TurnResult.Success2;
         }
-        //ƒvƒŒƒCƒ„[‚ÌƒJ[ƒh‚ªSima‚Å“G‚Ì–‚Î‚ª—ÎAÂA‹àA‡‚Ì
+        //ãƒ—ãƒ¬ã‚¤ãƒ¤ãƒ¼ã®ã‚«ãƒ¼ãƒ‰ãŒSimaã§æ•µã®é­”çŸ³ãŒç·‘ã€é’ã€é‡‘ã€ç´«ã®æ™‚
         if (myCard.HasFlag(PlayerType.Sima) && (enemyType.HasFlag(EnemyType.Green) || enemyType.HasFlag(EnemyType.Blue) || enemyType.HasFlag(EnemyType.Gold) || enemyType.HasFlag(EnemyType.Purple)))
         {
-            Debug.Log("Sima‚ÅUŒ‚‚ğ‚µ‚½‚ª¸”s");
+            Debug.Log("Simaã§æ”»æ’ƒã‚’ã—ãŸãŒå¤±æ•—");
             return TurnResult.Failure2;
         }
-        //ƒvƒŒƒCƒ„[‚ÌƒJ[ƒh‚ªYuraki‚Å“G‚Ì–‚Î‚ªÂA‹àA‡‚Ì
+        //ãƒ—ãƒ¬ã‚¤ãƒ¤ãƒ¼ã®ã‚«ãƒ¼ãƒ‰ãŒYurakiã§æ•µã®é­”çŸ³ãŒé’ã€é‡‘ã€ç´«ã®æ™‚
         if (myCard.HasFlag(PlayerType.Yuraki) && (enemyType.HasFlag(EnemyType.Blue) || enemyType.HasFlag(EnemyType.Gold) || enemyType.HasFlag(EnemyType.Purple)))
         {
-            Debug.Log("Yuraki‚ÅUŒ‚‚ğ‚µ‚½");
+            Debug.Log("Yurakiã§æ”»æ’ƒã‚’ã—ãŸ");
             return TurnResult.Success2;
         }
-        //ƒvƒŒƒCƒ„[‚ÌƒJ[ƒh‚ªYuraki‚Å“G‚Ì–‚Î‚ªÔA—ÎA”’A‡‚Ì
+        //ãƒ—ãƒ¬ã‚¤ãƒ¤ãƒ¼ã®ã‚«ãƒ¼ãƒ‰ãŒYurakiã§æ•µã®é­”çŸ³ãŒèµ¤ã€ç·‘ã€ç™½ã€ç´«ã®æ™‚
         if (myCard.HasFlag(PlayerType.Yuraki) && (enemyType.HasFlag(EnemyType.Red) || enemyType.HasFlag(EnemyType.Green) || enemyType.HasFlag(EnemyType.White) || enemyType.HasFlag(EnemyType.Purple)))
         {
-            Debug.Log("Yuraki‚ÅUŒ‚‚ğ‚µ‚½‚ª¸”s");
+            Debug.Log("Yurakiã§æ”»æ’ƒã‚’ã—ãŸãŒå¤±æ•—");
             return TurnResult.Failure2;
         }
-        //ƒvƒŒƒCƒ„[‚ÌƒJ[ƒh‚ªRisia‚Å“G‚Ì–‚Î‚ª—ÎA‰©FA‡‚Ì
+        //ãƒ—ãƒ¬ã‚¤ãƒ¤ãƒ¼ã®ã‚«ãƒ¼ãƒ‰ãŒRisiaã§æ•µã®é­”çŸ³ãŒç·‘ã€é»„è‰²ã€ç´«ã®æ™‚
         if (myCard.HasFlag(PlayerType.Risia) && (enemyType.HasFlag(EnemyType.Green) || enemyType.HasFlag(EnemyType.Yellow) || enemyType.HasFlag(EnemyType.Purple)))
         {
-            Debug.Log("Risia‚ÅUŒ‚‚ğ‚µ‚½");
+            Debug.Log("Risiaã§æ”»æ’ƒã‚’ã—ãŸ");
             return TurnResult.Success2;
         }
-        //ƒvƒŒƒCƒ„[‚ÌƒJ[ƒh‚ªRisia‚Å“G‚Ì–‚Î‚ªÔAÂA‹àA”’‚Ì 
+        //ãƒ—ãƒ¬ã‚¤ãƒ¤ãƒ¼ã®ã‚«ãƒ¼ãƒ‰ãŒRisiaã§æ•µã®é­”çŸ³ãŒèµ¤ã€é’ã€é‡‘ã€ç™½ã®æ™‚ 
         if (myCard.HasFlag(PlayerType.Risia) && (enemyType.HasFlag(EnemyType.Red) || enemyType.HasFlag(EnemyType.Blue) || enemyType.HasFlag(EnemyType.Gold) || enemyType.HasFlag(EnemyType.White)))
         {
-            Debug.Log("Risia‚ÅUŒ‚‚ğ‚µ‚½‚ª¸”s");
+            Debug.Log("Risiaã§æ”»æ’ƒã‚’ã—ãŸãŒå¤±æ•—");
             return TurnResult.Failure2;
         }
-        //ƒvƒŒƒCƒ„[‚ÌƒJ[ƒh‚ªKurofusi‚Å“G‚Ì–‚Î‚ªÔA‰©FA‹à‚Ì
+        //ãƒ—ãƒ¬ã‚¤ãƒ¤ãƒ¼ã®ã‚«ãƒ¼ãƒ‰ãŒKurofusiã§æ•µã®é­”çŸ³ãŒèµ¤ã€é»„è‰²ã€é‡‘ã®æ™‚
         if (myCard.HasFlag(PlayerType.Kurofusi) && (enemyType.HasFlag(EnemyType.Red) || enemyType.HasFlag(EnemyType.Yellow) || enemyType.HasFlag(EnemyType.Gold)))
         {
-            Debug.Log("Kurofusi‚ÅUŒ‚‚ğ‚µ‚½");
+            Debug.Log("Kurofusiã§æ”»æ’ƒã‚’ã—ãŸ");
             return TurnResult.Success2;
         }
-        //ƒvƒŒƒCƒ„[‚ÌƒJ[ƒh‚ªKurofusi‚Å“G‚Ì–‚Î‚ªÂA—ÎA”’A‡‚Ì 
+        //ãƒ—ãƒ¬ã‚¤ãƒ¤ãƒ¼ã®ã‚«ãƒ¼ãƒ‰ãŒKurofusiã§æ•µã®é­”çŸ³ãŒé’ã€ç·‘ã€ç™½ã€ç´«ã®æ™‚ 
         if (myCard.HasFlag(PlayerType.Kurofusi) && (enemyType.HasFlag(EnemyType.Blue) || enemyType.HasFlag(EnemyType.Green) || enemyType.HasFlag(EnemyType.White) || enemyType.HasFlag(EnemyType.Purple)))
         {
-            Debug.Log("Kurofusi‚ÅUŒ‚‚ğ‚µ‚½‚ª¸”s");
+            Debug.Log("Kurofusiã§æ”»æ’ƒã‚’ã—ãŸãŒå¤±æ•—");
             return TurnResult.Failure2;
         }
-        //ƒvƒŒƒCƒ„[‚ÌƒJ[ƒh‚ªKongoji‚Å“G‚Ì–‚Î‚ªÂA—ÎA”’‚Ì
+        //ãƒ—ãƒ¬ã‚¤ãƒ¤ãƒ¼ã®ã‚«ãƒ¼ãƒ‰ãŒKongojiã§æ•µã®é­”çŸ³ãŒé’ã€ç·‘ã€ç™½ã®æ™‚
         if (myCard.HasFlag(PlayerType.Kongoji) && (enemyType.HasFlag(EnemyType.Blue) || enemyType.HasFlag(EnemyType.Green) || enemyType.HasFlag(EnemyType.White)))
         {
-            Debug.Log("Kongoji‚ÅUŒ‚‚ğ‚µ‚½");
+            Debug.Log("Kongojiã§æ”»æ’ƒã‚’ã—ãŸ");
             return TurnResult.Success2;
         }
-        //ƒvƒŒƒCƒ„[‚ÌƒJ[ƒh‚ªKongoji‚Å“G‚Ì–‚Î‚ªÔA‰©FA‡A‹à‚Ì 
+        //ãƒ—ãƒ¬ã‚¤ãƒ¤ãƒ¼ã®ã‚«ãƒ¼ãƒ‰ãŒKongojiã§æ•µã®é­”çŸ³ãŒèµ¤ã€é»„è‰²ã€ç´«ã€é‡‘ã®æ™‚ 
         if (myCard.HasFlag(PlayerType.Kongoji) && (enemyType.HasFlag(EnemyType.Red) || enemyType.HasFlag(EnemyType.Yellow) || enemyType.HasFlag(EnemyType.Purple) || enemyType.HasFlag(EnemyType.Gold)))
         {
-            Debug.Log("Kongoji‚ÅUŒ‚‚ğ‚µ‚½‚ª¸”s");
+            Debug.Log("Kongojiã§æ”»æ’ƒã‚’ã—ãŸãŒå¤±æ•—");
             return TurnResult.Failure2;
         }
-        //ƒvƒŒƒCƒ„[‚ÌƒJ[ƒh‚ªYorugami‚Å“G‚Ì–‚Î‚ªÔA‰©FA‡‚Ì
+        //ãƒ—ãƒ¬ã‚¤ãƒ¤ãƒ¼ã®ã‚«ãƒ¼ãƒ‰ãŒYorugamiã§æ•µã®é­”çŸ³ãŒèµ¤ã€é»„è‰²ã€ç´«ã®æ™‚
         if (myCard.HasFlag(PlayerType.Yorugami) && (enemyType.HasFlag(EnemyType.Red) || enemyType.HasFlag(EnemyType.Yellow) || enemyType.HasFlag(EnemyType.Purple)))
         {
-            Debug.Log("Yorugami‚ÅUŒ‚‚ğ‚µ‚½");
+            Debug.Log("Yorugamiã§æ”»æ’ƒã‚’ã—ãŸ");
             return TurnResult.Success2;
         }
-        //ƒvƒŒƒCƒ„[‚ÌƒJ[ƒhYorugami‚Å“G‚Ì–‚Î‚ªÂA—ÎA”’A‹à‚Ì 
+        //ãƒ—ãƒ¬ã‚¤ãƒ¤ãƒ¼ã®ã‚«ãƒ¼ãƒ‰Yorugamiã§æ•µã®é­”çŸ³ãŒé’ã€ç·‘ã€ç™½ã€é‡‘ã®æ™‚ 
         if (myCard.HasFlag(PlayerType.Yorugami) && (enemyType.HasFlag(EnemyType.Blue) || enemyType.HasFlag(EnemyType.Green) || enemyType.HasFlag(EnemyType.White) || enemyType.HasFlag(EnemyType.Gold)))
         {
-            Debug.Log("Yorugami‚ÅUŒ‚‚ğ‚µ‚½‚ª¸”s");
+            Debug.Log("Yorugamiã§æ”»æ’ƒã‚’ã—ãŸãŒå¤±æ•—");
             return TurnResult.Failure2;
         }
-        //ƒvƒŒƒCƒ„[‚ÌƒJ[ƒh‚ªSabitani‚Å“G‚Ì–‚Î‚ªÔAÂA‰©F‚Ì
+        //ãƒ—ãƒ¬ã‚¤ãƒ¤ãƒ¼ã®ã‚«ãƒ¼ãƒ‰ãŒSabitaniã§æ•µã®é­”çŸ³ãŒèµ¤ã€é’ã€é»„è‰²ã®æ™‚
         if (myCard.HasFlag(PlayerType.Sabitani) && (enemyType.HasFlag(EnemyType.Red) || enemyType.HasFlag(EnemyType.Blue)
          || enemyType.HasFlag(EnemyType.Yellow)))
         {
-            Debug.Log("Sabitani‚ÅUŒ‚‚ğ‚µ‚½");
+            Debug.Log("Sabitaniã§æ”»æ’ƒã‚’ã—ãŸ");
             return TurnResult.Success2;
         }
-        //ƒvƒŒƒCƒ„[‚ÌƒJ[ƒh‚ªSabitani‚Å“G‚Ì–‚Î‚ª—ÎA”’A‡A‹à‚Ì
+        //ãƒ—ãƒ¬ã‚¤ãƒ¤ãƒ¼ã®ã‚«ãƒ¼ãƒ‰ãŒSabitaniã§æ•µã®é­”çŸ³ãŒç·‘ã€ç™½ã€ç´«ã€é‡‘ã®æ™‚
         if (myCard.HasFlag(PlayerType.Sabitani) && (enemyType.HasFlag(EnemyType.Green) || enemyType.HasFlag(EnemyType.White)
          || enemyType.HasFlag(EnemyType.Purple) || enemyType.HasFlag(EnemyType.Gold)))
         {
-            Debug.Log("Sabitani‚ÅUŒ‚‚ğ‚µ‚½‚ª¸”s");
+            Debug.Log("Sabitaniã§æ”»æ’ƒã‚’ã—ãŸãŒå¤±æ•—");
             return TurnResult.Failure2;
         }
 
-        //1‘®«‚ğ‘ÎÛ
-        //ƒvƒŒƒCƒ„[‚ÌƒJ[ƒh‚ªHaisiki‚Å“G‚Ì–‚Î‚ªÔ‚Ì
+        //1å±æ€§ã‚’å¯¾è±¡
+        //ãƒ—ãƒ¬ã‚¤ãƒ¤ãƒ¼ã®ã‚«ãƒ¼ãƒ‰ãŒHaisikiã§æ•µã®é­”çŸ³ãŒèµ¤ã®æ™‚
         if (myCard.HasFlag(PlayerType.Haisiki) && enemyType.HasFlag(EnemyType.Red))
         {
-            Debug.Log("Haisiki‚ÅUŒ‚‚ğ‚µ‚½");
+            Debug.Log("Haisikiã§æ”»æ’ƒã‚’ã—ãŸ");
             return TurnResult.Success3;
         }
-        //ƒvƒŒƒCƒ„[‚ÌƒJ[ƒh‚ªHaisiki‚Å“G‚Ì–‚Î‚ªÂA—ÎA‰©FA‡A‹àA”’‚Ì
+        //ãƒ—ãƒ¬ã‚¤ãƒ¤ãƒ¼ã®ã‚«ãƒ¼ãƒ‰ãŒHaisikiã§æ•µã®é­”çŸ³ãŒé’ã€ç·‘ã€é»„è‰²ã€ç´«ã€é‡‘ã€ç™½ã®æ™‚
         if (myCard.HasFlag(PlayerType.Haisiki) && (enemyType.HasFlag(EnemyType.Blue) || enemyType.HasFlag(EnemyType.Green)
             || enemyType.HasFlag(EnemyType.Yellow)) || enemyType.HasFlag(EnemyType.Purple) || enemyType.HasFlag(EnemyType.Gold) || enemyType.HasFlag(EnemyType.White))
         {
-            Debug.Log("Haisiki‚ÅUŒ‚‚ğ‚µ‚½‚ª¸”s");
+            Debug.Log("Haisikiã§æ”»æ’ƒã‚’ã—ãŸãŒå¤±æ•—");
             return TurnResult.Failure3;
         }
-        //ƒvƒŒƒCƒ„[‚ÌƒJ[ƒh‚ªRyutan‚Å“G‚Ì–‚Î‚ªÂ‚Ì
+        //ãƒ—ãƒ¬ã‚¤ãƒ¤ãƒ¼ã®ã‚«ãƒ¼ãƒ‰ãŒRyutanã§æ•µã®é­”çŸ³ãŒé’ã®æ™‚
         if (myCard.HasFlag(PlayerType.Ryutan) && enemyType.HasFlag(EnemyType.Blue))
         {
-            Debug.Log("Ryutan‚ÅUŒ‚‚ğ‚µ‚½");
+            Debug.Log("Ryutanã§æ”»æ’ƒã‚’ã—ãŸ");
             return TurnResult.Success3;
         }
-        //ƒvƒŒƒCƒ„[‚ÌƒJ[ƒh‚ªRyutan‚Å“G‚Ì–‚Î‚ªÔA—ÎA‰©FA‡A‹àA”’‚Ì
+        //ãƒ—ãƒ¬ã‚¤ãƒ¤ãƒ¼ã®ã‚«ãƒ¼ãƒ‰ãŒRyutanã§æ•µã®é­”çŸ³ãŒèµ¤ã€ç·‘ã€é»„è‰²ã€ç´«ã€é‡‘ã€ç™½ã®æ™‚
         if (myCard.HasFlag(PlayerType.Ryutan) && (enemyType.HasFlag(EnemyType.Red) || enemyType.HasFlag(EnemyType.Green)
             || enemyType.HasFlag(EnemyType.Yellow)) || enemyType.HasFlag(EnemyType.Purple) || enemyType.HasFlag(EnemyType.Gold) || enemyType.HasFlag(EnemyType.White))
         {
-            Debug.Log("Ryutan‚ÅUŒ‚‚ğ‚µ‚½‚ª¸”s");
+            Debug.Log("Ryutanã§æ”»æ’ƒã‚’ã—ãŸãŒå¤±æ•—");
             return TurnResult.Failure3;
         }
-        //ƒvƒŒƒCƒ„[‚ÌƒJ[ƒh‚ªSekidou‚Å“G‚Ì–‚Î‚ª—Î‚Ì
+        //ãƒ—ãƒ¬ã‚¤ãƒ¤ãƒ¼ã®ã‚«ãƒ¼ãƒ‰ãŒSekidouã§æ•µã®é­”çŸ³ãŒç·‘ã®æ™‚
         if (myCard.HasFlag(PlayerType.Sekidou) && enemyType.HasFlag(EnemyType.Green))
         {
-            Debug.Log("Sekidou‚ÅUŒ‚‚ğ‚µ‚½");
+            Debug.Log("Sekidouã§æ”»æ’ƒã‚’ã—ãŸ");
             return TurnResult.Success3;
         }
-        //ƒvƒŒƒCƒ„[‚ÌƒJ[ƒh‚ªSekidou‚Å“G‚Ì–‚Î‚ªÔAÂA‰©FA‡A‹àA”’‚Ì
+        //ãƒ—ãƒ¬ã‚¤ãƒ¤ãƒ¼ã®ã‚«ãƒ¼ãƒ‰ãŒSekidouã§æ•µã®é­”çŸ³ãŒèµ¤ã€é’ã€é»„è‰²ã€ç´«ã€é‡‘ã€ç™½ã®æ™‚
         if (myCard.HasFlag(PlayerType.Sekidou) && (enemyType.HasFlag(EnemyType.Red) || enemyType.HasFlag(EnemyType.Blue)
             || enemyType.HasFlag(EnemyType.Yellow)) || enemyType.HasFlag(EnemyType.Purple) || enemyType.HasFlag(EnemyType.Gold) || enemyType.HasFlag(EnemyType.White))
         {
-            Debug.Log("Sekidou‚ÅUŒ‚‚ğ‚µ‚½‚ª¸”s");
+            Debug.Log("Sekidouã§æ”»æ’ƒã‚’ã—ãŸãŒå¤±æ•—");
             return TurnResult.Failure3;
         }
-        //ƒvƒŒƒCƒ„[‚ÌƒJ[ƒh‚ªMitori‚Å“G‚Ì–‚Î‚ª‰©F‚Ì
+        //ãƒ—ãƒ¬ã‚¤ãƒ¤ãƒ¼ã®ã‚«ãƒ¼ãƒ‰ãŒMitoriã§æ•µã®é­”çŸ³ãŒé»„è‰²ã®æ™‚
         if (myCard.HasFlag(PlayerType.Mitori) && enemyType.HasFlag(EnemyType.Yellow))
         {
-            Debug.Log("Sekidou‚ÅUŒ‚‚ğ‚µ‚½");
+            Debug.Log("Sekidouã§æ”»æ’ƒã‚’ã—ãŸ");
             return TurnResult.Success3;
         }
-        //ƒvƒŒƒCƒ„[‚ÌƒJ[ƒh‚ªMitori‚Å“G‚Ì–‚Î‚ªÔAÂA—ÎA‡A‹àA”’‚Ì
+        //ãƒ—ãƒ¬ã‚¤ãƒ¤ãƒ¼ã®ã‚«ãƒ¼ãƒ‰ãŒMitoriã§æ•µã®é­”çŸ³ãŒèµ¤ã€é’ã€ç·‘ã€ç´«ã€é‡‘ã€ç™½ã®æ™‚
         if (myCard.HasFlag(PlayerType.Mitori) && (enemyType.HasFlag(EnemyType.Red) || enemyType.HasFlag(EnemyType.Blue)
             || enemyType.HasFlag(EnemyType.Green)) || enemyType.HasFlag(EnemyType.Purple) || enemyType.HasFlag(EnemyType.Gold) || enemyType.HasFlag(EnemyType.White))
         {
-            Debug.Log("Mitori‚ÅUŒ‚‚ğ‚µ‚½‚ª¸”s");
+            Debug.Log("Mitoriã§æ”»æ’ƒã‚’ã—ãŸãŒå¤±æ•—");
             return TurnResult.Failure3;
         }
-        //ƒvƒŒƒCƒ„[‚ÌƒJ[ƒh‚ªSiratori‚Å“G‚Ì–‚Î‚ª‡‚Ì
+        //ãƒ—ãƒ¬ã‚¤ãƒ¤ãƒ¼ã®ã‚«ãƒ¼ãƒ‰ãŒSiratoriã§æ•µã®é­”çŸ³ãŒç´«ã®æ™‚
         if (myCard.HasFlag(PlayerType.Siratori) && enemyType.HasFlag(EnemyType.Purple))
         {
-            Debug.Log("Siratori‚ÅUŒ‚‚ğ‚µ‚½");
+            Debug.Log("Siratoriã§æ”»æ’ƒã‚’ã—ãŸ");
             return TurnResult.Success3;
         }
-        //ƒvƒŒƒCƒ„[‚ÌƒJ[ƒh‚ªSiratori‚Å“G‚Ì–‚Î‚ªÔAÂA—ÎA‰©FA‹àA”’‚Ì
+        //ãƒ—ãƒ¬ã‚¤ãƒ¤ãƒ¼ã®ã‚«ãƒ¼ãƒ‰ãŒSiratoriã§æ•µã®é­”çŸ³ãŒèµ¤ã€é’ã€ç·‘ã€é»„è‰²ã€é‡‘ã€ç™½ã®æ™‚
         if (myCard.HasFlag(PlayerType.Siratori) && (enemyType.HasFlag(EnemyType.Red) || enemyType.HasFlag(EnemyType.Blue)
             || enemyType.HasFlag(EnemyType.Green)) || enemyType.HasFlag(EnemyType.Yellow) || enemyType.HasFlag(EnemyType.Gold) || enemyType.HasFlag(EnemyType.White))
         {
-            Debug.Log("Siratori‚ÅUŒ‚‚ğ‚µ‚½‚ª¸”s");
+            Debug.Log("Siratoriã§æ”»æ’ƒã‚’ã—ãŸãŒå¤±æ•—");
             return TurnResult.Failure3;
         }
-        //ƒvƒŒƒCƒ„[‚ÌƒJ[ƒh‚ªGotouda‚Å“G‚Ì–‚Î‚ª‹à‚Ì
+        //ãƒ—ãƒ¬ã‚¤ãƒ¤ãƒ¼ã®ã‚«ãƒ¼ãƒ‰ãŒGotoudaã§æ•µã®é­”çŸ³ãŒé‡‘ã®æ™‚
         if (myCard.HasFlag(PlayerType.Gotouda) && enemyType.HasFlag(EnemyType.Gold))
         {
-            Debug.Log("Gotouda‚ÅUŒ‚‚ğ‚µ‚½");
+            Debug.Log("Gotoudaã§æ”»æ’ƒã‚’ã—ãŸ");
             return TurnResult.Success3;
         }
-        //ƒvƒŒƒCƒ„[‚ÌƒJ[ƒh‚ªGotouda‚Å“G‚Ì–‚Î‚ªÔAÂA—ÎA‰©FA‡A”’‚Ì
+        //ãƒ—ãƒ¬ã‚¤ãƒ¤ãƒ¼ã®ã‚«ãƒ¼ãƒ‰ãŒGotoudaã§æ•µã®é­”çŸ³ãŒèµ¤ã€é’ã€ç·‘ã€é»„è‰²ã€ç´«ã€ç™½ã®æ™‚
         if (myCard.HasFlag(PlayerType.Gotouda) && (enemyType.HasFlag(EnemyType.Red) || enemyType.HasFlag(EnemyType.Blue)
             || enemyType.HasFlag(EnemyType.Green)) || enemyType.HasFlag(EnemyType.Yellow) || enemyType.HasFlag(EnemyType.Purple) || enemyType.HasFlag(EnemyType.White))
         {
-            Debug.Log("Gotouda‚ÅUŒ‚‚ğ‚µ‚½‚ª¸”s");
+            Debug.Log("Gotoudaã§æ”»æ’ƒã‚’ã—ãŸãŒå¤±æ•—");
             return TurnResult.Failure3;
         }
-        //ƒvƒŒƒCƒ„[‚ÌƒJ[ƒh‚ªYokosima‚Å“G‚Ì–‚Î‚ª”’‚Ì
+        //ãƒ—ãƒ¬ã‚¤ãƒ¤ãƒ¼ã®ã‚«ãƒ¼ãƒ‰ãŒYokosimaã§æ•µã®é­”çŸ³ãŒç™½ã®æ™‚
         if (myCard.HasFlag(PlayerType.Yokosima) && enemyType.HasFlag(EnemyType.White))
         {
-            Debug.Log("Yokosima‚ÅUŒ‚‚ğ‚µ‚½");
+            Debug.Log("Yokosimaã§æ”»æ’ƒã‚’ã—ãŸ");
             return TurnResult.Success3;
         }
-        //ƒvƒŒƒCƒ„[‚ÌƒJ[ƒh‚ªYokosima‚Å“G‚Ì–‚Î‚ªÔAÂA—ÎA‰©FA‡A‹à‚Ì
+        //ãƒ—ãƒ¬ã‚¤ãƒ¤ãƒ¼ã®ã‚«ãƒ¼ãƒ‰ãŒYokosimaã§æ•µã®é­”çŸ³ãŒèµ¤ã€é’ã€ç·‘ã€é»„è‰²ã€ç´«ã€é‡‘ã®æ™‚
         if (myCard.HasFlag(PlayerType.Yokosima) && (enemyType.HasFlag(EnemyType.Red) || enemyType.HasFlag(EnemyType.Blue)
             || enemyType.HasFlag(EnemyType.Green)) || enemyType.HasFlag(EnemyType.Yellow) || enemyType.HasFlag(EnemyType.Purple) || enemyType.HasFlag(EnemyType.Gold))
         {
-            Debug.Log("Yokosima‚ÅUŒ‚‚ğ‚µ‚½‚ª¸”s");
+            Debug.Log("Yokosimaã§æ”»æ’ƒã‚’ã—ãŸãŒå¤±æ•—");
             return TurnResult.Failure3;
         }
         return TurnResult.None;

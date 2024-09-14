@@ -2,23 +2,23 @@ using UnityEngine;
 
 public class MouseManager : MonoBehaviour
 {
-    public float hoverScale = 0.6f; // ƒ}ƒEƒX‚ğ‡‚í‚¹‚½‚Æ‚«‚ÌŠg‘å—¦
-    private Vector3 originalScale; // ƒIƒuƒWƒFƒNƒg‚ÌŒ³‚ÌƒXƒP[ƒ‹
+    public float hoverScale = 0.6f; // ãƒã‚¦ã‚¹ã‚’åˆã‚ã›ãŸã¨ãã®æ‹¡å¤§ç‡
+    private Vector3 originalScale; // ã‚ªãƒ–ã‚¸ã‚§ã‚¯ãƒˆã®å…ƒã®ã‚¹ã‚±ãƒ¼ãƒ«
 
     private void Start()
     {
-        originalScale = transform.localScale; // ƒIƒuƒWƒFƒNƒg‚ÌŒ³‚ÌƒXƒP[ƒ‹‚ğ•Û‘¶
+        originalScale = transform.localScale; // ã‚ªãƒ–ã‚¸ã‚§ã‚¯ãƒˆã®å…ƒã®ã‚¹ã‚±ãƒ¼ãƒ«ã‚’ä¿å­˜
     }
 
     private void OnMouseEnter()
     {
-        // ƒ}ƒEƒX‚ªƒIƒuƒWƒFƒNƒg‚É“ü‚Á‚½‚Æ‚«‚Ìˆ—
-        transform.localScale = originalScale * hoverScale; // Šg‘å‚·‚é
+        // ãƒã‚¦ã‚¹ãŒã‚ªãƒ–ã‚¸ã‚§ã‚¯ãƒˆã«å…¥ã£ãŸã¨ãã®å‡¦ç†
+        transform.localScale = originalScale * hoverScale; // æ‹¡å¤§ã™ã‚‹
     }
 
     private void OnMouseExit()
     {
-        // ƒ}ƒEƒX‚ªƒIƒuƒWƒFƒNƒg‚©‚ço‚½‚Æ‚«‚Ìˆ—
-        transform.localScale = originalScale; // Œ³‚ÌƒXƒP[ƒ‹‚É–ß‚·
+        // ãƒã‚¦ã‚¹ãŒã‚ªãƒ–ã‚¸ã‚§ã‚¯ãƒˆã‹ã‚‰å‡ºãŸã¨ãã®å‡¦ç†
+        transform.localScale = originalScale; // å…ƒã®ã‚¹ã‚±ãƒ¼ãƒ«ã«æˆ»ã™
     }
 }

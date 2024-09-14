@@ -11,22 +11,22 @@ public class Entity : MonoBehaviour
     public Card SubmitCard { get => _submitposition.SubmitCard; }
     public int Life { get; set; }
 
-    //entity‚ÉƒJ[ƒh‚ğ’Ç‰Á
-    //ƒNƒŠƒbƒN‚³‚ê‚½‚Æ‚«‚É‘I‘ğ‚³‚ê‚½ƒJ[ƒh‚ğˆÚ“®
+    //entityã«ã‚«ãƒ¼ãƒ‰ã‚’è¿½åŠ 
+    //ã‚¯ãƒªãƒƒã‚¯ã•ã‚ŒãŸã¨ãã«é¸æŠã•ã‚ŒãŸã‚«ãƒ¼ãƒ‰ã‚’ç§»å‹•
     public void SetCardToHand(Card card) 
     {
-        //ƒJ[ƒh‚ª”z‚ç‚ê‚½‚É©•ª‚ÌŠÖ”‚ğ“o˜^‚µ‚Ä‚¨‚­
+        //ã‚«ãƒ¼ãƒ‰ãŒé…ã‚‰ã‚ŒãŸæ™‚ã«è‡ªåˆ†ã®é–¢æ•°ã‚’ç™»éŒ²ã—ã¦ãŠã
         Hand.Add(card);
         card.OnClickCard = SelectedCard;
     }
-    //èD‚ÌƒJ[ƒh‚ğ‘I‘ğ‚³‚ê‚½‚Æ‚«‚É’ñoˆÊ’u‚ÉƒZƒbƒg
+    //æ‰‹æœ­ã®ã‚«ãƒ¼ãƒ‰ã‚’é¸æŠã•ã‚ŒãŸã¨ãã«æå‡ºä½ç½®ã«ã‚»ãƒƒãƒˆ
     void SelectedCard(Card card)
     {
         if (IsSubmitted)
         {
             return;
         }
-        //‚·‚Å‚ÉƒZƒbƒg‚µ‚Ä‚¢‚ê‚ÎAèD‚É–ß‚·
+        //ã™ã§ã«ã‚»ãƒƒãƒˆã—ã¦ã„ã‚Œã°ã€æ‰‹æœ­ã«æˆ»ã™
         if (_submitposition.SubmitCard)
         {
             _hand.Add(_submitposition.SubmitCard);
@@ -36,32 +36,32 @@ public class Entity : MonoBehaviour
         _hand.ResetPosition();
     }
 
-    //ƒ{ƒ^ƒ“‚ª‰Ÿ‚³‚ê‚½‚Æ‚«’ño‚³‚ê‚½‚±‚Æ‚ğgamemanager‚É’Ê’m
+    //ãƒœã‚¿ãƒ³ãŒæŠ¼ã•ã‚ŒãŸã¨ãæå‡ºã•ã‚ŒãŸã“ã¨ã‚’gamemanagerã«é€šçŸ¥
     public void OnSubmitButton()
     {
         if (_submitposition.SubmitCard)
         {
-            //ƒJ[ƒh‚ÌŒˆ’èA•ÏX•s‰Â
+            //ã‚«ãƒ¼ãƒ‰ã®æ±ºå®šã€å¤‰æ›´ä¸å¯
             IsSubmitted = true;
-            //Manager‚É’Ê’m
+            //Managerã«é€šçŸ¥
             OnSubmitAction?.Invoke();
         }
     }
-    //enemy‚ªƒ‰ƒ“ƒ_ƒ€‚ÉƒJ[ƒh‚ğ’ño‚·‚é
+    //enemyãŒãƒ©ãƒ³ãƒ€ãƒ ã«ã‚«ãƒ¼ãƒ‰ã‚’æå‡ºã™ã‚‹
     public void RandomSubmit()
     {
-        //èD‚©‚çƒ‰ƒ“ƒ_ƒ€‚ÉƒJ[ƒh‚ğ”²‚«æ‚é
+        //æ‰‹æœ­ã‹ã‚‰ãƒ©ãƒ³ãƒ€ãƒ ã«ã‚«ãƒ¼ãƒ‰ã‚’æŠœãå–ã‚‹
         Card card = _hand.RandomRemove();
-        //’ño—p‚ÉƒZƒbƒg
+        //æå‡ºç”¨ã«ã‚»ãƒƒãƒˆ
         _submitposition.Set(card);
-        //ƒQ[ƒ€ƒ}ƒl[ƒWƒƒ‚É’Ê’m‚·‚é
+        //ã‚²ãƒ¼ãƒ ãƒãƒãƒ¼ã‚¸ãƒ£ã«é€šçŸ¥ã™ã‚‹
         IsSubmitted = true;
         OnSubmitAction?.Invoke();
         _hand.ResetPosition();
 
     }
 
-    //’ño‚µ‚½ƒJ[ƒh‚ğíœ
+    //æå‡ºã—ãŸã‚«ãƒ¼ãƒ‰ã‚’å‰Šé™¤
     public void TurnChange()
     {
         IsSubmitted = false;

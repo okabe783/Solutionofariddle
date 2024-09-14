@@ -24,7 +24,7 @@ public class Result : MonoBehaviour
             _resultText.text = "LOSE";
         }
     }
-    private void ShowEnemyAttribute()
+    private void ShowEnemyAttribute() //敵の属性
     {
         _enemyCardResult.text = _resultData.CardList[0];
         if (_resultData.CardList.Count == 1 ) return;

@@ -2,26 +2,25 @@ using UnityEngine;
 using static CardGenerator;
 using static RuleBook;
 using UnityEngine.SceneManagement;
-using UnityEngine.UI;
 
 public class GameManager : MonoBehaviour
 {
-    [SerializeField] Player _player;
-    [SerializeField] Enemy _enemy;
-    [SerializeField] CardGenerator _generator;
-    [SerializeField] GameObject _submitButton;
-    [SerializeField] GameUI _gameUI;
-    [SerializeField] PlayerHand _playerHand;
-    [SerializeField] PlayerHand _enemyHand;
-    [SerializeField] SubmitPosition _playerSubmitCard;
-    [SerializeField] SubmitPosition _enemySubmitCard;
-    [SerializeField] PlayerHandMovement _playerHandMovement;
-    [SerializeField] SubmitPosition _submitPosition;
-    [SerializeField] GameObject _effect;
-    [SerializeField] EnemyAnimController _enemyAnimController;
-    [SerializeField] ResultData _resultData;
-    RuleBook _ruleBook;
-    private int _enemyCardCount = 0;
+    [SerializeField] private Player _player;
+    [SerializeField] private Enemy _enemy;
+    [SerializeField] private CardGenerator _generator;
+    [SerializeField] private GameObject _submitButton;
+    [SerializeField] private GameUI _gameUI;
+    [SerializeField] private PlayerHand _playerHand;
+    [SerializeField] private PlayerHand _enemyHand;
+    [SerializeField] private SubmitPosition _playerSubmitCard;
+    [SerializeField] private SubmitPosition _enemySubmitCard;
+    [SerializeField] private PlayerHandMovement _playerHandMovement;
+    [SerializeField] private SubmitPosition _submitPosition;
+    [SerializeField] private GameObject _effect;
+    [SerializeField] private EnemyAnimController _enemyAnimController;
+    [SerializeField] private ResultData _resultData;
+    private RuleBook _ruleBook;
+    private int _enemyCardCount;
     private void Awake()
     {
         _ruleBook = GetComponent<RuleBook>();
@@ -31,10 +30,10 @@ public class GameManager : MonoBehaviour
         SetUp();
     }
 
-    void SetUp()
+    private void SetUp()
     {
         _gameUI.Init();
-        //ƒ‰ƒCƒtŠÇ—
+        //ãƒ©ã‚¤ãƒ•ç®¡ç†
         _player.Life = _enemy.Life = 10;
         _gameUI.ShowLife(_player.Life, _enemy.Life);
         _player.OnSubmitAction = _enemy.OnSubmitAction = SubmittedAction;
@@ -42,67 +41,67 @@ public class GameManager : MonoBehaviour
         EnemySendCard(_enemy);
     }
 
-    //player‚Æenemy‚ª’ño‚µ‚½‚©‚Ç‚¤‚©‚ğŠm”F‚µA—¼•û’ño‚µ‚Ä‚¢‚½ê‡CardBattle‚ğ‚³‚¹‚é
-    //enemy‚ª’ño‚µ‚½ê‡enemy‚Éƒ‰ƒ“ƒ_ƒ€‚ÉƒJ[ƒh‚ğ’ño‚³‚¹‚é
-    void SubmittedAction()
+    //playerã¨enemyãŒæå‡ºã—ãŸã‹ã©ã†ã‹ã‚’ç¢ºèªã—ã€ä¸¡æ–¹æå‡ºã—ã¦ã„ãŸå ´åˆCardBattleã‚’ã•ã›ã‚‹
+    //enemyãŒæå‡ºã—ãŸå ´åˆenemyã«ãƒ©ãƒ³ãƒ€ãƒ ã«ã‚«ãƒ¼ãƒ‰ã‚’æå‡ºã•ã›ã‚‹
+    private void SubmittedAction()
     {
         if (_player.IsSubmitted && _enemy.IsSubmitted)
         {
-            _submitButton.SetActive(false); //Player‚ªŒˆ’è‚ğ‚¨‚µ‚½‚ç
+            _submitButton.SetActive(false); //PlayerãŒæ±ºå®šã‚’ãŠã—ãŸã‚‰
             CardBattle();
             _submitPosition.AttackEffect();
         }
         else if (_player.IsSubmitted)
         {
-            _submitButton.SetActive(false); //ƒvƒŒƒCƒ„[‚ªŒˆ’è‚ğ‰Ÿ‚µ‚½‚ç•ÏX‚Å‚«‚È‚­‚·‚é
-            //ƒGƒlƒ~[‚©‚çƒJ[ƒh‚ğo‚·
+            _submitButton.SetActive(false); //ãƒ—ãƒ¬ã‚¤ãƒ¤ãƒ¼ãŒæ±ºå®šã‚’æŠ¼ã—ãŸã‚‰å¤‰æ›´ã§ããªãã™ã‚‹
+            //ã‚¨ãƒãƒŸãƒ¼ã‹ã‚‰ã‚«ãƒ¼ãƒ‰ã‚’å‡ºã™
             _enemy.RandomSubmit();
         }
         else if (_enemy.IsSubmitted)
         {
-            //ƒvƒŒƒCƒ„[‚Ì’ño‚ğ‘Ò‚Â
+            //ãƒ—ãƒ¬ã‚¤ãƒ¤ãƒ¼ã®æå‡ºã‚’å¾…ã¤
         }
     }
-    //player‚Æenemy‚ÌƒJ[ƒh‚ğæ“¾‚µƒ‹[ƒ‹ƒuƒbƒN‚ğg—p‚µ‚Äƒoƒgƒ‹Œ‹‰Ê‚ğŒvZ
-    //Œ‹‰Ê‚ğUI‚É•\¦
+    //playerã¨enemyã®ã‚«ãƒ¼ãƒ‰ã‚’å–å¾—ã—ãƒ«ãƒ¼ãƒ«ãƒ–ãƒƒã‚¯ã‚’ä½¿ç”¨ã—ã¦ãƒãƒˆãƒ«çµæœã‚’è¨ˆç®—
+    //çµæœã‚’UIã«è¡¨ç¤º
     void CardBattle()
     {
-        PlayerType playerType = _playerSubmitCard.SubmitCard.Base.PlayerType;
-        EnemyType enemyType = _enemySubmitCard.SubmitCard.Base.EnemyType;
-        TurnResult result = _ruleBook.Result(playerType, enemyType);
-        string resultText = (result == TurnResult.Success1 || result == TurnResult.Success2 || result == TurnResult.Success3) ? "Success" : "Failure";
+        var playerType = _playerSubmitCard.SubmitCard.Base.PlayerType;
+        var enemyType = _enemySubmitCard.SubmitCard.Base.EnemyType;
+        var result = _ruleBook.Result(playerType, enemyType);
+        var resultText = (result == TurnResult.Success1 || result == TurnResult.Success2 || result == TurnResult.Success3) ? "Success" : "Failure";
         _gameUI.ShowTurnResult(resultText);
         if (result == TurnResult.Success1)
         {
             _enemy.Life--;
-            Invoke("EnemyEffect", 0.5f);
+            Invoke(nameof(EnemyEffect), 0.5f);
         }
         else if (result == TurnResult.Success2)
         {
             _enemy.Life -= 2;
-            Invoke("EnemyEffect", 0.5f);
+            Invoke(nameof(EnemyEffect), 0.5f);
         }
         else if (result == TurnResult.Success3)
         {
             _enemy.Life -= 3;
-            Invoke("EnemyEffect", 0.5f);
+            Invoke(nameof(EnemyEffect), 0.5f);
         }
         else if (result == TurnResult.Failure1)
         {
             _player.Life -= 2;
-            Invoke("PlayerEffect", 0.5f);
+            Invoke(nameof(PlayerEffect), 0.5f);
         }
         else if (result == TurnResult.Failure2)
         {
             _player.Life -= 2;
-            Invoke("PlayerEffect", 0.5f);
+            Invoke(nameof(PlayerEffect), 0.5f);
         }
         else if (result == TurnResult.Failure3)
         {
             _player.Life -= 3;
-            Invoke("PlayerEffect", 0.5f);
+            Invoke(nameof(PlayerEffect), 0.5f);
         }
-        //ƒ‰ƒCƒt‚ª0‚É‚È‚Á‚½ƒvƒŒƒCƒ„[‚ª‚¢‚ê‚ÎŸ”sƒpƒlƒ‹‚ğ•\¦@ÅŒã‚É“G‚Ì‘®«‚ğ•\¦
+        //ãƒ©ã‚¤ãƒ•ãŒ0ã«ãªã£ãŸãƒ—ãƒ¬ã‚¤ãƒ¤ãƒ¼ãŒã„ã‚Œã°å‹æ•—ãƒ‘ãƒãƒ«ã‚’è¡¨ç¤ºã€€æœ€å¾Œã«æ•µã®å±æ€§ã‚’è¡¨ç¤º
         _gameUI.ShowLife(_player.Life, _enemy.Life);
         if (result == TurnResult.GameWin || _enemy.Life <= 0)
         {
@@ -115,11 +114,11 @@ public class GameManager : MonoBehaviour
             OnTitleButton();
         }
         else
-            Invoke("SetUpNextTurn", 0.8f);
+            Invoke(nameof(SetUpNextTurn), 0.8f);
     }
-    //ƒ^[ƒ“‚ªI—¹‚µ‚½‚Æ‚«AƒvƒŒƒCƒ„[‚ÌƒJ[ƒh‚ğƒŠƒZƒbƒg‚µV‚µ‚¢ƒJ[ƒh‚ğ¶¬‚µ‚ÄèD‚É’Ç‰Á‚·‚é
-    //’ñoƒ{ƒ^ƒ“‚ğƒAƒNƒeƒBƒu‚É‚·‚é
-    void SetUpNextTurn()
+    //ã‚¿ãƒ¼ãƒ³ãŒçµ‚äº†ã—ãŸã¨ãã€ãƒ—ãƒ¬ã‚¤ãƒ¤ãƒ¼ã®ã‚«ãƒ¼ãƒ‰ã‚’ãƒªã‚»ãƒƒãƒˆã—æ–°ã—ã„ã‚«ãƒ¼ãƒ‰ã‚’ç”Ÿæˆã—ã¦æ‰‹æœ­ã«è¿½åŠ ã™ã‚‹
+    //æå‡ºãƒœã‚¿ãƒ³ã‚’ã‚¢ã‚¯ãƒ†ã‚£ãƒ–ã«ã™ã‚‹
+    private void SetUpNextTurn()
     {
         _player.TurnChange();
         _submitButton.SetActive(true);
@@ -129,17 +128,17 @@ public class GameManager : MonoBehaviour
         EnemyRedistributeCards();
         _playerHandMovement.StartMove();
     }
-    //ƒvƒŒƒCƒ„[‚ÉƒJ[ƒh‚ğƒ‰ƒ“ƒ_ƒ€‚É”z‚èAèD‚ÌˆÊ’u‚ğƒŠƒZƒbƒg‚·‚é
+    //ãƒ—ãƒ¬ã‚¤ãƒ¤ãƒ¼ã«ã‚«ãƒ¼ãƒ‰ã‚’ãƒ©ãƒ³ãƒ€ãƒ ã«é…ã‚Šã€æ‰‹æœ­ã®ä½ç½®ã‚’ãƒªã‚»ãƒƒãƒˆã™ã‚‹
     public void PlayerSendCard(Player _player)
     {
         for (int i = 0; i < 3; i++)
         {
-            Card card = _generator.Spawn(SpawnType.Player);  //ƒJ[ƒh‚ğ¶¬‚µ‚Ä“n‚³‚ê‚é
-            _player.SetCardToHand(card);  //ƒvƒŒƒCƒ„[‚ÌèD‚É’Ç‰Á
+            Card card = _generator.Spawn(SpawnType.Player);  //ã‚«ãƒ¼ãƒ‰ã‚’ç”Ÿæˆã—ã¦æ¸¡ã•ã‚Œã‚‹
+            _player.SetCardToHand(card);  //ãƒ—ãƒ¬ã‚¤ãƒ¤ãƒ¼ã®æ‰‹æœ­ã«è¿½åŠ 
         }
         _player.Hand.ResetPosition();
     }
-    //enemy‚ÉƒJ[ƒh‚ğƒ‰ƒ“ƒ_ƒ€‚É”z‚èAèD‚ÌˆÊ’u‚ğƒŠƒZƒbƒg‚·‚é
+    //enemyã«ã‚«ãƒ¼ãƒ‰ã‚’ãƒ©ãƒ³ãƒ€ãƒ ã«é…ã‚Šã€æ‰‹æœ­ã®ä½ç½®ã‚’ãƒªã‚»ãƒƒãƒˆã™ã‚‹
     public void EnemySendCard(Enemy _enemy)
     {
         Card card = _generator.Spawn(SpawnType.Enemy);

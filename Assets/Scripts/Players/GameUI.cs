@@ -9,26 +9,26 @@ public class GameUI : MonoBehaviour
     [SerializeField] GameObject _resultPanel;
     [SerializeField] Text _resultText;
     [SerializeField] Text _changeAttributeText;
-    //手札を初期化する
+    //謇区惆繧貞�晄悄蛹悶☆繧�
     public void Init()
     {
         _resultPanel.gameObject.SetActive(false);
         _resultText.gameObject.SetActive(false);
         _changeAttributeText.gameObject.SetActive(false);
     }
-    //playerとenemyのライフを表示
+    //player縺ｨenemy縺ｮ繝ｩ繧､繝輔ｒ陦ｨ遉ｺ
     public void ShowLife(int _playerLife, int _enemyLife)
     {
         _platerLifeText.text = $"x{_playerLife}";
         _enemyLifeText.text = $"x{_enemyLife}";
     }
-    //ターンの結果を表示
+    //繧ｿ繝ｼ繝ｳ縺ｮ邨先棡繧定｡ｨ遉ｺ
     public void ShowTurnResult(string result)
     {
         _turnResultText.gameObject.SetActive(true);
         _turnResultText.text = result;
     }
-    //ゲームの最終結果を表示
+    //繧ｲ繝ｼ繝縺ｮ譛邨らｵ先棡繧定｡ｨ遉ｺ
     public void ShowGameResult(string result)
     {
         _resultPanel.SetActive(true);

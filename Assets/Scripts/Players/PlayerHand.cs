@@ -3,32 +3,32 @@ using UnityEngine;
 
 public class PlayerHand : MonoBehaviour
 {
-    List<Card> list = new List<Card>();
+    private readonly List<Card> list = new();
 
-    //e‚ðPlayerHand‚É‚µ‚ÄƒJ[ƒh‚ð‚»‚ÌŽq—v‘f‚É‚·‚é
+    //è¦ªã‚’PlayerHandã«ã—ã¦ã‚«ãƒ¼ãƒ‰ã‚’ãã®å­è¦ç´ ã«ã™ã‚‹
     public void Add(Card card)
     {
         list.Add(card);
-        card.transform.SetParent(this.transform); //Ž©•ªŽ©g‚ðŽq—v‘f‚É‚·‚é
+        card.transform.SetParent(this.transform); //è‡ªåˆ†è‡ªèº«ã‚’å­è¦ç´ ã«ã™ã‚‹
     }
-    //Žw’è‚³‚ê‚½ƒJ[ƒh‚ðíœ‚·‚é
+    //æŒ‡å®šã•ã‚ŒãŸã‚«ãƒ¼ãƒ‰ã‚’å‰Šé™¤ã™ã‚‹
     public void Remove(Card card)
     {
         list.Remove(card);
     }
 
-    //ŽèŽD‚ð®—‚·‚é
+    //æ‰‹æœ­ã‚’æ•´ç†ã™ã‚‹
     public void ResetPosition() 
     {
-        //¬‚³‚¢‡‚É•À‚×‚é
+        //å°ã•ã„é †ã«ä¸¦ã¹ã‚‹
         list.Sort((card0, card1) => card0.Base.CardNumber - card1.Base.CardNumber);
-        for (int i = 0; i < list.Count; i++)
+        for (var i = 0; i < list.Count; i++)
         {
-            float posX = i * 2f; //ãY—í‚É®—ñ‚³‚¹‚é
+            var posX = i * 2f; //ç¶ºéº—ã«æ•´åˆ—ã•ã›ã‚‹
             list[i].transform.localPosition = new Vector2(posX, 0);
         }
     }
-    //“G‚ªƒ‰ƒ“ƒ_ƒ€‚ÉƒJ[ƒh‚ðo‚·‚½‚ß‚Ìƒƒ\ƒbƒh
+    //æ•µãŒãƒ©ãƒ³ãƒ€ãƒ ã«ã‚«ãƒ¼ãƒ‰ã‚’å‡ºã™ãŸã‚ã®ãƒ¡ã‚½ãƒƒãƒ‰
     public Card RandomRemove()
     {
         if (list.Count == 0)
@@ -39,7 +39,7 @@ public class PlayerHand : MonoBehaviour
         Card card = list[r];
         return card;
     }
-    //ŽèŽD‚ðíœ‚µV‚µ‚­ƒJ[ƒh‚ð’Ç‰Á‚·‚é
+    //æ‰‹æœ­ã‚’å‰Šé™¤ã—æ–°ã—ãã‚«ãƒ¼ãƒ‰ã‚’è¿½åŠ ã™ã‚‹
     public void ResetCard()
     {
         foreach(var card in list)

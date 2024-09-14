@@ -20,7 +20,7 @@ public class ResultData : ScriptableObject
     {
         _cardList.Add(card);
     }
-    public void ResetMatchData()
+    public void ResetMatchData() //敵のカードリストを初期化←最後
     {
         _cardList = null;
     }

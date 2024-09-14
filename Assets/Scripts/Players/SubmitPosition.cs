@@ -2,23 +2,21 @@ using UnityEngine;
 using DG.Tweening;
 public class SubmitPosition : MonoBehaviour
 {
-    //�I�����ꂽ�J�[�h���Ǘ�����
-    Card submitCard;
+    //選択されたカードを管理する
+    public Card SubmitCard { get; private set; }
 
-    public Card SubmitCard => submitCard;
-
-    //�����̎q�v�f�ɂ���E�ʒu�������̏ꏊ�ɂ���
+    //自分の子要素にする・位置を自分の場所にする
     public void Set(Card card)
     {
-        submitCard = card;
+        SubmitCard = card;
         card.transform.SetParent(transform);
         card.transform.position = transform.position;
     }
-    //��D�̃J�[�h������
+    //手札のカードを消す
     public void DestroyCard()
     {
-        Destroy(submitCard.gameObject);
-        submitCard = null;
+        Destroy(SubmitCard.gameObject);
+        SubmitCard = null;
     }
     public void AttackEffect()
     {
