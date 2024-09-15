@@ -4,3 +4,9 @@ public enum MatchData
     WIN,
     LOSE,
 }
+
+public enum SpawnType
+{
+    Enemy,
+    Player
+}

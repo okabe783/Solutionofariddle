@@ -7,7 +7,7 @@ public class EffectManager : SingletonMonoBehaviour<EffectManager>
     private EffectSettings _settings;
 
     //Effectを再生する
-    public async UniTask Show(string effectName, Vector2 firstPos, Vector2 targetPos)
+    public void Show(string effectName, Vector2 firstPos)
     {
         EffectSettings effect = (EffectSettings)Resources.Load(effectName);
 
