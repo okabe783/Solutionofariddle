@@ -23,4 +23,10 @@ public class CardGenerator : MonoBehaviour
         }
         return card;
     }
+    
+    public enum SpawnType
+    {
+        Enemy,
+        Player,
+    }
 }

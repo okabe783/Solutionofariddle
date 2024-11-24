@@ -314,7 +314,6 @@ GameObject:
   - component: {fileID: 580114239}
   - component: {fileID: 580114241}
   - component: {fileID: 580114240}
-  - component: {fileID: 580114242}
   m_Layer: 5
   m_Name: ResultPanel
   m_TagString: Untagged
@@ -381,24 +380,6 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 580114238}
   m_CullTransparentMesh: 1
---- !u!114 &580114242
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 580114238}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: df5edd68bf05fef43a0bb0dd36307bab, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  _turnResultText: {fileID: 932714579}
-  _platerLifeText: {fileID: 1793701984}
-  _enemyLifeText: {fileID: 1722495715}
-  _resultPanel: {fileID: 580114238}
-  _resultText: {fileID: 0}
-  _changeAttributeText: {fileID: 932714579}
 --- !u!1 &682968691
 GameObject:
   m_ObjectHideFlags: 0
@@ -499,7 +480,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 698281325}
-  - component: {fileID: 698281326}
+  - component: {fileID: 698281324}
   m_Layer: 0
   m_Name: CardGenerator
   m_TagString: Untagged
@@ -507,22 +488,7 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!4 &698281325
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 698281323}
-  serializedVersion: 2
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
-  m_Children: []
-  m_Father: {fileID: 0}
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &698281326
+--- !u!114 &698281324
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -531,14 +497,15 @@ MonoBehaviour:
   m_GameObject: {fileID: 698281323}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: c6e68ca5934cc374ba51bed2869ef095, type: 3}
+  m_Script: {fileID: 11500000, guid: 590ae8128fd5bbe49ac295edf7f36b79, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _cardBases:
+  _playercardBases:
   - {fileID: 11400000, guid: 8ddf9b2ca6301b646ba04095bee9ebbd, type: 2}
   - {fileID: 11400000, guid: 5a78d28c3ac8bdd4b8eea49afcf011ef, type: 2}
   - {fileID: 11400000, guid: a56a8f1086c384f49a01156626cc6dc2, type: 2}
   - {fileID: 11400000, guid: e0c79e799ce0c9e4d82f88ee37bd8e79, type: 2}
+  - {fileID: 11400000, guid: 909f103932440ac4cb03b80395229505, type: 2}
   - {fileID: 11400000, guid: ebf9ac2962533b2479dd01a3dd0b6224, type: 2}
   - {fileID: 11400000, guid: 5dd8869083615cf4bab7b165fc2d9637, type: 2}
   - {fileID: 11400000, guid: df9c6c051e7c3ba4cac3bb0a40f75afa, type: 2}
@@ -566,7 +533,27 @@ MonoBehaviour:
   - {fileID: 11400000, guid: e6b1df0e5933abf4b9a945480e559b8d, type: 2}
   - {fileID: 11400000, guid: 132edd20959e9a048a3107ff81da4958, type: 2}
   - {fileID: 11400000, guid: 26a775deac285694ea9f77b7ba98918a, type: 2}
-  _cardPrefab: {fileID: 8998810292363682441, guid: 278a4ae0a1e95c54db69f38dcdc68d83, type: 3}
+  _enemycardBases:
+  - {fileID: 11400000, guid: 8a9160981d84ad74198f380bf51b3f7d, type: 2}
+  - {fileID: 11400000, guid: f85b6e85cd475b64192a590095e4f71c, type: 2}
+  - {fileID: 11400000, guid: 98d3c240b1a534348bc27f11706a53c3, type: 2}
+  - {fileID: 11400000, guid: b05f55bdc89260841ac16bf9ebacea41, type: 2}
+  cardprefab: {fileID: 8998810292363682441, guid: 278a4ae0a1e95c54db69f38dcdc68d83, type: 3}
+--- !u!4 &698281325
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 698281323}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &734763870
 GameObject:
   m_ObjectHideFlags: 0
@@ -719,17 +706,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _text: {fileID: 2046644286}
   _pressedColor: {r: 0.5, g: 0.5, b: 0.5, a: 1}
---- !u!114 &932714579 stripped
-MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 460455276266440120, guid: e87766757dd35e34980b24be7420768d, type: 3}
-  m_PrefabInstance: {fileID: 2627844602352770150}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 5f7201a12d95ffc409449d95f23cf332, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!1 &1226430783
 GameObject:
   m_ObjectHideFlags: 0
@@ -1029,15 +1005,16 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _player: {fileID: 1395356546}
   _enemy: {fileID: 734763873}
-  _cardGenerator: {fileID: 698281326}
+  _generator: {fileID: 698281324}
   _submitButton: {fileID: 1937404375}
-  _gameUI: {fileID: 580114242}
+  _gameUI: {fileID: 0}
   _playerHand: {fileID: 1721294950}
   _enemyHand: {fileID: 461686207}
   _playerSubmitCard: {fileID: 2115480741}
   _enemySubmitCard: {fileID: 410425782}
   _playerHandMovement: {fileID: 1721294953}
   _submitPosition: {fileID: 2115480741}
+  _effect: {fileID: 1000011128802252, guid: 96730f8640590934eacb6f860058e7f9, type: 3}
   _enemyAnimController: {fileID: 734763874}
   _resultData: {fileID: 11400000, guid: 6d29ad20d33ff954dbfbc7c57c8ca6a9, type: 2}
 --- !u!114 &1435432204
@@ -1132,28 +1109,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _position: {x: -19.01, y: -3.12}
---- !u!114 &1722495715 stripped
-MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 3774989345094751277, guid: e87766757dd35e34980b24be7420768d, type: 3}
-  m_PrefabInstance: {fileID: 2627844602352770150}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 5f7201a12d95ffc409449d95f23cf332, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
---- !u!114 &1793701984 stripped
-MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 3652719385719536349, guid: e87766757dd35e34980b24be7420768d, type: 3}
-  m_PrefabInstance: {fileID: 2627844602352770150}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 5f7201a12d95ffc409449d95f23cf332, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!1 &1831200588
 GameObject:
   m_ObjectHideFlags: 0

@@ -1,11 +1,12 @@
 using UnityEngine;
+using static CardGenerator;
 using static RuleBook;
 
 public class GameManager : MonoBehaviour
 {
     [SerializeField] private Player _player;
     [SerializeField] private Enemy _enemy;
-    [SerializeField] private FixCardGenerator _cardGenerator;
+    [SerializeField] private CardGenerator _generator;
     [SerializeField] private GameObject _submitButton;
     [SerializeField] private GameUI _gameUI;
     [SerializeField] private PlayerHand _playerHand;
@@ -14,6 +15,7 @@ public class GameManager : MonoBehaviour
     [SerializeField] private SubmitPosition _enemySubmitCard;
     [SerializeField] private PlayerHandMovement _playerHandMovement;
     [SerializeField] private SubmitPosition _submitPosition;
+    [SerializeField] private GameObject _effect;
     [SerializeField] private EnemyAnimController _enemyAnimController;
     [SerializeField] private ResultData _resultData;
     private RuleBook _ruleBook;
@@ -29,13 +31,13 @@ public class GameManager : MonoBehaviour
 
     private void SetUp()
     {
-        //_gameUI.Init();
+        _gameUI.Init();
         //ライフ管理
         _player.Life = _enemy.Life = 10;
         _gameUI.ShowLife(_player.Life, _enemy.Life);
         _player.OnSubmitAction = _enemy.OnSubmitAction = SubmittedAction;
-        _cardGenerator.PlayerSendCard(_player);
-        //EnemySendCard(_enemy);
+        PlayerSendCard(_player);
+        EnemySendCard(_enemy);
     }
 
     //playerとenemyが提出したかどうかを確認し、両方提出していた場合CardBattleをさせる
@@ -71,7 +73,6 @@ public class GameManager : MonoBehaviour
         if (result == TurnResult.Success1)
         {
             _enemy.Life--;
-            //EffectManager.I.Show("AttackEffect", _enemy.transform.position);
         }
         else if (result == TurnResult.Success2)
         {
@@ -113,30 +114,39 @@ public class GameManager : MonoBehaviour
         _player.TurnChange();
         _submitButton.SetActive(true);
         _playerHand.ResetCard();
-        _cardGenerator.PlayerSendCard(_player);
+        PlayerSendCard(_player);
         _player.Hand.ResetPosition();
-        //EnemyRedistributeCards();
+        EnemyRedistributeCards();
         _playerHandMovement.StartMove();
     }
-    
+    //プレイヤーにカードをランダムに配り、手札の位置をリセットする
+    public void PlayerSendCard(Player _player)
+    {
+        for (int i = 0; i < 3; i++)
+        {
+            Card card = _generator.Spawn(SpawnType.Player);  //カードを生成して渡される
+            _player.SetCardToHand(card);  //プレイヤーの手札に追加
+        }
+        _player.Hand.ResetPosition();
+    }
     //enemyにカードをランダムに配り、手札の位置をリセットする
-    // public void EnemySendCard(Enemy _enemy)
-    // {
-    //     Card card = _generator.Spawn(SpawnType.Enemy);
-    //     _enemy.SetCardToHand(card);
-    //     _enemy.Hand.ResetPosition();
-    //     _resultData.SetEnemyAttribute(card.Base.CardName);
-    // }
-    // public void EnemyRedistributeCards()
-    // {
-    //     _enemyCardCount++;
-    //     if (_enemyCardCount == 6)
-    //     {
-    //         _gameUI.ChangeAttribute();
-    //         _enemy.TurnChange();
-    //         _enemyHand.ResetCard();
-    //         EnemySendCard(_enemy);
-    //         _enemyAnimController.ChangeAttribute();
-    //     }
-    // }
+    public void EnemySendCard(Enemy _enemy)
+    {
+        Card card = _generator.Spawn(SpawnType.Enemy);
+        _enemy.SetCardToHand(card);
+        _enemy.Hand.ResetPosition();
+        _resultData.SetEnemyAttribute(card.Base.CardName);
+    }
+    public void EnemyRedistributeCards()
+    {
+        _enemyCardCount++;
+        if (_enemyCardCount == 6)
+        {
+            _gameUI.ChangeAttribute();
+            _enemy.TurnChange();
+            _enemyHand.ResetCard();
+            EnemySendCard(_enemy);
+            _enemyAnimController.ChangeAttribute();
+        }
+    }
 }
